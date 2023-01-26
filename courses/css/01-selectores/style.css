@@ -1,0 +1,90 @@
+/* selector universal */
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* selector de etiquetas */
+h1 {
+    background: red;
+    color: white;
+    font-size: 50px;
+    padding: 10px;                  /* bordes/margenes internos */
+}
+
+a {
+    font-size: 18px;
+    color: green;
+    text-decoration: none;
+}
+
+footer a {
+    color: red;
+}
+
+/* selector de id */
+#descripcion {
+    border: 5px solid black;        /* bordes externos  */
+    padding: 15px;
+}
+
+/* selector de clase */
+.parrafo {
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.parrafo2 {
+    background: green;
+    color: white;
+    text-decoration: none;
+}
+
+.parrafo3 {
+    background: orange;
+    color: black;
+    text-decoration: none;
+}
+
+/* selector de atributos */
+#usuario form {
+    border: 5px solid blue;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+#usuario form * {
+    display: block;
+}
+
+#usuario form input[type="text"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 350px;
+}
+
+#usuario form input[type="submit"] {
+    background: green;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    box-shadow: 2px;
+    cursor: pointer;
+}
+
+/* selectores hijos */
+
+#menu > li > a {
+    font-size: 18px;
+    color: red;
+    text-decoration: none;
+}
+
+/* prioridad */
+#saludo h1 {
+    background: brown;
+}

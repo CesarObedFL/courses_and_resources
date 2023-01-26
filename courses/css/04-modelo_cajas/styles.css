@@ -1,0 +1,47 @@
+body {
+    padding: 40px;
+}
+
+.cajas {
+    max-width: 1035px;
+    border: 1px solid black;
+}
+
+#caja1 {
+    display: block;
+    background-color: lightblue;
+    width: 250px;
+    height: 250px;
+    border: 10px solid black;
+    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 40px; 
+    margin-right: 10px;
+    margin-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+
+#caja2 {
+    background-color: lightgreen;
+    width: 90%;
+    height: 30%;
+    margin: 30px 20px 15px 30px;
+    padding: 20px 20px 20px 20px;
+}
+
+#caja1 p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 210px;
+}
+
+.clearfix {             /* para limpiar el grid de elementos flotados dentro de la página */
+    float: none;        /* limpia los elementos flotados */ 
+    clear: both;        /* limpia ambos tipos de float, right and left */
+}
