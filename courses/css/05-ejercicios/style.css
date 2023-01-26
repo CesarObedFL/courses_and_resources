@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #contenedor-principal {
@@ -9,5 +10,96 @@
     margin: 0px auto;           /* para centrar el elemento */
     margin-top: 25px;
     border: 1px solid #ccc;
-
 }
+
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(0, 174, 255);
+    color: white;
+    text-align: center;
+    line-height: 90px;
+}
+
+#menu {
+    background-color: #eee;
+}
+
+#menu ul li {
+    display: inline-block;
+    
+    border-right: 1px solid #ccc;
+}
+
+#menu ul li a {
+    color: #444;
+    display: block;
+    padding: 15px;
+}
+
+#menu ul li:hover {
+    background-color: rgb(11, 82, 115);
+    cursor: pointer;
+}
+
+#menu ul li:hover a {
+    color: white;
+}
+
+#barra-lateral {
+    width: 29%;
+    border: 1px solid red;
+    float: left;
+    min-height: 500px;
+    text-align: center;
+}
+
+#contenido {
+    width: 70%;
+    float: left;
+}
+
+#contenido > h1 {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    color: #444;
+    text-shadow: 0px 0px 2px gray;
+}
+
+#contenido .caja {
+    width: 40%;
+    height: 250px;
+    background-color: #ccc;
+    border: 1px solid gray;
+    color: white;
+    float: left;
+    margin: 10px;
+    margin-left: 45px;
+    text-align: center;
+    line-height: 200px;
+    color: #444;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+}
+
+#contenido .caja:hover {
+    box-shadow: 0px 0px 5px black inset !important;
+}
+
+#footer {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    background-color: #eee;
+    text-align: center;
+    color: #444;
+    border-top: 1px solid #ccc;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
