@@ -1,0 +1,56 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul li {
+    font-size: 20px;
+}
+
+/* pseudoclases */
+
+ul li:first-child {
+    color: purple;
+    font-weight: bold;
+}
+
+ul li:nth-child(2) {
+    color: orange;
+    font-weight: bold;
+}
+
+ul li:last-child {
+    color: red;
+    font-weight: bold;
+}
+
+a {
+    font-size: 30px;
+    color: lightsalmon;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: gray;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+input[type="text"] {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+input[type="text"]:focus {
+    border: 4px dashed red;
+}
