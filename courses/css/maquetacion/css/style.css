@@ -223,9 +223,31 @@ button:active {
     width: 100%;
     color: #cccccc;
     text-align: center;
+    margin-bottom: 15px;
     padding-top: 2px;
     padding-bottom: 2px;
     border: 2px solid #ccc;
     border-right: none;
     border-left: none;
+}
+
+#sidebar div input[type="text"],
+#sidebar div input[type="email"],
+#sidebar div input[type="password"] {
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#sidebar div input[type="button"],
+#sidebar div input[type="submit"],
+#sidebar div button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#sidebar div input{
+    margin: 0px auto;
+    padding-left: 5px;
 }
