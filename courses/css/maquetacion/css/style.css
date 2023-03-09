@@ -272,6 +272,7 @@ button:active {
     font-family: "fajala";
     font-size: 24px;
     font-weight: normal;
+    margin-top: -20px;
     letter-spacing: 1px;
     text-align: center;
     padding-top: 20px;
@@ -299,4 +300,14 @@ button:active {
 #sections .date {
     color: gray;
     font-size: 14px;
+}
+
+#sections .sticker-one, #sections .sticker-two {
+    position: absolute;
+    margin-top: -38px;
+    z-index: 0;
+}
+
+#sections .sticker-two {
+    margin-left: 64%;
 }
