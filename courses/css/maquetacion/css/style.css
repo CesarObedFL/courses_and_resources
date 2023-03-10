@@ -18,6 +18,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'icons';
+    src: url('fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg'),
+         url('fonts/websymbols-regular-webfont.eot');
+    src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('fonts/websymbols-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* estilos generales */
 
 * {
@@ -27,6 +38,13 @@
 
 body {
     background-image: url("../img/paven.png");
+}
+
+.icon {
+    font-family: 'icons';
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
 }
 
 /* forms */
