@@ -55,7 +55,7 @@ aside {
 
 /* media queries responsive */
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     #main article {
         width: 40%;
@@ -63,7 +63,7 @@ aside {
     }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
 
     #container {
         overflow: hidden;
