@@ -1,0 +1,96 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.card-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translate(calc(var(--offset) * 100%), 0);
+    transform-origin: var(--direction) 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out,
+    visibility 0.3s ease-out;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: hsl( 280deg, 40%, calc(100% - var(--abs-offset) * 50%) );
+    border-radius: 1rem;
+    color: #9ca3af;
+    text-align: justify;
+    transition: all 0.3s ease-out;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 0.7em;
+    color: #1f2937;
+}
+
+p, h2 {
+    transition: all 0.3s ease-out;
+    opacity: var(--active);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+}
+
+.nav:hover {
+    background-color: #e5e7eb;
+}
+
+.nav.left {
+    left: 20px;
+}
+
+.nav.right {
+    right: 20px;
+}
+
+.feather {
+    vertical-align: middle;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
