@@ -131,7 +131,7 @@ header {
 }
 /* Banner */
 
-/* Tarjetas */
+/* cards */
 .card {
     float: left;
     width: 205px;
@@ -174,5 +174,73 @@ header {
     color: #0083da;
     font-size: 15px;
 }
-/* Tarjetas */
+/* cards */
 
+/* sidebar */
+#sidebar {
+    width: 300px;
+    min-height: 1200px;
+    font-family: "TrebuchetMS";
+    float: right;
+    margin: 20px;
+}
+
+aside h3 {
+    display: block;
+    width: auto;
+    height: 45px;
+    line-height: 49px;
+    background: url('../img/pxgray.png'), white;
+    box-shadow: 0px 1px 0px #393d3f, 1px 2px 0px #393d3f, 2px 3px 0px #393d3f, 3px 4px 0px #393d3f;
+    font-size: 30px;
+    font-family: "BebasNeue";
+    font-weight: normal;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#sidebar h3:first-child {
+    margin-top: 0px;
+}
+
+#search {
+    width: 90%;
+    height: 30px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 1px solid #ccc;
+    box-shadow: 1px 1px 4px #ccc inset;
+}
+
+#sidebar input[type="text"] {
+    width: 85%;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ccc;
+    transition: 300ms;
+}
+
+#sidebar input[type="text"]:focus {
+    color: #555;
+}
+
+#sidebar input[type="button"], 
+#sidebar input[type="submit"] {
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    border: none;
+    border-left: 1px solid #ccc;
+    background-color: transparent;
+    color: #555;
+    padding-left: 6px;
+
+}
+
+/* sidebar */
