@@ -425,4 +425,20 @@ aside h3 {
     font-size: 15px;
 }
 
+#blog-button {
+    height: 100px;
+    margin-top: 60px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#blog-button a {
+    display: block;
+    font-family: "BebasNeue";
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #00538c;
+    text-decoration: none;
+}
+
 /* articles */
