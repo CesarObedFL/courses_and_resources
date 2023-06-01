@@ -170,6 +170,17 @@ header {
     background: url("../img/bakbaner.png");
     background-position: -200px -200px;
     margin: 20px auto;
+    overflow: hidden;
+    animation: back-banner 10s linear;
+}
+
+@keyframes back-banner {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -200px -200px;
+    }
 }
 
 #banner h1 {
@@ -182,6 +193,30 @@ header {
     letter-spacing: 2px;
     margin: 27px auto;
     text-shadow: 2px 2px 1px black;
+    animation: show-banner-text 10s linear;
+}
+
+@keyframes show-banner-text {
+    0% {
+        transform: translateX(-600%) scale(5,5);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(600%) scale(5,5);
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-600%) scale(5,5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%) scale(1,1);
+        text-shadow: 2px 2px 1px black;
+        color: white;
+        opacity: 1;
+    }
 }
 /* Banner */
 
