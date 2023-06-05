@@ -23,7 +23,7 @@ html {
 }
 
 :root {
-    --card-height: 65vh;
+    --card-height: 100px;
     --card-width: calc(var(--card-height) / 1.5);
 }
 
@@ -77,7 +77,7 @@ h1 {
 	left: 10px;
 	top: 10px;
 	overflow: hidden;
-	border: solid 5px black;
+	border: solid 2px black;
 }
 
 #carousel figure:nth-child(1) { transform: rotateY(0deg)   translateZ(288px); }
@@ -89,6 +89,10 @@ h1 {
 #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
 #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
 #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px); }
+
+#carousel figure {
+    backface-visibility: hidden;
+}
 
 img {
 	-webkit-filter: grayscale(1);
@@ -150,14 +154,12 @@ img:hover {
     width: 104%;
     height: 102%;
     border-radius: 8px;
-    background-image: linear-gradient(
-        var(--rotate)
-        , #d15dff, #983ce3 43%, #6f47aa);
-        position: absolute;
-        z-index: -1;
-        top: -1%;
-        left: -2%;
-        animation: spin 2.5s linear infinite;
+    background-image: linear-gradient(var(--rotate), #d15dff, #983ce3 43%, #6f47aa);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
 }
 
 .card:hover:after {
@@ -172,10 +174,8 @@ img:hover {
     margin: 0 auto;
     transform: scale(0.8);
     filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(
-        var(--rotate)
-        , #d15dff, #983ce3 43%, #6f47aa);
-        opacity: 1;
+    background-image: linear-gradient( var(--rotate), #d15dff, #983ce3 43%, #6f47aa);
+    opacity: 1;
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
 }
