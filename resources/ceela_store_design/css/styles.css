@@ -62,7 +62,7 @@ h1 {
 	height: 100%;
 	position: absolute;
 	transform-style: preserve-3d;
-	animation: rotation 20s infinite linear;
+	animation: rotation 30s infinite linear;
 }
 
 #carousel:hover {
@@ -138,7 +138,7 @@ img:hover {
 
 .card:hover {
     color: rgb(207, 172, 214);
-    transition: color 1s;
+    transition: color 3s;
 }
 
 /*
