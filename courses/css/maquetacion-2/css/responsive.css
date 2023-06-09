@@ -54,6 +54,10 @@
 }
 
 @media (max-width: 950px) {
+    .banner h1 {
+        width: 100%;
+    }
+
     .card .category {
         font-size: 17px;
     }
@@ -72,6 +76,7 @@
 
     #footer .wrap > div {
         width: 20%;
+        margin: 20px;
     }
 
     #footer #info img {
@@ -85,4 +90,34 @@
     #footer h5 {
         font-size: 20px;
     }
+
+    .aside-box {
+        width: 95%;
+        min-height: 140px;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    #login input[type="email"],
+    #login input[type="password"] {
+        width: 65%;
+    }
+
+    #login #email,
+    #login #password {
+        margin-left: 24px;
+    }
+
+    #login input[type="submit"],
+    #login input[type="button"],
+    #login input[type="reset"],
+    #login button {
+        margin-bottom: 0px;
+    }
+
+    #login a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
 }
