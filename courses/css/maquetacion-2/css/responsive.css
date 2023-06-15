@@ -223,4 +223,54 @@
 
 @media (max-width: 560px) {
 
+    #banner h1 {
+        margin-left: -180px;
+    }
+
+    .card {
+        width: 16%;
+        margin: 1.75%;
+        margin-bottom: 20px;
+    }
+
+    .card:hover .icon {
+        font-size: 30px;
+    }
+
+    #sidebar {
+        float: none;
+        width: 100%;
+        margin: 0px auto;
+        min-height: 0px auto;
+    }
+
+    #sidebar input[type="text"] {
+        width: 90%;
+    }
+
+    #login input[type="email"], 
+    #login input[type="password"] {
+        width: 80%;
+        margin-left: 45px;
+    }
+
+    #login #user, 
+    #login #password {
+        margin-left: 20px;
+    }
+
+    #login input[type="submit"], 
+    #login input[type="button"], 
+    #login input[type="reset"], 
+    #login button {
+        width: 92%;
+        margin: 15px 20px 15px 20px;
+    }
+
+    #articles {
+        float: none;
+        width: 100%;
+        margin: 0px auto;
+        min-height: 0px auto;
+    }
 }
