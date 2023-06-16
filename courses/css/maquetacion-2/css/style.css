@@ -448,7 +448,7 @@ aside h3 {
     color: white;
     background: linear-gradient(to bottom, #3eb8e5 0%, #2ca0ca);
     border: 1px solid #156785;
-    border-radius: 1px;
+    border-radius: 3px;
     cursor: pointer;    
     font-size: 15px;
     font-family: "TrebuchetMS";
