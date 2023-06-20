@@ -309,6 +309,29 @@
 
 }
 
+@media (max-width: 470px) {
+
+    #articles {
+        width: 90%;
+    }
+
+    #articles h2 {
+        font-size: 30px;
+    }
+
+    #articles .data {
+        float: none;
+        margin: -10px;
+        padding: 5px;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    #articles article h4 {
+        margin-top: 20px;
+    }
+
+}
+
 @media (max-width: 350px) {
 
     .logo {
@@ -354,22 +377,6 @@
     #login button {
         width: 85%;
         margin: 15px 20px 15px 20px;
-    }
-
-    #articles {
-        width: 90%;
-    }
-
-    #articles h2 {
-        font-size: 30px;
-    }
-
-    #articles .data {
-        height: 20px;
-        line-height: 20px;
-        margin: -10px;
-        padding: 5px;
-        font-size: 9px;
     }
 
 }
