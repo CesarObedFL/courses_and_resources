@@ -38,6 +38,7 @@ body {
     box-sizing: border-box;
 }
 
+
 .carousel-title {
     margin: 20px auto;
 }
@@ -49,9 +50,11 @@ body {
 }
 
 .container {
+	margin: 4% auto;
 	width: 210px;
 	height: 140px;
 	position: relative;
+	perspective: 1000px;
 }
 
 #carousel {
