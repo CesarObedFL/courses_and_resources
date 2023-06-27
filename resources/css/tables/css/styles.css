@@ -47,8 +47,10 @@ table.styled-table {
     border-spacing: 0; 
 }
 
-table.styled-table thead {
+table.styled-table thead tr {
     background-color: rgb(182, 221, 240);
+    position: sticky;
+    top: 0;
 }
 
 table.styled-table tr {
