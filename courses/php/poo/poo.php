@@ -12,27 +12,38 @@
 		
 		const PI = "3.14159";
 		
-		function getName() { return $this->name; }
-		function setName($name) { $this->name = $name; }
+		function getName() 
+		{ 
+			return $this->name; 
+		}
 
-        function __construct() {
+		function setName($name) 
+		{ 
+			$this->name = $name; 
+		}
+
+        function __construct() 
+		{
 			$this->id = rand(100,999);
 			echo $this->id . " has been assigned" ."\n";
 			Animal::$number_of_animals++;
 		}
 
-		function __destruct() {
+		function __destruct() 
+		{
 			echo $this->name . " is being destroyed" . "\n";
 		}
 
 		// magic getter
-		function __get($attribute) {
+		function __get($attribute) 
+		{
 			echo "asked for " . $attribute;
 			return $this->$attribute;
 		}
 
 		// magic setter
-		function __set($attribute, $value) {
+		function __set($attribute, $value) 
+		{
 			echo "set " . $attribute . " to " . $value . "\n";
 			switch($attribute) {
 				case "name":
@@ -51,6 +62,21 @@
 			
 		}
 
-    }
+		function __toString()
+		{
+			return $this->name . " says " . $this->sound . " give me some " . $this->favorite_food . " please!...\n";
+		}
+
+		function run() 
+		{
+			echo $this->name . " runs..." . "\n";
+		}
+
+		function sing()
+		{
+			return $this->name . " is singing: " . $this->sound . "\n";
+		}
+
+    } /** /. class Animal */
 
 ?>
