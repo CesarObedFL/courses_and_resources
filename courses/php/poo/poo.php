@@ -79,4 +79,18 @@
 
     } /** /. class Animal */
 
+	/** inheritance */
+	class Dog extends Animal implements Singable {
+		function run()
+		{
+			echo $this->name . " runs like crazy..." . "\n";
+		}
+
+		function sing()
+		{
+			return $this->name . " is singing: " . $this->sound . "\n";
+		}
+	}
+	/** /. inheritance */
+
 ?>
