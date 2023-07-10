@@ -93,4 +93,11 @@
 	}
 	/** /. inheritance */
 
+	/** interface */
+	interface Singable
+	{
+		public function sing();
+	}
+	/** /. interface */
+
 ?>
