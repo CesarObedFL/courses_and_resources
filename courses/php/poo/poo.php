@@ -100,6 +100,12 @@
 	}
 	/** /. interface */
 
+	$dog_1 = new Animal();
+	$dog_1->name = "Megan";
+	$dog_1->favorite_food = "chicken, vegetables and dogfood";
+	$dog_1->sound = "waauu";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
 	$cat_1 = new Animal();
 	$cat_1->name = 'Micho';
