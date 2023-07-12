@@ -128,6 +128,20 @@
 
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
+	$dog_4 = new Animal();
+	$dog_4->name = "Huesos";
+	$dog_4->favorite_food = "chicken and vegetables";
+	$dog_4->sound = "waauu";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
+	$dog_5 = new Animal();
+	$dog_5->name = "Negrito";
+	$dog_5->favorite_food = "dogfood";
+	$dog_5->sound = "";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
 	$cat_2 = new Animal();
 	$cat_2->name = 'Micho';
 	$cat_2->favorite_food = "chicken";
