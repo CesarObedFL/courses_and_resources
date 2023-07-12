@@ -118,8 +118,16 @@
 	$cat_1->name = 'Bicha';
 	$cat_1->favorite_food = "catfood";
 	$cat_1->sound = "mau";
+	
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
+	$dog_3 = new Animal();
+	$dog_3->name = "Perrito";
+	$dog_3->favorite_food = "dogfood";
+	$dog_3->sound = "waauu";
 
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
 	$cat_2 = new Animal();
 	$cat_2->name = 'Micho';
 	$cat_2->favorite_food = "chicken";
