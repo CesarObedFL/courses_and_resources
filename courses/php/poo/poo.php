@@ -115,9 +115,15 @@
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
 	$cat_1 = new Animal();
-	$cat_1->name = 'Micho';
-	$cat_1->favorite_food = "chicken";
-	$cat_1->sound = "miau";
+	$cat_1->name = 'Bicha';
+	$cat_1->favorite_food = "catfood";
+	$cat_1->sound = "mau";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+	$cat_2 = new Animal();
+	$cat_2->name = 'Micho';
+	$cat_2->favorite_food = "chicken";
+	$cat_2->sound = "miau";
 
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
