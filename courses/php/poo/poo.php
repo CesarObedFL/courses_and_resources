@@ -149,4 +149,18 @@
 
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
+	$cat_3 = new Animal();
+	$cat_3->name = 'Kili Negrito';
+	$cat_3->favorite_food = "catfood";
+	$cat_3->sound = "mauau";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
+	$cat_4 = new Animal();
+	$cat_4->name = 'Fili Momo';
+	$cat_4->favorite_food = "chicken livers";
+	$cat_4->sound = "mauuuu";
+
+	echo "amount of animals: " . Animal::$number_of_animals . "\n";
+
 ?>
