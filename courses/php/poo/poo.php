@@ -211,4 +211,8 @@
 	singing($cat_4);
 	singing($dog_6);
 
+	echo ($dog_1 instanceof Animal) ? "it is an aminal\n" : "it isn't an animal\n";
+
+	$animal = clone $dog_1;
+
 ?>
