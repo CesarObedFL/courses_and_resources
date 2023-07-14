@@ -170,4 +170,28 @@
 
 	echo "amount of animals: " . Animal::$number_of_animals . "\n";
 
+
+	echo $dog_1;
+	echo $dog_2;
+	echo $cat_1;
+	echo $dog_3;
+	echo $dog_4;
+	echo $dog_5;
+	echo $cat_2;
+	echo $cat_3;
+	echo $cat_4;
+	echo $dog_6;
+
+	$dog_1->run();
+	$dog_2->run();
+	$cat_1->run();
+	$dog_3->run();
+	$dog_4->run();
+	$dog_5->run();
+	$cat_2->run();
+	$cat_3->run();
+	$cat_4->run();
+	$dog_6->run();
+
+
 ?>
