@@ -193,5 +193,22 @@
 	$cat_4->run();
 	$dog_6->run();
 
+	/** polimorfism */
+	function singing(Singable $object)
+	{
+		echo $object->sing();
+	}
+	/** /. polimorfism */
+
+	singing($dog_1);
+	singing($dog_2);
+	singing($cat_1);
+	singing($dog_3);
+	singing($dog_4);
+	singing($dog_5);
+	singing($cat_2);
+	singing($cat_3);
+	singing($cat_4);
+	singing($dog_6);
 
 ?>
