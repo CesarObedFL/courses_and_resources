@@ -1,0 +1,81 @@
+CREATE DATABASE Company;
+USE Company;
+
+CREATE TABLE Departments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    build VARCHAR(10)
+);
+
+CREATE TABLE Dept_Emp (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    departmentId INT NOT NULL REFERENCES Department(id),
+    employees INT UNSIGNED NOT NULL
+);
+
+CREATE TABLE Employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    age INT,
+    email VARCHAR(25) NOT NULL,
+    salary INT UNSIGNED NOT NULL,
+    departmentId INT UNSIGNED REFERENCES Department(id)
+);
+
+CREATE VIEW salaries AS SELECT SUM(salary) FROM Employees GROUP BY departmentID;
+
+DELIMITER //
+CREATE PROCEDURE edit_build(IN newBuild VARCHAR(10))
+BEGIN
+    DECLARE i INT DEFAULT 0;
+    SET i = 1;
+    WHILE i <= ( SELECT COUNT(id) FROM Departments ) DO
+        UPDATE Departments SET build = newBuild WHERE id = i;
+        SET i = i + 1;
+    END WHILE;
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER addDepartment AFTER INSERT ON Departments
+    FOR EACH ROW
+    BEGIN 
+        INSERT INTO Dept_Emp (departmentId,employees) VALUES (NEW.id, 0);
+    
+END //
+DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER addEmployee BEFORE INSERT ON Employees
+    FOR EACH ROW
+    BEGIN
+        UPDATE Dept_Emp SET employees = employees + 1 WHERE departmentId = NEW.departmentId;
+END //
+DELIMITER ;
+
+INSERT INTO Departments (name,build) VALUES ("Production","build 1");
+INSERT INTO Departments (name,build) VALUES ("Marketing","build 1");
+INSERT INTO Departments (name,build) VALUES ("Design","build 1");
+INSERT INTO Departments (name,build) VALUES ("HR","build 1");
+
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 1",23,"empleado1@mail.com",6000,4);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 2",21,"empleado2@testmail.com",7500,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 3",26,"empleado3@gmail.com",8000,2);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 4",29,"empleado4@live.com",8000,3);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 5",36,"empleado5@mail.com",12000,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 6",30,"empleado6@gmail.com",12000,2);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 7",24,"empleado7@gmail.com",8000,3);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 8",24,"empleado8@testmail.com",8000,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 9",29,"empleado9@gmail.com",8500,3);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 10",20,"empleado10@outlok.com",6000,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 11",26,"empleado11@gmail.com",6000,4);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 12",31,"empleado12@outlok.com",10000,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 13",28,"empleado13@live.com",8000,1);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 14",25,"empleado14@gmail.com",7500,2);
+INSERT INTO Employees (name,age,email,salary,departmentId) VALUES ("empleado 15",40,"empleado15@live.com",10000,4);
+
+CALL edit_build("main build");
+SELECT * FROM Departments;
+SELECT * FROM Dept_Emp;
+
+SELECT * FROM salaries;
