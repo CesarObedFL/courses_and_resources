@@ -26,7 +26,7 @@ echo $pi * ($radio * $radio);
 $b = 0;
 $b ? print 'true' : print 'false';
 
-// passing variables to functions by reference
+/* passing variables to functions by reference */
 $a1 = "WILLIAM";
 $a2 = "henry";
 $a3 = "gatES";
@@ -40,6 +40,34 @@ function fix_names(&$n1, &$n2, &$n3)
     $n1 = ucfirst(strtolower($n1));
     $n2 = ucfirst(strtolower($n2));
     $n3 = ucfirst(strtolower($n3));
+}
+
+/* static variables access */
+$temp = new Test();
+
+// usando el operador de resolución de ámbito (::)
+echo "Test A: " . Test::$static_property;
+
+// usando una función que utiliza la autoreferencia de constantes (self)
+echo "Test B: " . $temp->getStaticProperty();
+
+class Test {
+    static $static_property = "I'm static";
+
+    function __construct() 
+    {
+
+    }
+
+    function __destruct() 
+    {
+
+    }
+
+    function getStaticProperty()
+    {
+        return self::$static_property;
+    }
 }
 
 
