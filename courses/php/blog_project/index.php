@@ -57,12 +57,9 @@
             <!-- /. main -->
             <div class="clearfix"></div>
         </div>
+        <!-- /. container -->
 
-        <!-- footer -->
-        <footer id="footer">
-            <p>Desarrollado por César Obed Figueroa Luna &copy; 2023</p>
-        </footer>
-        <!-- /. footer -->
+        <?php include_once 'includes/footer.php'; ?>
 
     </body>
 </html>
