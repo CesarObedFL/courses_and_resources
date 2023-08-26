@@ -1,8 +1,5 @@
 <?php require_once 'includes/header.php'; ?>
-
-
-        <div id="container">
-            
+    
             <?php require_once 'includes/aside_bar.php'; ?>
 
             <!-- main -->
@@ -55,11 +52,9 @@
                 </div>
             </div>
             <!-- /. main -->
-            <div class="clearfix"></div>
-        </div>
-        <!-- /. container -->
+            
 
-        <?php include_once 'includes/footer.php'; ?>
+        <?php require_once 'includes/footer.php'; ?>
 
     </body>
 </html>
