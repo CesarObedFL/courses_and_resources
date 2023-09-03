@@ -8,7 +8,7 @@
             <label for="password">Password</label>
             <input type="password" name="password">
 
-            <input type="submit" value="ENTRAR">
+            <input type="submit" name="submit" value="ENTRAR">
         </form>
     </div>
 
@@ -16,7 +16,7 @@
         <h3>Regístrate</h3>
         <form action="register.php" method="POST">
             <label for="name">Nombre</label>
-            <input type="email" name="email">
+            <input type="email" name="name">
             <label for="email">Email</label>
             <input type="email" name="email">
             <label for="password">Password</label>
