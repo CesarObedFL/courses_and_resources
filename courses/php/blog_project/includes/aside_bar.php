@@ -1,3 +1,5 @@
+<?php require_once 'includes/helpers.php'; ?>
+
 <!-- sidebar -->
 <aside id="sidebar">
     <div id="login" class="block-aside">
@@ -16,14 +18,22 @@
         <h3>Regístrate</h3>
         <form action="register.php" method="POST">
             <label for="name">Nombre</label>
-            <input type="email" name="name">
+            <input type="text" name="name">
+            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'name') : ''; ?>
+
             <label for="email">Email</label>
             <input type="email" name="email">
+            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'email') : ''; ?>
+
+
             <label for="password">Password</label>
             <input type="password" name="password">
+            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'password') : ''; ?>
 
             <input type="submit" value="REGISTRARSE">
         </form>
+
+        <?php clean_errors(); ?>
     </div>
 
 </aside>

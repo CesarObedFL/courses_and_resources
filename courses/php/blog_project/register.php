@@ -2,6 +2,8 @@
 
 if ( isset($_POST['submit']) ) {
 
+    session_start();
+
     // get the register's form variables
     $name = isset($_POST['name']) ? $_POST['name'] : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
@@ -31,10 +33,13 @@ if ( isset($_POST['submit']) ) {
         $errors['password'] = "variable password empty!...";
     }
 
-    // 
+    // dave data
+    $save_data = false;
     if ( count($errors) == 0 ) {
+        $save_data = true;
         echo "insert data";
     } else {
-        echo "cannot insert data";
+        $_SESSION['errors'] = $errors;
+        header('Location: index.php');
     }
 }
