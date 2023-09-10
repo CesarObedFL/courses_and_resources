@@ -1,7 +1,8 @@
 <?php
 
-if ( isset($_POST['submit']) ) {
+if ( isset($_POST ) ) {
 
+    require_once 'includes/database_connection.phps';
     session_start();
 
     // get the register's form variables
@@ -37,9 +38,21 @@ if ( isset($_POST['submit']) ) {
     $save_data = false;
     if ( count($errors) == 0 ) {
         $save_data = true;
-        echo "insert data";
+        $password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
+        $sql = "INSERT INTO users VALUES(null, '$name', '$email', '$password', CURDATE());";
+        $result = mysqli_query($db, $sql);
+
+        if ($result) {
+            $_SESSION['saved'] = "User saved successfully!...";
+        } else {
+            $_SESSION['errors']['saved'] = "Some error has happened until saving user!...";
+        }
+
+
     } else {
         $_SESSION['errors'] = $errors;
-        header('Location: index.php');
+        
     }
 }
+
+header('Location: index.php');
