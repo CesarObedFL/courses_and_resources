@@ -2,52 +2,62 @@
 
 <!-- sidebar -->
 <aside id="sidebar">
-    <div id="login" class="block-aside">
-        <h3>Identificate</h3>
-        <form action="login.php" method="POST">
-            <label for="email">Email</label>
-            <input type="email" name="email">
-            <label for="password">Password</label>
-            <input type="password" name="password">
 
-            <input type="submit" name="submit" value="ENTRAR">
-        </form>
-    </div>
+    <?php if(isset($_SESSION['user'])): ?>
+        <div class="block-aside">
+            <h3>Welcome, <?=$_SESSION['user']['name'];?></h3>
+        </div>
+    <?php endif; ?>
 
-    <div id="register" class="block-aside">
-        <h3>Regístrate</h3>
+    <?php if( !isset($_SESSION['user'])): ?>
+        <div id="login" class="block-aside">
+            <h3>Login</h3>
+            <form action="login.php" method="POST">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                <label for="password">Password</label>
+                <input type="password" name="password">
 
-        <!-- show messages -->
-        <?php if (isset($_SESSION['saved'])): ?>
-            <div class="alert alert-success">
-                <?= $_SESSION['saved'] ?>
-            </div>
-        <? elseif(isset($_SESSION['errors']['saved'])): ?>
-            <div class="alert alert-error">
-                <?= $_SESSION['errors']['saved']?>
-            </div>
-        <? endif; ?>
-        <!-- /. show messages -->
+                <input type="submit" name="submit" value="ENTRAR">
+            </form>
+        </div>
+    <?php else: ?>
+        <div id="register" class="block-aside">
+            <h3>Regístrate</h3>
 
-        <form action="register.php" method="POST">
-            <label for="name">Nombre</label>
-            <input type="text" name="name">
-            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'name') : ''; ?>
+            <!-- show messages -->
+            <?php if (isset($_SESSION['saved'])): ?>
+                <div class="alert alert-success">
+                    <?= $_SESSION['saved'] ?>
+                </div>
+            <? elseif(isset($_SESSION['errors']['saved'])): ?>
+                <div class="alert alert-error">
+                    <?= $_SESSION['errors']['saved']?>
+                </div>
+            <? endif; ?>
+            <!-- /. show messages -->
 
-            <label for="email">Email</label>
-            <input type="email" name="email">
-            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'email') : ''; ?>
+            <form action="register.php" method="POST">
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+                <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'name') : ''; ?>
+
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'email') : ''; ?>
 
 
-            <label for="password">Password</label>
-            <input type="password" name="password">
-            <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'password') : ''; ?>
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'password') : ''; ?>
 
-            <input type="submit" value="REGISTRARSE">
-        </form>
+                <input type="submit" value="REGISTRARSE">
+            </form>
 
-        <?php clean_errors(); ?>
-    </div>
+            <?php clean_errors(); ?>
+        </div>
+
+    <?php endif; ?>
 
 </aside>
 <!-- /. sidebar -->

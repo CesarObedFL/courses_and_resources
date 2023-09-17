@@ -8,7 +8,7 @@ if ( isset($_POST ) ) {
     // get the register's form variables
     $name = isset($_POST['name']) ? mysqli_real_escape_string($db, $_POST['name']) : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
-    $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : null;
+    $password = isset($_POST['password']) ? mysqli_real_escape_string($db, trim($_POST['password'])) : null;
 
     $errors = array();
 
