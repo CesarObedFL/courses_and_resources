@@ -23,6 +23,20 @@ body {
     background: url(../img/cubes.png) #F4F4F4;
 }
 
+.alert {
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    background-color: green;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.alert-error {
+    background-color: red;
+}
+
 label, 
 input[type="text"], 
 input[type="email"], 
