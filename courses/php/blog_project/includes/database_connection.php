@@ -1,9 +1,9 @@
 <?php
 
-$server = 'localhost';
-$username = 'root';
-$password = '';
-$database = 'blog_project_db';
+$server = 'cyr_database_container';
+$username = 'cyr_db_user';
+$password = 'secret';
+$database = 'cyr_db';
 $db = mysqli_connect($server, $username, $password, $database);
 
-mysqli_query($db, "SET NAMES 'utf-8'");
+mysqli_query($db, "SET NAMES 'utf8'");
