@@ -13,13 +13,13 @@ function show_errors($errors, $field)
 
 function clean_errors() 
 {
-    if ($_SESSION['errors']) {
-        $_SESSION['errors'] = null;
-        session_unset($_SESSION['errors']);
+    if ( isset($_SESSION['errors']) ) {
+        //$_SESSION['errors'] = null;
+        unset($_SESSION['errors']);
     }
    
-    if ($_SESSION['saved']) {
-        $_SESSION['saved'] = null;
-        session_unset($_SESSION['saved']);
+    if ( isset($_SESSION['saved']) ) {
+        //$_SESSION['saved'] = null;
+        unset($_SESSION['saved']);
     }
 }

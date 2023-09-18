@@ -2,8 +2,7 @@
 
 if ( isset($_POST ) ) {
 
-    require_once 'includes/database_connection.phps';
-    session_start();
+    require_once 'includes/database_connection.php';
 
     // get the register's form variables
     $name = isset($_POST['name']) ? mysqli_real_escape_string($db, $_POST['name']) : null;

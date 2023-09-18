@@ -21,18 +21,18 @@
                 <input type="submit" name="submit" value="ENTRAR">
             </form>
         </div>
-    <?php else: ?>
+
         <div id="register" class="block-aside">
             <h3>Regístrate</h3>
 
             <!-- show messages -->
-            <?php if (isset($_SESSION['saved'])): ?>
+            <?php if ( isset($_SESSION['saved']) ): ?>
                 <div class="alert alert-success">
                     <?= $_SESSION['saved'] ?>
                 </div>
-            <? elseif(isset($_SESSION['errors']['saved'])): ?>
+            <? elseif( isset($_SESSION['errors']['saved']) ): ?>
                 <div class="alert alert-error">
-                    <?= $_SESSION['errors']['saved']?>
+                    <?=$_SESSION['errors']['saved']?>
                 </div>
             <? endif; ?>
             <!-- /. show messages -->

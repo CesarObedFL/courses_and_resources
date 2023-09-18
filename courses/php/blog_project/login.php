@@ -12,11 +12,11 @@
     if ( $login && mysqli_num_rows($login) == 1 ) {
         $user = mysqli_fetch_assoc($login);
 
-        if (password_verify($password, $usuario['password']) ) {
+        if (password_verify($password, $user['password']) ) {
             $_SESSION['user'] = $user;
 
             if ( isset($_SESSION['login_error']) ) {
-                session_unset($_SESSION['login_error']);
+                unset($_SESSION['login_error']);
             }
         } else {
             $_SESSION['login_error'] = 'incorrect credentials...';
