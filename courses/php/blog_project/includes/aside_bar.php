@@ -5,13 +5,20 @@
 
     <?php if(isset($_SESSION['user'])): ?>
         <div class="block-aside">
-            <h3>Welcome, <?=$_SESSION['user']['name'];?></h3>
+            <h3>Bienvenido, <?=$_SESSION['user']['name'];?></h3>
         </div>
     <?php endif; ?>
 
     <?php if( !isset($_SESSION['user'])): ?>
         <div id="login" class="block-aside">
             <h3>Login</h3>
+
+            <? if( isset($_SESSION['errors']['login']) ): ?>
+                <div class="alert alert-error">
+                    <?=$_SESSION['errors']['login']?>
+                </div>
+            <? endif; ?>
+
             <form action="login.php" method="POST">
                 <label for="email">Email</label>
                 <input type="email" name="email">

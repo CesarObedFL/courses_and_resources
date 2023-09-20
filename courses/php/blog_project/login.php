@@ -15,14 +15,14 @@
         if (password_verify($password, $user['password']) ) {
             $_SESSION['user'] = $user;
 
-            if ( isset($_SESSION['login_error']) ) {
-                unset($_SESSION['login_error']);
+            if ( isset($_SESSION['errors']['login']) ) {
+                unset($_SESSION['errors']['login']);
             }
         } else {
-            $_SESSION['login_error'] = 'incorrect credentials...';
+            $_SESSION['errors']['login'] = 'incorrect credentials...';
         }
     } else {
-        $_SESSION['login_error'] = 'incorrect credentials...';
+        $_SESSION['errors']['login'] = 'incorrect credentials...';
     }
 }
 
