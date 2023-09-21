@@ -55,7 +55,8 @@ input[type="password"] {
 }
 
 input[type="button"], 
-input[type="submit"] {
+input[type="submit"],
+button {
     margin-top: 20px;
     margin-bottom: 5px;
     display: block;
@@ -66,6 +67,17 @@ input[type="submit"] {
     cursor: pointer;
     padding: 8px;
     width: 95%;
+}
+
+.button-close {
+    text-align: center;
+    border: 1px solid #851515;
+    border: 1px solid #700808;
+}
+
+.button-perfil {
+    border: 1px solid #157485;
+    border: 1px solid #0a4b57;
 }
 
 /* header */
