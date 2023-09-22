@@ -4,17 +4,19 @@ class MyDate
 {
     protected $DAYS = array();
     protected $MONTHS = array();
+    private $date;
 
-    public function __construct()
+    public function __construct($date)
     {
         $this->DAYS = array("Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo");
         $this->MONTHS = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        $this->date = $date;
     }
 
     // transform the integer month to a string month
-    public function integer_month_to_string_month($date)
+    public function integer_month_to_string_month()
     {
-        $month = substr($date, 5, 2);
+        $month = substr($this->date, 5, 2);
 
         if ($month > 0 && $month <= 12) {
             return $this->MONTHS[ $month - 1 ];
@@ -25,10 +27,10 @@ class MyDate
 
 
     // get the day of the week between two dates
-    public function week_day($date)
+    public function week_day()
     {
-        $day = date("d", strtotime($date));
-        $number_day = date('N', strtotime($date));
+        $day = date("d", strtotime($this->date));
+        $number_day = date('N', strtotime($this->date));
 
         if ($number_day > 0 && $number_day <= 7) {
             return $this->DAYS[ $number_day - 1 ] . ' ' . $day;
@@ -37,9 +39,9 @@ class MyDate
         return "Error en el formato de fecha...";
     }
 
-    public function print_date($date)
+    function __toString()
     {
-        return $this->week_day($date) . " de " . $this->integer_month_to_string_month($date) . ' de ' . substr($date, 0, 4);
+        return $this->week_day() . " de " . $this->integer_month_to_string_month() . ' de ' . substr($this->date, 0, 4);
     }
 
 }
@@ -47,14 +49,12 @@ class MyDate
 
 
 // testing
-$my_date = new MyDate();
-$date =  '1991-12-09';
 $date1 = "2018-12-29";
 $date2 = "2019-01-12";
 
-echo $my_date->print_date($date) . '<br>';
+echo (new MyDate('1991-12-09')) . '<br>';
 
 for( $i = $date1; $i <= $date2; $i = date("Y-m-d", strtotime($i ."+ 1 days")) )
 {
-    echo $my_date->print_date($i) . '<br>';
+    echo (new MyDate($i)) . '<br>';
 }
