@@ -25,10 +25,14 @@
                     <li><a href="index.php">Inicio</a></li>
                     <?php 
                         $categories = get_categories($db);
-                        while($categorie = mysqli_fetch_assoc($categories) ) : 
+                        if ( !empty( $categories) ):
+                            while($categorie = mysqli_fetch_assoc($categories) ) : 
                     ?>
                         <li><a href="categorie.php?id=<?=$categorie['id']?>"><?=$categorie['name']?></a></li>
-                    <?php endwhile; ?>
+                    <?php 
+                            endwhile; 
+                        endif;
+                    ?>
                     <li><a href="index.php">Sobre mí</a></li>
                     <li><a href="index.php">Contacto</a></li>
                 </ul>
