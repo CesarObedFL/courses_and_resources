@@ -36,3 +36,18 @@ function get_categories($db)
 
     return $categories;
 }
+
+function get_articles($db)
+{
+    $sql = "SELECT a.*, c.* FROM articles a 
+            INNER JOIN categories c ON a.category_id = c.id
+            ORDER BY a.id DESC LIMIT 4";
+    $result = mysqli_query($db, $sql);
+
+    $articles = array();
+    if ( $result && mysqli_num_rows($result) >= 1 ) {
+        $articles = $result;
+    } 
+
+    return $articles;
+}
