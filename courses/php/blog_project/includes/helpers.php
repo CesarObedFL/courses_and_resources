@@ -23,3 +23,16 @@ function clean_errors()
         unset($_SESSION['saved']);
     }
 }
+
+function get_categories($db)
+{
+    $sql = "SELECT * FROM categories ORDER BY id ASC";
+    $result = mysqli_query($db, $sql);
+
+    $categories = array();
+    if ( $result && mysqli_num_rows($result) >= 1 ) {
+        $categories = $result;
+    }
+
+    return $categories;
+}
