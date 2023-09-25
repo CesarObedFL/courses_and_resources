@@ -32,8 +32,9 @@ if ( isset($_POST ) ) {
         $password_validated = false;
         $errors['password'] = "variable password empty!...";
     }
+    // /. validate data 
 
-    // dave data
+    // save data
     $save_data = false;
     if ( count($errors) == 0 ) {
         $save_data = true;

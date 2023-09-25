@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * function to show the errors in the text field in the frontend
+ * 
+ * @param Array with the errors in the text field
+ * @param String with the field's name to show
+ * @return Html element with the error string
+ */
 function show_errors($errors, $field)
 {
     $alert = '';
@@ -10,7 +17,9 @@ function show_errors($errors, $field)
     return $alert; 
 }
 
-
+/**
+ * function to clean the array errors and messages
+ */
 function clean_errors() 
 {
     if ( isset($_SESSION['errors']) ) {
@@ -24,6 +33,13 @@ function clean_errors()
     }
 }
 
+
+/**
+ * function to get all the categories of the database
+ * 
+ * @param Object with the database connection
+ * @return Array with the categories obtained
+ */
 function get_categories($db)
 {
     $sql = "SELECT * FROM categories ORDER BY id ASC";
@@ -37,6 +53,13 @@ function get_categories($db)
     return $categories;
 }
 
+
+/**
+ * function to get the articles of the database
+ * 
+ * @param Object with the database connection
+ * @return Array with 4 articles obtained of the database
+ */
 function get_articles($db)
 {
     $sql = "SELECT a.*, c.* FROM articles a 

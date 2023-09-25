@@ -35,7 +35,7 @@
 
                 <input type="submit" name="submit" value="ENTRAR">
             </form>
-        </div>
+        </div> <!-- /. id="login" -->
 
         <div id="register" class="block-aside">
             <h3>Regístrate</h3>
@@ -70,7 +70,7 @@
             </form>
 
             <?php clean_errors(); ?>
-        </div>
+        </div> <!-- /. id="register" -->
 
     <?php endif; ?>
 
