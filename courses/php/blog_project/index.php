@@ -12,6 +12,7 @@
                 ?>
                             <article class="article">
                                 <a href=""><h2 class="article-title"><?=$article['title']?></h2></a>
+                                <span class="b-date"><?=$article['category'].' | '.$article['date']?></span>
                                 <p>
                                     <?=substr($article['description'],0, 160) . '...'?>
                                 </p>

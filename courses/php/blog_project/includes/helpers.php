@@ -62,7 +62,7 @@ function get_categories($db)
  */
 function get_articles($db)
 {
-    $sql = "SELECT a.*, c.* FROM articles a 
+    $sql = "SELECT a.*, c.name as category FROM articles a 
             INNER JOIN categories c ON a.category_id = c.id
             ORDER BY a.id DESC LIMIT 4";
     $result = mysqli_query($db, $sql);
