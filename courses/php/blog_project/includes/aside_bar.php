@@ -8,7 +8,7 @@
             <h3>Bienvenido, <?=$_SESSION['user']['name'];?></h3>
 
             <!-- action buttons -->
-            <a href="#" class="button button-accept">crear entrada</a>
+            <a href="create_article.php" class="button button-accept">crear artículo</a>
             <a href="create_category.php" class="button">crear categoría</a>
             <a href="#" class="button button-profile">mi perfil</a>
             <a href="logout.php" class="button button-close">logout</a>
