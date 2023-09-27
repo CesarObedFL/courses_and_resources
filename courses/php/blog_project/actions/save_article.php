@@ -3,7 +3,7 @@
 if ( isset($_POST) ) {
     require_once '../includes/database_connection.php';
 
-    $name = isset( $_POST['name'] ) ? mysqli_real_escape_string($db, $_POST['name']) : false;
+    $title = isset( $_POST['title'] ) ? mysqli_real_escape_string($db, $_POST['title']) : false;
     $description = isset( $_POST['description'] ) ? mysqli_real_escape_string($db, $_POST['description']) : false;
     $category_id = isset( $_POST['category_id'] ) ? (int)$_POST['category_id'] : false;
     $user_id = $_SESSION['user']['id'];
@@ -11,11 +11,11 @@ if ( isset($_POST) ) {
     $errors = array();
 
     // validate data
-    if ( !empty($name) && !is_numeric($name) && !preg_match("/[0-9]/", $name) ) {
+    if ( !empty($title) ) {
         $name_validated = true; 
     } else {
         $name_validated = false;
-        $errors['name'] = "variable name invalid!...";
+        $errors['title'] = "variable title invalid!...";
     }
 
     // validate data
@@ -36,7 +36,7 @@ if ( isset($_POST) ) {
 
     // save data
     if ( count($errors) == 0 ) {
-        $sql = "INSERT INTO articles VALUES(null, '$name', '$description', $user_id, $category_id, CURDATE());";
+        $sql = "INSERT INTO articles VALUES(null, '$title', '$description', $user_id, $category_id, CURDATE());";
         $result = mysqli_query($db, $sql);
 
         if ($result) {

@@ -14,7 +14,7 @@
     <br>
 
     <form action="actions/save_article.php" method="POST">
-        <label for="name">Título del artículo:</label>
+        <label for="title">Título del artículo:</label>
         <input type="text" name="title" id="title">
 
         <label for="description">Descripción:</label>
