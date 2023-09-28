@@ -44,12 +44,14 @@ if ( isset($_POST) ) {
         } else {
             $_SESSION['errors']['saved'] = "Some error has happened until saving the article!...";
         }
-
+        
+        header('Location: ../index.php');
 
     } else {
         $_SESSION['errors'] = $errors;
         
+        header('Location: ../create_article.php');
+        
     }
 }
 
-header('Location: ../index.php');

@@ -16,9 +16,11 @@
     <form action="actions/save_article.php" method="POST">
         <label for="title">Título del artículo:</label>
         <input type="text" name="title" id="title">
+        <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'title') : ''; ?>
 
         <label for="description">Descripción:</label>
         <textarea name="description" id="description" cols="125" rows="30"></textarea>
+        <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'description') : ''; ?>
 
         <label for="category">Categoría:</label>
         <select name="category_id" id="category_id">
@@ -34,9 +36,13 @@
                 endif;
             ?>
         </select>
+        <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'category') : ''; ?>
+
 
         <input type="submit" value="Guardar">
     </form>
+
+    <?php clean_errors(); ?>
 
 </div>
 <!-- /. main -->
