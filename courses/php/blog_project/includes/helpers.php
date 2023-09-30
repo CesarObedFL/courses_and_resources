@@ -60,11 +60,13 @@ function get_categories($db)
  * @param Object with the database connection
  * @return Array with 4 articles obtained of the database
  */
-function get_articles($db)
+function get_articles($db, $amount = 0)
 {
+    $LIMIT = ( $amount > 0 ) ? "LIMIT ".$amount : "";
+    
     $sql = "SELECT a.*, c.name as category FROM articles a 
             INNER JOIN categories c ON a.category_id = c.id
-            ORDER BY a.id DESC LIMIT 4";
+            ORDER BY a.id DESC " . $LIMIT;
     $result = mysqli_query($db, $sql);
 
     $articles = array();
