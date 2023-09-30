@@ -8,3 +8,6 @@
     <p>Desarrollado por César Obed Figueroa Luna &copy; 2023</p>
 </footer>
 <!-- /. footer -->
+
+</body>
+</html>
