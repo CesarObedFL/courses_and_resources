@@ -22,7 +22,7 @@
     ?>
 
     <div id="view-all-button">
-        <a href="show_articles.php">Ver todas las entradas</a>
+        <a href="views/show_articles.php">Ver todas las entradas</a>
     </div>
 </div>
 <!-- /. main -->

@@ -1,6 +1,6 @@
-<?php require_once 'includes/header.php'; ?>
+<?php require_once '../includes/header.php'; ?>
     
-<?php require_once 'includes/aside_bar.php'; ?>
+<?php require_once '../includes/aside_bar.php'; ?>
 
 <!-- main -->
 <div id="main">
@@ -24,4 +24,4 @@
 </div>
 <!-- /. main -->
             
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

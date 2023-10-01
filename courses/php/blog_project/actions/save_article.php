@@ -50,7 +50,7 @@ if ( isset($_POST) ) {
     } else {
         $_SESSION['errors'] = $errors;
         
-        header('Location: ../create_article.php');
+        header('Location: ../views/create_article.php');
         
     }
 }

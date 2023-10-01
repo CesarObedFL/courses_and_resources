@@ -62,5 +62,5 @@ if ( isset($_POST ) ) {
     }
 }
 
-header('Location: ../profile.php');
+header('Location: ../views/profile.php');
 

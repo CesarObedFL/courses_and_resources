@@ -1,6 +1,6 @@
 <?php
 
- require_once 'includes/database_connection.php';
+ require_once '../includes/database_connection.php';
 
  if (isset($_POST)) {
 
@@ -30,4 +30,4 @@
     }
 }
 
-header('Location: index.php');
+header('Location: ../index.php');

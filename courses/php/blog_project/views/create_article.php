@@ -1,6 +1,6 @@
-<?php require_once 'includes/redirect.php'; ?>
-<?php require_once 'includes/header.php'; ?>
-<?php require_once 'includes/aside_bar.php'; ?>
+<?php require_once '../includes/redirect.php'; ?>
+<?php require_once '../includes/header.php'; ?>
+<?php require_once '../includes/aside_bar.php'; ?>
 
 
 <!-- main -->
@@ -13,7 +13,7 @@
     </p>
     <br>
 
-    <form action="actions/save_article.php" method="POST">
+    <form action="../actions/save_article.php" method="POST">
         <label for="title">Título del artículo:</label>
         <input type="text" name="title" id="title">
         <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'title') : ''; ?>
@@ -47,4 +47,4 @@
 </div>
 <!-- /. main -->
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

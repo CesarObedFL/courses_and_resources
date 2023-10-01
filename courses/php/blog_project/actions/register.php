@@ -2,7 +2,7 @@
 
 if ( isset($_POST ) ) {
 
-    require_once 'includes/database_connection.php';
+    require_once '../includes/database_connection.php';
 
     // get the register's form variables
     $name = isset($_POST['name']) ? mysqli_real_escape_string($db, $_POST['name']) : null;
@@ -55,4 +55,4 @@ if ( isset($_POST ) ) {
     }
 }
 
-header('Location: index.php');
+header('Location: ../index.php');
