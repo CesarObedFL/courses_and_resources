@@ -1,6 +1,7 @@
-<?php require_once 'includes/redirect.php'; ?>
-<?php require_once 'includes/header.php'; ?>
-<?php require_once 'includes/aside_bar.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php'; ?>
+<?php require_once INCLUDES_PATH.'/redirect.php'; ?>
+<?php require_once INCLUDES_PATH.'/header.php'; ?>
+<?php require_once INCLUDES_PATH.'/aside_bar.php'; ?>
 
 
 <!-- main -->
@@ -21,7 +22,7 @@
     <? endif; ?>
     <!-- /. show messages -->
 
-    <form action="actions/update_profile.php" method="POST">
+    <form action="<?=ACTIONS_PATH.'/update_profile.php'?>" method="POST">
         <label for="name">Nombre</label>
         <input type="text" name="name" value="<?=$_SESSION['user']['name'];?>">
         <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'name') : ''; ?>
@@ -38,4 +39,4 @@
 </div>
 <!-- /. main -->
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once INCLUDES_PATH.'/footer.php'; ?>

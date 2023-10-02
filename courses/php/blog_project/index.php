@@ -1,6 +1,8 @@
-<?php require_once 'includes/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php'; ?>
+
+<?php require_once INCLUDES_PATH.'/header.php'; ?>
     
-<?php require_once 'includes/aside_bar.php'; ?>
+<?php require_once INCLUDES_PATH.'/aside_bar.php'; ?>
 
 <!-- main -->
 <div id="main">
@@ -22,11 +24,11 @@
     ?>
 
     <div id="view-all-button">
-        <a href="views/show_articles.php">Ver todas las entradas</a>
+        <a href="<?=VIEWS_PATH.'/show_articles.php';?>">Ver todas las entradas</a>
     </div>
 </div>
 <!-- /. main -->
 
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once INCLUDES_PATH.'/footer.php'; ?>
 

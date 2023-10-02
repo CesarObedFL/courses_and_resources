@@ -1,7 +1,10 @@
 <?php
 
+include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php';
+
 if ( isset($_POST) ) {
-    require_once '../includes/database_connection.php';
+
+    require_once INCLUDES_PATH.'/database_connection.php';
 
     $title = isset( $_POST['title'] ) ? mysqli_real_escape_string($db, $_POST['title']) : false;
     $description = isset( $_POST['description'] ) ? mysqli_real_escape_string($db, $_POST['description']) : false;

@@ -1,8 +1,10 @@
 <?php
 
- require_once '../includes/database_connection.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php';
 
- if (isset($_POST)) {
+require_once INCLUDES_PATH.'/database_connection.php';
+
+if (isset($_POST)) {
 
     // delete previous errors
     if ( isset($_SESSION['errors']['login']) ) {

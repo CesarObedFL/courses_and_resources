@@ -1,4 +1,4 @@
-<?php require_once 'includes/helpers.php'; ?>
+<?php require_once INCLUDES_PATH.'/helpers.php'; ?>
 
 <!-- sidebar -->
 <aside id="sidebar">
@@ -8,10 +8,10 @@
             <h3>Bienvenido, <?=$_SESSION['user']['name'];?></h3>
 
             <!-- action buttons -->
-            <a href="../views/create_article.php" class="button button-accept">crear artículo</a>
-            <a href="../views/create_category.php" class="button">crear categoría</a>
-            <a href="../views/profile.php" class="button button-profile">mi perfil</a>
-            <a href="../actions/logout.php" class="button button-close">logout</a>
+            <a href="<?=VIEWS_PATH.'/create_article.php'?>" class="button button-accept">crear artículo</a>
+            <a href="<?=VIEWS_PATH.'/create_category.php'?>" class="button">crear categoría</a>
+            <a href="<?=VIEWS_PATH.'/profile.php'?>" class="button button-profile">mi perfil</a>
+            <a href="<?=ACTIONS_PATH.'/logout.php'?>" class="button button-close">logout</a>
             <!-- /. action buttons -->
 
         </div>
@@ -27,7 +27,7 @@
                 </div>
             <? endif; ?>
 
-            <form action="../actions/login.php" method="POST">
+            <form action="<?=ACTIONS_PATH.'/login.php'?>" method="POST">
                 <label for="email">Email</label>
                 <input type="email" name="email">
                 <label for="password">Password</label>
@@ -52,7 +52,7 @@
             <? endif; ?>
             <!-- /. show messages -->
 
-            <form action="../actions/register.php" method="POST">
+            <form action="<?=ACTIONS_PATH.'/register.php'?>" method="POST">
                 <label for="name">Nombre</label>
                 <input type="text" name="name">
                 <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'name') : ''; ?>

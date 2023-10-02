@@ -1,10 +1,12 @@
-<?php require_once '../includes/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php'; ?>
+
+<?php require_once INCLUDES_PATH.'/header.php'; ?>
     
-<?php require_once '../includes/aside_bar.php'; ?>
+<?php require_once INCLUDES_PATH.'/aside_bar.php'; ?>
 
 <!-- main -->
 <div id="main">
-    <h1>Todas entradas</h1>
+    <h1>Todas las entradas</h1>
     <?php 
         $articles = get_articles($db);
         if ( !empty($articles) ):
@@ -24,4 +26,4 @@
 </div>
 <!-- /. main -->
             
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once INCLUDES_PATH.'/footer.php'; ?>

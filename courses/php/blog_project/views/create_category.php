@@ -1,6 +1,7 @@
-<?php require_once 'includes/redirect.php'; ?>
-<?php require_once 'includes/header.php'; ?>
-<?php require_once 'includes/aside_bar.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/blog_project/config/routes.php'; ?>
+<?php require_once INCLUDES_PATH.'/redirect.php'; ?>
+<?php require_once INCLUDES_PATH.'/header.php'; ?>
+<?php require_once INCLUDES_PATH.'/aside_bar.php'; ?>
 
 
 <!-- main -->
@@ -13,7 +14,7 @@
     </p>
     <br>
 
-    <form action="actions/save_category.php" method="POST">
+    <form action="<?=ACTIONS_PATH.'/save_category.php'?>" method="POST">
         <label for="name">Nombre de la cateogría:</label>
         <input type="text" name="name" id="name">
 
@@ -23,4 +24,4 @@
 </div>
 <!-- /. main -->
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once INCLUDES_PATH.'/footer.php'; ?>
