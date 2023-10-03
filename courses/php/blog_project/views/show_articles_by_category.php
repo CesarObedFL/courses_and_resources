@@ -15,8 +15,7 @@
         <?php 
             $articles = get_articles($db, 0, $category['id']);
             if ( !empty($articles) ):
-                while ( $article = mysqli_fetch_assoc($articles) ):
-                    ?>
+                while ( $article = mysqli_fetch_assoc($articles) ): ?>
                     <article class="article">
                         <a href=""><h2 class="article-title"><?=$article['title']?></h2></a>
                         <span class="b-date"><?=$article['category'].' | '.$article['date']?></span>
@@ -24,11 +23,11 @@
                             <?=substr($article['description'],0, 160) . '...'?>
                         </p>
                     </article>
-                <?php endwhile;
-            else: ?>
+                <?php endwhile; ?>
+            <?php else: ?>
                 <div class="alert">No hay artículos en esta categoría</div>
         <?php endif; ?>
-    <? else: ?>
+    <?php else: ?>
         <h1> Categoría inexistente!... </h1>
     <?php endif; ?>
 
