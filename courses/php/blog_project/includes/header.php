@@ -28,7 +28,7 @@
                         if ( !empty( $categories) ):
                             while($categorie = mysqli_fetch_assoc($categories) ) : 
                     ?>
-                        <li><a href="categorie.php?id=<?=$categorie['id']?>"><?=$categorie['name']?></a></li>
+                        <li><a href="<?=VIEWS_PATH.'/show_articles_by_category.php?id='.$categorie['id']?>"><?=$categorie['name']?></a></li>
                     <?php 
                             endwhile; 
                         endif;

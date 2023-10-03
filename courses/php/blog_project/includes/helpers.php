@@ -55,17 +55,40 @@ function get_categories($db)
 
 
 /**
+ * function to get a single categorie of the database
+ * 
+ * @param Object with the database connection
+ * @param Integer with the id of the category
+ * @return Array with the categories obtained
+ */
+function get_category($db, $id)
+{
+    $sql = "SELECT * FROM categories WHERE id = $id";
+    $result = mysqli_query($db, $sql);
+
+    $category = null;
+    if ( $result && mysqli_num_rows($result) >= 1 ) {
+        $category = mysqli_fetch_assoc($result);
+    }
+
+    return $category;
+}
+
+
+/**
  * function to get the articles of the database
  * 
  * @param Object with the database connection
  * @return Array with 4 articles obtained of the database
  */
-function get_articles($db, $amount = 0)
+function get_articles($db, $amount = 0, $category_id = null)
 {
     $LIMIT = ( $amount > 0 ) ? "LIMIT ".$amount : "";
+    $WHERE_CATEGORY = ( $category_id ) ? "WHERE c.id = $category_id" : "";
     
     $sql = "SELECT a.*, c.name as category FROM articles a 
             INNER JOIN categories c ON a.category_id = c.id
+            $WHERE_CATEGORY 
             ORDER BY a.id DESC " . $LIMIT;
     $result = mysqli_query($db, $sql);
 
