@@ -43,6 +43,13 @@ body {
     font-size: 14px;
 }
 
+.b-date a {
+    color: #4e4e4e;
+    margin-top: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
 label, 
 input[type="text"], 
 input[type="email"], 
