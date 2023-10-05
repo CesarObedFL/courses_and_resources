@@ -110,8 +110,10 @@ function get_articles($db, $amount = 0, $category_id = null)
  */
 function get_article_by_id($db, $id)
 {
-    $sql = "SELECT a.*, c.name AS category, c.id AS category_id FROM articles a 
-            INNER JOIN categories c ON a.category_id = c.id 
+    $sql = "SELECT a.*, c.name AS category, c.id AS category_id, u.name AS user_name, u.id AS user_id 
+            FROM articles a 
+                INNER JOIN categories c ON a.category_id = c.id 
+                INNER JOIN users u ON a.user_id = u.id 
             WHERE a.id = $id";
     $result = mysqli_query($db, $sql);
 
