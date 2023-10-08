@@ -39,7 +39,17 @@ if ( isset($_POST) ) {
 
     // save data
     if ( count($errors) == 0 ) {
-        $sql = "INSERT INTO articles VALUES(null, '$title', '$description', $user_id, $category_id, CURDATE());";
+
+        if ( isset($_GET['edit']) ) {
+            $user_id = $_SESSION['user']['id'];
+            $article_id = $_GET['edit'];
+            $sql = "UPDATE articles 
+                    SET title = '$title', description = '$description', category_id = $category_id 
+                    WHERE id = $article_id AND user_id = $user_id";
+        } else {
+            $sql = "INSERT INTO articles VALUES(null, '$title', '$description', $user_id, $category_id, CURDATE());";
+        }
+
         $result = mysqli_query($db, $sql);
 
         if ($result) {
@@ -52,8 +62,12 @@ if ( isset($_POST) ) {
 
     } else {
         $_SESSION['errors'] = $errors;
-        
-        header('Location: ../views/create_article.php');
+
+        if ( isset($_GET['edit']) ) {
+            header("Location: ../views/edit_articles.php?id=".$article_id);
+        } else {
+            header('Location: ../views/create_article.php');
+        }
         
     }
 }

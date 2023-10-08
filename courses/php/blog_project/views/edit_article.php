@@ -19,7 +19,7 @@
         if ( isset($article['id']) ):
     ?>
 
-        <form action="<?=ACTIONS_PATH.'/edit_article.php'?>" method="POST">
+        <form action="<?=ACTIONS_PATH.'/save_article.php?edit='.$article['id']?>" method="POST">
             <label for="title">Título del artículo:</label>
             <input type="text" name="title" id="title" value="<?=$article['title']?>">
             <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'title') : ''; ?>
@@ -36,7 +36,8 @@
                     if ( !empty( $categories) ):
                         while($categorie = mysqli_fetch_assoc($categories) ) : 
                 ?>
-                    <option value="<?=$categorie['id']?>"><?=$categorie['name']?></option>
+                    <option value="<?=$categorie['id']?>" 
+                        <?=($categorie['id']==$article['category_id']) ? "selected='selected '": '';?>><?=$categorie['name']?></option>
                 <?php 
                         endwhile; 
                     endif;
