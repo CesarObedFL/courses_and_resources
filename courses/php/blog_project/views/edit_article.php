@@ -25,7 +25,7 @@
             <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'title') : ''; ?>
 
             <label for="description">Descripción:</label>
-            <textarea name="description" id="description" cols="125" rows="30" value="<?=$article['description']?>"></textarea>
+            <textarea name="description" id="description" cols="125" rows="30"><?=$article['description']?></textarea>
             <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'description') : ''; ?>
 
             <label for="category">Categoría:</label>
@@ -46,8 +46,9 @@
             <?php echo isset($_SESSION['errors']) ? show_errors($_SESSION['errors'], 'category') : ''; ?>
 
 
-            <a href="<?=VIEWS_PATH.'/show_article_by_id.php?id='.$_GET['id']?>" class="button button-profile">Cancelar</a>
-            <input type="submit" value="Editar">
+            
+            <input type="submit" class="button button-accept" value="Editar">
+            <a href="<?=VIEWS_PATH.'/show_article_by_id.php?id='.$_GET['id']?>" class="button button-close">Cancelar</a>
         </form>
 
     <?php else: ?>
