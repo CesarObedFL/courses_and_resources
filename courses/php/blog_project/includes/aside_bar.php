@@ -5,7 +5,7 @@
 
     <div id="searcher" class="block-aside">
         <h3>Buscar</h3>
-        <form action="<?=ACTIONS_PATH.'/searching.php'?>" method="POST">
+        <form action="<?=VIEWS_PATH.'/searching.php'?>" method="POST">
             <input type="text" name="search">
             <input type="submit" name="submit" value="Buscar">
         </form>

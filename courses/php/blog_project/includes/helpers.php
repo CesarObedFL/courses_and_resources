@@ -79,16 +79,20 @@ function get_category($db, $id)
  * function to get the articles of the database
  * 
  * @param Object with the database connection
+ * @param Integer with the amount of articles wanted
+ * @param String with the word to search by article title
  * @return Array with 4 articles obtained of the database
  */
-function get_articles($db, $amount = 0, $category_id = null)
+function get_articles($db, $amount = 0, $category_id = null, $search = null)
 {
     $LIMIT = ( $amount > 0 ) ? "LIMIT ".$amount : "";
     $WHERE_CATEGORY = ( $category_id ) ? "WHERE c.id = $category_id" : "";
+    $WHERE_SEARCH = ( $search ) ? "WHERE a.title LIKE '%$search%'" : "";
     
     $sql = "SELECT a.*, c.name as category FROM articles a 
             INNER JOIN categories c ON a.category_id = c.id
             $WHERE_CATEGORY 
+            $WHERE_SEARCH 
             ORDER BY a.id DESC " . $LIMIT;
     $result = mysqli_query($db, $sql);
 
