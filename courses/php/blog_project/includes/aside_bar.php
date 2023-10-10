@@ -3,6 +3,14 @@
 <!-- sidebar -->
 <aside id="sidebar">
 
+    <div id="searcher" class="block-aside">
+        <h3>Buscar</h3>
+        <form action="<?=ACTIONS_PATH.'/searching.php'?>" method="POST">
+            <input type="text" name="search">
+            <input type="submit" name="submit" value="Buscar">
+        </form>
+    </div> <!-- /. id="searcher" -->
+
     <?php if(isset($_SESSION['user'])): ?>
         <div class="block-aside">
             <h3>Bienvenido, <?=$_SESSION['user']['name'];?></h3>
