@@ -4,8 +4,8 @@ class Car {
 
     // attributes
     public $color;
-    public $brand;
-    public $model;
+    protected $brand;
+    private $model;
     public $speed;
     public $potency;
     public $doors;
@@ -33,9 +33,19 @@ class Car {
         $this->color = $color;
     }
 
+    public function set_brand($brand)
+    {
+        $this->brand = $brand;
+    }
+
     public function set_model($model)
     {
         $this->model = $model;
+    }
+
+    public function get_model()
+    {
+        return $this->model;
     }
 
     public function get_speed()
@@ -51,6 +61,16 @@ class Car {
     public function slow_down()
     {
         $this->speed--;
+    }
+
+    public function print(Car $object)
+    {
+        $info = "<h1>Car info</h1><br>";
+        $info .= "Color:".$object->color."<br>";
+        $info .= "Speed:".$object->speed."<br>";
+        $info .= "Potency:".$object->potency."<br>";
+
+        return $info;
     }
 
 }

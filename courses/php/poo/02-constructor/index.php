@@ -13,3 +13,5 @@ var_dump($car_2); echo '<br>';
 var_dump($car_3); echo '<br>';
 var_dump($car_4);
 
+echo $car_1->print($car_1);
+
