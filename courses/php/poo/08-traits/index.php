@@ -56,4 +56,4 @@ $one_videogame = new Videogame();
 
 echo $one_car->get_name() . "<br>";
 echo $one_person->get_name() . "<br>";
-echo $one_person->get_name() . "<br>";
+echo $one_videogame->get_name() . "<br>";
