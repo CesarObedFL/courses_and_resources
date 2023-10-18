@@ -1,9 +1,12 @@
 <?php
 
+define('BASE_PATH', realpath(dirname(__FILE__)));
 
 function app_autoloader($class)
 {
-    require_once 'models/'. $class . '.php';
+    // Adapt this depending on your directory structure
+    $filename = BASE_PATH . '/Classes/'. str_replace('\\', '/', $class) . '.php';
+    include($filename);
 }
 
 
