@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * La herencia es un concepto clave en la POO. Permite crear nuevas clases basadas en clases existentes. 
+ * Una clase derivada (subclase o hija) hereda propiedades y métodos de una clase base (superclase o padre) 
+ * y puede agregar nuevos o modificar los existentes.
+ */
+
 class Person {
 
     public $name;

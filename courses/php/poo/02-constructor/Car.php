@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * Los constructores en PHP son métodos especiales dentro de una clase que se ejecutan automáticamente cuando se crea una 
+ * instancia (objeto) de esa clase. Aquí tienes una breve descripción de los constructores en PHP: 
+ * Se utilizan para inicializar objetos cuando se crea una instancia de una clase. Esto significa que puedes realizar 
+ * tareas de configuración o asignar valores iniciales a propiedades dentro del constructor. 
+ * 
+ * No necesitas llamar explícitamente el constructor cuando creas un objeto. Se llama automáticamente en el momento de la creación del objeto.
+ * Puedes definir parámetros en el constructor para pasar valores iniciales a la clase cuando se crea una instancia,
+ * esto permite una mayor flexibilidad al configurar objetos. 
+ * 
+ * Los constructores son útiles para establecer valores iniciales en propiedades de la clase o para realizar tareas de configuración 
+ * que deben llevarse a cabo al principio de la vida del objeto.
+ */
+
 class Car {
 
     // attributes

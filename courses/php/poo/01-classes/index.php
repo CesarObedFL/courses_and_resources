@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Clases: Una clase es una plantilla o un modelo que define la estructura y el comportamiento de 
+ * los objetos que se crearán a partir de ella. 
+ * Las clases contienen propiedades (variables) y métodos (funciones) que encapsulan el comportamiento de los objetos.
+ * 
+ * Objetos: Los objetos son instancias de una clase. Cuando se crea un objeto a partir de una clase, 
+ * hereda las propiedades y métodos definidos en esa clase. 
+ * Cada objeto puede tener sus propios valores para las propiedades, pero comparte los mismos métodos.
+ */
+
+
 class Car {
 
     // attributes
@@ -11,6 +22,9 @@ class Car {
     public $doors = 4;
     public $places = 5;
 
+    /**
+     * Encapsulación: Las clases permiten la encapsulación, lo que significa que puedes ocultar la implementación interna de una clase y exponer solo la interfaz pública. Esto ayuda a organizar y mantener el código y a prevenir el acceso no autorizado a las propiedades o métodos internos.
+     */
     // methods
     public function get_color()
     {
@@ -62,3 +76,9 @@ var_dump($one_car);
 echo "<br><br>";
 
 echo $one_car->system_constants() . '<br>';
+
+/**
+ * En resumen, las clases en PHP son la base de la programación orientada a objetos y proporcionan una forma estructurada 
+ * y eficaz de organizar y reutilizar el código. 
+ * Se utilizan para modelar objetos del mundo real y abstraer su comportamiento y propiedades en un entorno de programación.
+ */

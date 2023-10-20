@@ -7,6 +7,8 @@ if ($x-- == 0)
 
 echo $x;
 
+
+// interpotlation
 echo 'preface variables with a $ like this: $x';
 echo "this week $x people";
 
