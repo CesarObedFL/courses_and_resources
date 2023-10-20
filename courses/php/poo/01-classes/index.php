@@ -42,9 +42,23 @@ class Car {
         $this->speed--;
     }
 
+    // system constants
+    public function system_constants()
+    {
+        return 'class constant: ' . __CLASS__ . ' <br> ' .
+                'method constant: ' . __METHOD__ . '<br>' . 
+                'dir constant: ' . __DIR__ . ' <br> ' .
+                'file constant: ' . __FILE__ . ' <br> ' .
+                'namespace constant: ' . __NAMESPACE__ . ' <br> ';
+    }
+
 }
 // /. class Car 
 
 $one_car = new Car();
 
 var_dump($one_car);
+
+echo "<br><br>";
+
+echo $one_car->system_constants() . '<br>';
