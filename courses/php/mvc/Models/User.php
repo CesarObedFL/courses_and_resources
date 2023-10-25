@@ -5,7 +5,7 @@ class User {
     public $email;
     public $password;
 
-    public function __construct($name, $email, $password)
+    public function __construct($name = null, $email = null, $password = null)
     {
         $this->name = (isset($name)) ? $name : 'Cesar Obed Figueroa Luna';
         $this->email = (isset($email)) ? $email : 'cesarobedfl@gmail.com';
