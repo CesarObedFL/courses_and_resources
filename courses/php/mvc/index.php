@@ -1,6 +1,7 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Controllers/UsersController.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Controllers/NotesController.php';
 
 if ( isset($_GET['controller']) && class_exists($_GET['controller'].'Controller') ) {
     $controller_name = $_GET['controller'].'Controller';

@@ -1,6 +1,8 @@
 <?php
 
-class User {
+require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Models/BaseModel.php';
+
+class User extends BaseModel {
     public $name;
     public $email;
     public $password;
@@ -36,13 +38,6 @@ class User {
     public function set_password($password)
     {
         $this->password = $password;
-    }
-
-
-    // database functions 
-    public function get_all_users()
-    {
-        return 'all users';
     }
 
 }
