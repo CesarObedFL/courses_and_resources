@@ -12,6 +12,8 @@ class User extends BaseModel {
         $this->name = (isset($name)) ? $name : 'Cesar Obed Figueroa Luna';
         $this->email = (isset($email)) ? $email : 'cesarobedfl@gmail.com';
         $this->password = (isset($password)) ? $password : 'secret';
+
+        parent::__construct();
     }
 
     // getters and setters

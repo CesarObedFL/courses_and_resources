@@ -10,6 +10,8 @@ class Note extends BaseModel {
     {
         $this->name = (isset($name)) ? $name : 'note 1';
         $this->content = (isset($content)) ? $content : 'test content';
+
+        parent::__construct();
     }
 
     // getters and setters
