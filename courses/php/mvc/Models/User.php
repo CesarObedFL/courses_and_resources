@@ -42,4 +42,13 @@ class User extends BaseModel {
         $this->password = $password;
     }
 
+    public function save()
+    {
+        $sql = "INSERT INTO users(id, name, email, password) VALUES({$this->id}, '{$this->name}', '{$this->email}', '{$this->password}');";
+
+        $save = $db->query($sql);
+
+        return $save;
+    }
+
 }

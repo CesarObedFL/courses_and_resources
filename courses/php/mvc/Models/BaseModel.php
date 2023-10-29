@@ -12,8 +12,9 @@ class BaseModel {
     }
 
     // database functions 
-    public function get_all()
+    public function get_all($table)
     {
-        return 'all';
+        $query = $this->db->query("SELECT * FROM $table ORDER BY id DESC");
+        return $query;
     }
 }

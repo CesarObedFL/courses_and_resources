@@ -6,6 +6,12 @@ class UsersController {
     public function create()
     {
         require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Views/Users/create.php';
+
+        $user = new User();
+
+        $user->save();
+
+        header('Location: index.php?controller=Users&action=show');
     }
 
     public function show()
@@ -14,7 +20,7 @@ class UsersController {
         
         $user = new User();
 
-        $users = $user->get_all();
+        $users = $user->get_all('users');
 
         require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Views/Users/show.php';
     }

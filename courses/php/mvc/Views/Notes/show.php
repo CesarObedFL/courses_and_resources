@@ -1,6 +1,8 @@
 
-<h1>Notes</h1>
+<h1>Note List</h1>
 
 <br><hr><br>
-    
-<?=$notes?>
+
+<?php while( $note = $notes->fetch_object() ): ?>
+    <?=$note->get_name() . ' : ' . $note->get_date()?> <br>
+<?php endwhile; ?>
