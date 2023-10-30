@@ -3,13 +3,14 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Models/BaseModel.php';
 
 class User extends BaseModel {
+    public $id;
     public $name;
     public $email;
     public $password;
 
     public function __construct($name = null, $email = null, $password = null)
     {
-        $this->name = (isset($name)) ? $name : 'Cesar Obed Figueroa Luna';
+        $this->name = (isset($name)) ? $name : 'César Obed Figueroa Luna';
         $this->email = (isset($email)) ? $email : 'cesarobedfl@gmail.com';
         $this->password = (isset($password)) ? $password : 'secret';
 
@@ -17,6 +18,11 @@ class User extends BaseModel {
     }
 
     // getters and setters
+    public function get_id()
+    {
+        return $this->id;
+    }
+
     public function set_name($name)
     {
         $this->name = $name;
@@ -44,9 +50,9 @@ class User extends BaseModel {
 
     public function save()
     {
-        $sql = "INSERT INTO users(id, name, email, password) VALUES({$this->id}, '{$this->name}', '{$this->email}', '{$this->password}');";
+        $sql = "INSERT INTO Users(name, email, password) VALUES('{$this->name}', '{$this->email}', '{$this->password}');";
 
-        $save = $db->query($sql);
+        $save = $this->db->query($sql);
 
         return $save;
     }

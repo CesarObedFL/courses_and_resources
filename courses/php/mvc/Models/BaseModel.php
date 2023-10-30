@@ -1,5 +1,6 @@
 <?php
 
+
 require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/config/database.php';
 
 class BaseModel {

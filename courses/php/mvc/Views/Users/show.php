@@ -4,5 +4,5 @@
 <br><hr><br>
 
 <?php while( $user = $users->fetch_object() ): ?>
-    <?=$user->get_name() . ' : ' . $user->get_email()?> <br>
+    <?=$user->name . ' : ' . $user->email?> <br>
 <?php endwhile; ?>
