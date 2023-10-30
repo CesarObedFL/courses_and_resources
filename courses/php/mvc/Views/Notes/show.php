@@ -4,5 +4,5 @@
 <br><hr><br>
 
 <?php while( $note = $notes->fetch_object() ): ?>
-    <?=$note->get_name() . ' : ' . $note->get_date()?> <br>
+    <?=$note->title . ' : ' . $note->date?> <br>
 <?php endwhile; ?>

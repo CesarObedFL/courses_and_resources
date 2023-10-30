@@ -3,15 +3,15 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/mvc/Models/BaseModel.php';
 
 class Note extends BaseModel {
-    public $name;
+    public $title;
     public $date;
     public $content;
     public $user_id;
 
-    public function __construct($name = null, $date = null, $content = null, $user_id = null)
+    public function __construct($title = null, $date = null, $content = null, $user_id = null)
     {
-        $this->name = (isset($name)) ? $name : 'note 1';
-        $this->date = (isset($date)) ? $date : today();
+        $this->title = (isset($title)) ? $title : 'note 1';
+        $this->date = (isset($date)) ? $date : date("Y-m-d h:i:sa");
         $this->content = (isset($content)) ? $content : 'test content';
         $this->user_id = (isset($user_id)) ? $user_id : 1;
 
@@ -19,14 +19,14 @@ class Note extends BaseModel {
     }
 
     // getters and setters
-    public function set_name($name)
+    public function set_title($title)
     {
-        $this->name = $name;
+        $this->title = $title;
     }
 
-    public function get_name()
+    public function get_title()
     {
-        return $this->name;
+        return $this->title;
     }
 
     public function get_date()
@@ -51,7 +51,7 @@ class Note extends BaseModel {
 
     public function save()
     {
-        $sql = "INSERT INTO notes(name, date, content, user_id) VALUES('{$this->name}', CURDATE(), '{$this->content}', {$this->user_id});";
+        $sql = "INSERT INTO Notes(title, date, content, user_id) VALUES('{$this->title}', CURDATE(), '{$this->content}', {$this->user_id});";
 
         $save = $this->db->query($sql);
 
