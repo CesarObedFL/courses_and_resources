@@ -12,6 +12,7 @@ $names = array('Employee 1' => 'César', 'Employee 2' => 'Obed');
 \FB::log($names);
 
 
-echo "Hello world!!!";
-
 \FB::log("print in console");
+
+
+echo "Hello world!!!";
