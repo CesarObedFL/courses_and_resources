@@ -1,8 +1,10 @@
 <?php
 
 /**
- * firephp requires an google chrome extenssion to work called firephp4chrome
+ * firephp requires an google chrome extenssion to work called firephp for chrome (official)
+ * and that extenssion need to be configured in chrome to work
  */
+
 require $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php//libraries_project/vendor/autoload.php';
 
 $fruits = array("apples", "oranges", "bananas");
