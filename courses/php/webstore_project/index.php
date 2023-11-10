@@ -46,8 +46,10 @@
                             <input type="submit" value="entrar">
                         </form>
 
-                        <a href="#">My Orders</a>
-                        <a href="#">My Profile</a>
+                        <ul>
+                            <li><a href="#">My Orders</a></li>
+                            <li><a href="#">My Profile</a></li>
+                        </ul>
                     </div>
                 </aside>
                 <!-- /. sidebar -->
