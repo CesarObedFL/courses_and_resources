@@ -56,7 +56,7 @@ select:focus {
 
 input[type="button"],
 input[type="submit"],
-button {
+button, .buy-button {
     display: block;
     border-radius: 2px;
     width: 90%;
@@ -166,7 +166,7 @@ button {
 /* sidebar */
 
 #aside {
-    width: 25%;
+    width: 20%;
     min-height: 500px;
     float: left;
     margin-top: 20px;
@@ -193,8 +193,56 @@ button {
 
 }
 
+/* main styles */
+
+#main {
+    width: 72%;
+    float: right;
+    border-left: 1px siolid #ccc;
+    box-shadow: -5px -1px 5px #ddd;
+    padding: 25px;
+    min-height: 500px;
+}
+
+#main h2 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
 /* products styles */
+
+.product {
+    width: 30%;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+
+}
+
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
 
 .product img {
     width: 100px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.buy-button {
+    background-color: #33AE3D;
+    color: white !important;
+    text-decoration: none;
 }
