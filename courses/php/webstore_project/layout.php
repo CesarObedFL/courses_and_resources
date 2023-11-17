@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>clothes store</title>
 
-        <link rel="stylesheet" href="<?=$base_url?>assets/css/styles.css">
+        <link rel="stylesheet" href="<?=BASE_URL?>assets/css/styles.css">
     </head>
 
     <body>
@@ -13,7 +13,7 @@
             <!-- header -->
             <header id="header">
                 <div id="logo">
-                    <img src="<?=$base_url?>assets/img/logo.png" alt="logo">
+                    <img src="<?=BASE_URL?>assets/img/logo.png" alt="logo">
                     <a href="index.php">
                         clothes store
                     </a>
