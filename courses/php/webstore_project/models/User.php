@@ -12,12 +12,12 @@ class User {
 
     public function __construct($name, $email, $password, $role, $image)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
-        $this->role = $role;
-        $this->image = $image;
         $this->db = Database::connect();
+        $this->name = $this->db->real_escape_string($name);
+        $this->email = $this->db->real_escape_string($email);
+        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
+        $this->role = $this->db->real_escape_string($role);
+        $this->image = $this->db->real_escape_string($image);
     }
 
     public function __call($name, $arguments)

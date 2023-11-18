@@ -1,5 +1,7 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/models/User.php';
+
 class UserController {
 
     public function index()
@@ -15,7 +17,14 @@ class UserController {
     public function save()
     {
         if ( isset($_POST) ) {
-            var_dump($_POST);
+            $user = new User(
+                $_POST['name'],
+                $_POST['email'],
+                $_POST['password'],
+                'role',
+                'image'
+            );
+            $user->save();
         }
     }
 }
