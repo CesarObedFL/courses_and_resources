@@ -9,9 +9,9 @@ class UserController {
         echo 'UserController::index';
     }
 
-    public function create()
+    public function register()
     {
-        require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/users/create.php';
+        require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/users/register.php';
     }
 
     public function save()
@@ -24,7 +24,18 @@ class UserController {
                 'role',
                 'image'
             );
-            $user->save();
+            $is_save = $user->save();
+
+            if ( $is_save ) {
+                $_SESSION['user_register'] = 'Register completed!!!...';
+            } else {
+                $_SESSION['user_register'] = 'An error has happened when the user wes registered';
+            }
+
+        } else {
+            $_SESSION['user_register'] = 'failed';
+            header('Location: ' . BASE_URL . 'user/create');
         }
+
     }
 }
