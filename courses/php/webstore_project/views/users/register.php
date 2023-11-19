@@ -6,6 +6,8 @@
     <strong><?=$_SESSION['user_register'];?></strong>
 <?php endif; ?>
 
+<?php Utils::delete_session('user_register');?>
+
 <form action="index.php?controller=User&action=save" method="POST">
     <label for="name">Name</label>
     <input type="text" name="name" required>
