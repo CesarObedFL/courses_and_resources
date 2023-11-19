@@ -17,19 +17,29 @@ class UserController {
     public function save()
     {
         if ( isset($_POST) ) {
-            $user = new User(
-                $_POST['name'],
-                $_POST['email'],
-                $_POST['password'],
-                'role',
-                'image'
-            );
-            $is_save = $user->save();
+            $name = ( isset($_POST['name']) ) ? $_POST['name'] : null;
+            $email = ( isset($_POST['email']) ) ? $_POST['email'] : null;
+            $password = ( isset($_POST['password']) ) ? $_POST['password'] : null;
 
-            if ( $is_save ) {
-                $_SESSION['user_register'] = 'Register completed!!!...';
+            if ( $name && $email && $password ) {
+
+                $user = new User(
+                    $name,
+                    $email,
+                    $password,
+                    'role',
+                    'image'
+                );
+                $is_save = $user->save();
+
+                if ( $is_save ) {
+                    $_SESSION['user_register'] = 'Register completed!!!...';
+                } else {
+                    $_SESSION['user_register'] = 'An error has happened when the user wes registered';
+                }
             } else {
-                $_SESSION['user_register'] = 'An error has happened when the user wes registered';
+                $_SESSION['user_register'] = 'failed';
+                header('Location: ' . BASE_URL . 'user/create');
             }
 
         } else {
