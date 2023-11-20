@@ -55,4 +55,20 @@ class User {
         }
         return false;
     }
+
+    public function login($email, $password)
+    {
+        $login = $this->db->query("SELECT * FROM users WHERE email='$email'");
+
+        if ( $login && $login->num_rows == 1 ) {
+            $user = $login->fetch_object();
+
+            $verify = password_verify($password, $user->password);
+
+            if ( $verify )
+                return $user;
+        }
+
+        return false;
+    }   
 }

@@ -48,4 +48,23 @@ class UserController {
         }
 
     }
+
+    public function login()
+    {
+        if ( isset($_POST) ) {
+            $user = new User();
+            $user = $user->login($_POST['email'], $_POST['password']);
+
+            if ( $user && is_object($user) ) {
+                $_SESSION['user'] = $user;
+                if ( $user->role == 'admin' ) {
+                    $_SESSION['admin'] = true;
+                }
+            } else {
+                $_SESSION['login_error'] = 'login error!...';
+            }
+        }
+
+        header('Location:'. BASE_URL);
+    }
 }
