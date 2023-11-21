@@ -1,3 +1,5 @@
+# apache configuration
+
 <ifModule mod_rewrite>
     RewriteEngine on
     ErrorDocument 404 http:localhost:8888/courses_and_resources/courses/php/webstore_project/error
@@ -7,3 +9,14 @@
 
     RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
 </ifModule>
+
+
+# nginx configuration
+
+error_page 404 http:localhost:8888/courses_and_resources/courses/php/webstore_project/error;
+
+location / {
+  if ($script_filename !~ "-d"){
+    rewrite ^/(.*)/(.*) /index.php?controller=$1&action=$2;
+  }
+}
