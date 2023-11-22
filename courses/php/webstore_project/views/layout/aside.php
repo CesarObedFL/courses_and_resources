@@ -14,6 +14,7 @@
                 <ul>
                     <li><a href="#">My Orders</a></li>
                     <li><a href="#">My Profile</a></li>
+                    <li><a href="<?=BASE_URL?>">Logout</a></li>
                 </ul>
             <?php endif;?>
         </div>
