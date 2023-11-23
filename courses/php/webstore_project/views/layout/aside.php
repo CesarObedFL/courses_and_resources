@@ -12,6 +12,11 @@
             <?php else: ?>
                 <h2><?=$_SESSION['user']->name;?></h2>
                 <ul>
+                    <? if ( isset($_SESSION['admin']) ):?>
+                        <li><a href="#">Manage Categories</a></li>
+                        <li><a href="#">Manage Products</a></li>
+                        <li><a href="#">Manage Orders</a></li>
+                    <? endif; ?>
                     <li><a href="#">My Orders</a></li>
                     <li><a href="#">My Profile</a></li>
                     <li><a href="<?=BASE_URL?>">Logout</a></li>
