@@ -70,9 +70,14 @@ button, .buy-button {
 }
 
 .button {
+    border-radius: 2px;
+    padding: 5px;
     background-color: #33AE3D;
-    color: white ipo !important;
+    border: 1px solid black;
     text-decoration: none;
+    text-transform: uppercase;
+    color: white !important;
+    
 }
 
 .button-sm {

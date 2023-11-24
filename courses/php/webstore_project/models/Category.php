@@ -11,7 +11,7 @@ class Category
     public function __construct($name = null)
     {
         $this->db = Database::connect();
-        $this->name = $this->db->real_escape_string($name) ?? '';
+        $this->name = (isset($name)) ? $this->db->real_escape_string($name) : '';
     }
 
     public function __call($name, $arguments)
