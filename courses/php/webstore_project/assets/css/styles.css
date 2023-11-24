@@ -69,6 +69,29 @@ button, .buy-button {
     text-transform: uppercase;
 }
 
+.button {
+    background-color: #33AE3D;
+    color: white ipo !important;
+    text-decoration: none;
+}
+
+.button-sm {
+    width: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    border: 1px solid #555;
+}
+
+table tr td {
+    border-top: 1px solid #ccc;
+    padding: 2px;
+}
+
 /* container styles */
 
 #container {
