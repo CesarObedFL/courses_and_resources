@@ -41,6 +41,15 @@ class Category
         }
     }
 
+    public function save()
+    {
+        $is_saved = $this->db->query("INSERT INTO categories VALUES(NULL, '{$this->getName()}') ");
+        if ( $is_saved ) {
+            return true;
+        }
+        return false;
+    }
+
     public function get_all()
     {
         $categories = $this->db->query("SELECT * FROM categories");
