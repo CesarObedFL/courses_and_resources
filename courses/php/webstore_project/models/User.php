@@ -13,11 +13,11 @@ class User {
     public function __construct($name, $email, $password, $role, $image)
     {
         $this->db = Database::connect();
-        $this->name = $this->db->real_escape_string($name);
-        $this->email = $this->db->real_escape_string($email);
-        $this->password = password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]);
-        $this->role = $this->db->real_escape_string($role);
-        $this->image = $this->db->real_escape_string($image);
+        $this->name = isset($name) ? $this->db->real_escape_string($name) : '';
+        $this->email = isset($email) ? $this->db->real_escape_string($email) : '';
+        $this->password = isset($password) ? password_hash($this->db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 4]) : '';
+        $this->role = isset($role) ? $this->db->real_escape_string($role) : '';
+        $this->image = isset($image) ? $this->db->real_escape_string($image) : '';
     }
 
     public function __call($name, $arguments)

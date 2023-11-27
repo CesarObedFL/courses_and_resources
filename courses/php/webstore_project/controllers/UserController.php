@@ -53,7 +53,7 @@ class UserController {
     public function login()
     {
         if ( isset($_POST) ) {
-            $user = new User();
+            $user = new User(null, null, null, null, null);
             $user = $user->login($_POST['email'], $_POST['password']);
 
             if ( $user && is_object($user) ) {
