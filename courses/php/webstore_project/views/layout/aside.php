@@ -9,6 +9,8 @@
                     <input type="password" name="password">
                     <input type="submit" value="entrar">
                 </form>
+                <br>
+                <li><a href="<?=PUBLIC_URL?>index.php?controller=User&action=register">Register</a></li>
             <?php else: ?>
                 <h2><?=$_SESSION['user']->name;?></h2>
                 <ul>

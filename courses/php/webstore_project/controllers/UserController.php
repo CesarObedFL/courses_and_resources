@@ -27,7 +27,7 @@ class UserController {
                     $name,
                     $email,
                     $password,
-                    'role',
+                    'user',
                     'image'
                 );
                 $is_save = $user->save();
@@ -37,6 +37,9 @@ class UserController {
                 } else {
                     $_SESSION['user_register'] = 'An error has happened when the user wes registered';
                 }
+
+                header('Location:' . BASE_URL . 'index.php');
+
             } else {
                 $_SESSION['user_register'] = 'failed';
                 header('Location: ' . BASE_URL . 'user/create');
