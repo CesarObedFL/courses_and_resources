@@ -15,7 +15,7 @@
                 <h2><?=$_SESSION['user']->name;?></h2>
                 <ul>
                     <? if ( isset($_SESSION['admin']) ):?>
-                        <li><a href="<?=PUBLIC_URL?>index.php?controller=Category&action=create">Manage Categories</a></li>
+                        <li><a href="<?=PUBLIC_URL?>index.php?controller=Category&action=index">Manage Categories</a></li>
                         <li><a href="#">Manage Products</a></li>
                         <li><a href="#">Manage Orders</a></li>
                     <? endif; ?>

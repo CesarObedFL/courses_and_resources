@@ -25,7 +25,7 @@
             <nav id="menu">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <?php $caetgories = Utils::get_categories(); ?>
+                    <?php $categories = Utils::get_categories(); ?>
                     <?php if( isset($categories) ):?>
                         <?php while( $category = $categories->fetch_object() ):?>
                             <li><a href="#"><?=$category->name;?></a></li>
