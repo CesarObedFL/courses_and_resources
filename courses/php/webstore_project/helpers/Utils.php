@@ -10,9 +10,14 @@ class Utils {
         return $name;
     }
 
+    public static function redirect($url)
+    {
+        echo "<script>location.href = '".$url."';</script>";
+    }
+
     public static function get_categories()
     {
-        require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/models/Category.php';
+        require_once BASE_URL.'/models/Category.php';
         $category = new Category();
         $categories = $category->get_all();
 

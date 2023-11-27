@@ -1,6 +1,6 @@
 <h2>Create Category</h2>
 
-<form action="<?=BASE_URL?>" method="POST">
+<form action="index.php?controller=Category&action=save" method="POST">
     <label for="name">Category:</label>
     <input type="text" name="name" required>
 

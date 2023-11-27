@@ -1,7 +1,7 @@
 <h1>Categories Management</h1>
 
 <br>
-<a class="button button-sm" href="<?=BASE_URL?>">Create Categorie</a>
+<a class="button button-sm" href="<?=PUBLIC_URL?>index.php?controller=Category&action=create">Create Categorie</a>
 <br><br>
 
 <table>

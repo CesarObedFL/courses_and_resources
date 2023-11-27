@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/models/Category.php';
+require_once BASE_URL.'/models/Category.php';
 
 class CategoryController {
 
@@ -9,15 +9,15 @@ class CategoryController {
         $category = new Category();
         $categories = $category->get_all();
 
-        require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/categories/index.php';
+        require_once BASE_URL.'/views/categories/index.php';
     }
 
     public function create()
     {
         if ( isset( $_SESSION['admin'] ) ) {
-            require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/categories/create.php';
+            require_once BASE_URL.'/views/categories/create.php';
         } else {
-            header("Location:" . $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/index.php');
+            Utils::redirect(PUBLIC_URL . 'index.php');
         }
     }
 
@@ -27,12 +27,14 @@ class CategoryController {
             if ( isset($_POST) && isset($_POST['name']) ) {
                 $category = new Category($_POST['name']);
                 $category->save();
-                header("Location:" . $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/categories/index.php');
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Category&action=index');
+            
             } else {
-                header("Location:" . $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/categories/create.php');
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Category&action=create');
             }
+            
         } else {
-            header("Location:" . $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/index.php');
+            Utils::redirect(PUBLIC_URL . 'index.php');
         }
     }
 }

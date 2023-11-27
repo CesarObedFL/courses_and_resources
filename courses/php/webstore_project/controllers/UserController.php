@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/models/User.php';
+require_once BASE_URL.'/models/User.php';
 
 class UserController {
 
@@ -11,7 +11,7 @@ class UserController {
 
     public function register()
     {
-        require_once $_SERVER['DOCUMENT_ROOT'].'/courses_and_resources/courses/php/webstore_project/views/users/register.php';
+        require_once BASE_URL.'/views/users/register.php';
     }
 
     public function save()
@@ -38,17 +38,15 @@ class UserController {
                     $_SESSION['user_register'] = 'An error has happened when the user wes registered';
                 }
 
-                header('Location:' . BASE_URL . 'index.php');
-
             } else {
                 $_SESSION['user_register'] = 'failed';
-                header('Location: ' . BASE_URL . 'user/create');
             }
 
         } else {
             $_SESSION['user_register'] = 'failed';
-            header('Location: ' . BASE_URL . 'user/create');
         }
+
+        Utils::redirect(PUBLIC_URL . 'index.php?controller=User&action=register');
 
     }
 
@@ -68,7 +66,7 @@ class UserController {
             }
         }
 
-        header('Location:'. BASE_URL);
+        Utils::redirect(PUBLIC_URL . 'index.php');
     }
 
     public function logout()
@@ -81,6 +79,6 @@ class UserController {
             unset( $_SESSION['admin'] );
         }
         
-        header('Location:'. BASE_URL);
+        Utils::redirect(PUBLIC_URL . 'index.php');
     }
 }
