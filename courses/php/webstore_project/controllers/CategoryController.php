@@ -6,8 +6,7 @@ class CategoryController {
 
     public function index()
     {
-        $category = new Category();
-        $categories = $category->get_all();
+        $categories = Category::get_all();
 
         require_once BASE_URL.'/views/categories/index.php';
     }

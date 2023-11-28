@@ -50,9 +50,10 @@ class Category
         return false;
     }
 
-    public function get_all()
+    public static function get_all()
     {
-        $categories = $this->db->query("SELECT * FROM categories");
+        $db = Database::connect();
+        $categories = $db->query("SELECT * FROM categories");
         return $categories;
     }
 

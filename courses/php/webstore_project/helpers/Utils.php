@@ -18,9 +18,6 @@ class Utils {
     public static function get_categories()
     {
         require_once BASE_URL.'/models/Category.php';
-        $category = new Category();
-        $categories = $category->get_all();
-
-        return $categories;
+        return Category::get_all();
     }
 }
