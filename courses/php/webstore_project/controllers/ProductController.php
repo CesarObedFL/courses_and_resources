@@ -33,11 +33,45 @@ class ProductController {
         if ( isset( $_SESSION['admin'] ) ) {
 
             if ( isset($_POST) ) {
-                var_dump($_POST);
+                // validating data
+                $name = isset($_POST['name']) ? $_POST['name'] : false;
+                $description = isset($_POST['description']) ? $_POST['description'] : false;
+                $price = isset($_POST['price']) ? $_POST['price'] : false;
+                $stock = isset($_POST['stock']) ? $_POST['stock'] : false;
+                $category = isset($_POST['category']) ? $_POST['category'] : false;
+                $offer = isset($_POST['offer']) ? $_POST['offer'] : false;
+                $image = isset($_POST['image']) ? $_POST['image'] : false;
+
+                if ($name && $description && $price && $stock && $category && $offer & $image) {
+
+                    $product = new Product(
+                        $_POST['name'],
+                        $_POST['description'],
+                        $_POST['price'],
+                        $_POST['stock'],
+                        $_POST['category'],
+                        $_POST['offer'],
+                        '$_POST[image]'
+                    );
+                    $is_saved = $product->save();
+                    if ( $is_saved ) {
+                        $_SESSION['status'] = 'success';
+                        $_SESSION['product_save'] = 'Product saved successfully!...';
+                    }
+
+                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=index');
+
+                } else {
+                    $_SESSION['status'] = 'error';
+                    $_SESSION['product_save'] = 'Create product failed!, complete all the inputs...';
+                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=create');
+                }
+
             }
             
         } else {
             Utils::redirect(PUBLIC_URL . 'index.php');
         }
     }
+    
 }

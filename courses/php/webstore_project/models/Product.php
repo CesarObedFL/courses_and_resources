@@ -15,7 +15,7 @@ class Product
 
     private $db;
 
-    public function __construct($name = null, $description = null, $price = null, $stock = null, $category_id = null, $offer = null, $date = null, $image = null)
+    public function __construct($name = null, $description = null, $price = null, $stock = null, $category_id = null, $offer = null, $image = null)
     {
         $this->db = Database::connect();
         $this->name = (isset($name)) ? $this->db->real_escape_string($name) : '';
@@ -24,7 +24,7 @@ class Product
         $this->stock = (isset($stock)) ? $this->db->real_escape_string($stock) : '';
         $this->category_id = (isset($category_id)) ? $this->db->real_escape_string($category_id) : '';
         $this->offer = (isset($offer)) ? $this->db->real_escape_string($offer) : '';
-        $this->date = (isset($date)) ? $this->db->real_escape_string($date) : '';
+        $this->date = (new DateTime())->format('Y-m-d H:i:s');
         $this->image = (isset($image)) ? $this->db->real_escape_string($image) : '';
     }
 
