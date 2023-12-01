@@ -33,17 +33,21 @@ class UserController {
                 $is_save = $user->save();
 
                 if ( $is_save ) {
-                    $_SESSION['user_register'] = 'Register completed!!!...';
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['msg'] = 'Register completed!!!...';
                 } else {
-                    $_SESSION['user_register'] = 'An error has happened when the user wes registered';
+                    $_SESSION['status'] = 'error';
+                    $_SESSION['msg'] = 'An error has happened when the user wes registered';
                 }
 
             } else {
-                $_SESSION['user_register'] = 'failed';
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'Complete all the fields in the register form!...';
             }
 
         } else {
-            $_SESSION['user_register'] = 'failed';
+            $_SESSION['status'] = 'error';
+            $_SESSION['msg'] = 'Something went wrong!...';
         }
 
         Utils::redirect(PUBLIC_URL . 'index.php?controller=User&action=register');
@@ -62,7 +66,8 @@ class UserController {
                     $_SESSION['admin'] = true;
                 }
             } else {
-                $_SESSION['login_error'] = 'login error!...';
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'incorrect credentials!...';
             }
         }
 

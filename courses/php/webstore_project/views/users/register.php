@@ -2,11 +2,12 @@
 
 <hr>
 
-<?php if ( isset($_SESSION['user_register']) ): ?>
-    <strong><?=$_SESSION['user_register'];?></strong>
-<?php endif; ?>
-
-<?php Utils::delete_session('user_register');?>
+<?php if ( isset($_SESSION['msg']) ):?>
+    <div class="alert alert-<?=$_SESSION['status']?>">
+        <strong><?=$_SESSION['msg']?></strong>
+        <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+<?php endif;?>
 
 <form action="index.php?controller=User&action=save" method="POST">
     <label for="name">Name</label>
@@ -20,3 +21,5 @@
 
     <input type="submit" value="create">
 </form>
+
+<?php Utils::delete_alert_messages(); ?>

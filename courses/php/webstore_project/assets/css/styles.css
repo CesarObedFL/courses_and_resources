@@ -100,9 +100,9 @@ table tr td {
 }
 
 .alert {
-    padding: 20px;
+    padding: 10px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .alert-success {
@@ -119,7 +119,7 @@ table tr td {
     color: white;
     font-weight: bold;
     float: right;
-    font-size: 22px;
+    font-size: 15px;
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
