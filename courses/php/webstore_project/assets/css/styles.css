@@ -99,6 +99,37 @@ table tr td {
     padding: 2px;
 }
 
+.alert {
+    padding: 20px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #409022;
+}
+
+.alert-error {
+    background-color: #f44336;
+}
+
+/* The close button */
+.close-alert-btn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.close-alert-btn:hover {
+    color: black;
+}
+
 /* container styles */
 
 #container {

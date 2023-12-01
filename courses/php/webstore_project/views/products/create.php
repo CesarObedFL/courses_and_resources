@@ -1,5 +1,12 @@
 <h2>Create Product</h2>
 
+<?php if ( isset($_SESSION['msg']) ):?>
+    <div class="alert alert-<?=$_SESSION['status']?>">
+        <strong><?=$_SESSION['msg']?></strong>
+        <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+<?php endif;?>
+
 <div class="form-container">
     <form action="index.php?controller=Product&action=save" method="POST">
         <label for="name">Name:</label>
@@ -32,4 +39,6 @@
         <br>
         <input type="submit" value="create">
     </form>
+
+    <?php Utils::delete_alert_messages(); ?>
 </div>

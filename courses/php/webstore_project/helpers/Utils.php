@@ -20,4 +20,17 @@ class Utils {
         require_once BASE_URL.'/models/Category.php';
         return Category::get_all();
     }
+
+    public static function delete_alert_messages()
+    {
+        if ( isset($_SESSION['status']) ) {
+            //$_SESSION['errors'] = null;
+            unset($_SESSION['status']);
+        }
+       
+        if ( isset($_SESSION['msg']) ) {
+            //$_SESSION['saved'] = null;
+            unset($_SESSION['msg']);
+        }
+    }
 }

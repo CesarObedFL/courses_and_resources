@@ -53,17 +53,17 @@ class ProductController {
                         $_POST['offer'],
                         '$_POST[image]'
                     );
-                    $is_saved = $product->save();
-                    if ( $is_saved ) {
+                    //$is_saved = $product->save();
+                    if ( true ) {
                         $_SESSION['status'] = 'success';
-                        $_SESSION['product_save'] = 'Product saved successfully!...';
+                        $_SESSION['msg'] = 'Product saved successfully!...';
                     }
 
-                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=index');
+                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
 
                 } else {
                     $_SESSION['status'] = 'error';
-                    $_SESSION['product_save'] = 'Create product failed!, complete all the inputs...';
+                    $_SESSION['msg'] = 'Create product failed!, complete all the inputs...';
                     Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=create');
                 }
 

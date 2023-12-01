@@ -4,6 +4,13 @@
 <a class="button button-sm" href="<?=PUBLIC_URL?>index.php?controller=Product&action=create">Create Product</a>
 <br><br>
 
+<?php if ( isset($_SESSION['msg']) ):?>
+    <div class="alert alert-<?=$_SESSION['status']?>">
+        <strong><?=$_SESSION['msg']?></strong>
+        <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+<?php endif;?>
+
 <table>
     <tr>
         <th>ID</th>
@@ -20,3 +27,5 @@
     </tr>
 <?php endwhile; ?>
 </table>
+
+<?php Utils::delete_alert_messages(); ?>
