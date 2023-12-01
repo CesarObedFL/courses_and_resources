@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alerts Messages</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <h1>Alerts Messages</h1>
+
+        <div class='content'>
+
+            <div class="alert alert-success alert-white rounded">
+                <div class="icon"><i class="alert-success-icon"></i></div>
+                <strong>Success!</strong> Changes has been saved successfully!
+                <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+
+            <div class="alert alert-info alert-white rounded">
+                <div class="icon"><i class="alert-info-icon"></i></div>
+                <strong>Info!</strong> You have 3 new messages in your inbox.
+                <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+
+            <div class="alert alert-warning alert-white rounded">
+                <div class="icon"><i class="alert-warning-icon"></i></div>
+                <strong>Alert!</strong> Don't forget to save your data.
+                <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+
+            <div class="alert alert-error alert-white rounded">
+                <div class="icon"><i class="alert-error-icon"></i></div>
+                <strong>Error!</strong> The server is not responding, try again later.
+                <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+
+        </div>
+        
+    </body>
+</html>
