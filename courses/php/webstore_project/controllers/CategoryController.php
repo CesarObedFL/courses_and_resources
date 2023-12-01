@@ -24,11 +24,22 @@ class CategoryController {
     {
         if ( isset( $_SESSION['admin'] ) ) {
             if ( isset($_POST) && isset($_POST['name']) ) {
+
                 $category = new Category($_POST['name']);
-                $category->save();
+                $is_saved = $category->save();
+                if ($is_saved) {
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['msg'] = 'Category saved successfully!...';
+                } else {
+                    $_SESSION['status'] = 'error';
+                    $_SESSION['msg'] = 'Create category failed!...';
+                }
+
                 Utils::redirect(PUBLIC_URL . 'index.php?controller=Category&action=index');
             
             } else {
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'Create category failed!...';
                 Utils::redirect(PUBLIC_URL . 'index.php?controller=Category&action=create');
             }
             
