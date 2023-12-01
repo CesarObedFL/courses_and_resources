@@ -53,8 +53,8 @@ class ProductController {
                         $_POST['offer'],
                         '$_POST[image]'
                     );
-                    //$is_saved = $product->save();
-                    if ( true ) {
+                    $is_saved = $product->save();
+                    if ( $is_saved ) {
                         $_SESSION['status'] = 'success';
                         $_SESSION['msg'] = 'Product saved successfully!...';
                     }
