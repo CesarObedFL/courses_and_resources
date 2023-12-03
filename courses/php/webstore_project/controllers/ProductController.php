@@ -13,7 +13,7 @@ class ProductController {
     {
         if ( isset( $_SESSION['admin'] ) ) {
 
-            $products = Product::get_all();
+         $products = Product::get_all();
 
             require_once BASE_URL.'/views/products/management.php';
             
@@ -40,9 +40,20 @@ class ProductController {
                 $stock = isset($_POST['stock']) ? $_POST['stock'] : false;
                 $category = isset($_POST['category']) ? $_POST['category'] : false;
                 $offer = isset($_POST['offer']) ? $_POST['offer'] : false;
-                $image = isset($_POST['image']) ? $_POST['image'] : false;
+                $image = false;
+                $file = $_FILES['image'];
+                $filename = $file['name'];
+                $mimetype = $file['type'];
 
-                if ($name && $description && $price && $stock && $category && $offer & $image) {
+                if ( $mimetype == "image/jpg" && $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/jpg" ) {
+                    if ( !is_dir('assets/img/products') ) {
+                        mkdir('assets/img/products', 0777, true);
+                    }
+                    move_uploaded_file($file['tmp_name'], 'assets/img/products/'.$filename);
+                    $image = true;
+                } 
+
+                if ( $name && $description && $price && $stock && $category && $offer & $image ) {
 
                     $product = new Product(
                         $_POST['name'],
@@ -51,8 +62,9 @@ class ProductController {
                         $_POST['stock'],
                         $_POST['category'],
                         $_POST['offer'],
-                        '$_POST[image]'
+                        $filename
                     );
+
                     $is_saved = $product->save();
                     if ( $is_saved ) {
                         $_SESSION['status'] = 'success';
