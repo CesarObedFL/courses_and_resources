@@ -71,5 +71,12 @@ class Product
         return $products;
     }
 
+    public static function delete()
+    {
+        $db = Database::connect($id);
+        $is_delete = $db->query("DELETE FROM products WHERE id = {$id}");
+        return $is_delete;
+    }
+
 
 }

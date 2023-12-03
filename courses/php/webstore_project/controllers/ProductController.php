@@ -85,5 +85,39 @@ class ProductController {
             Utils::redirect(PUBLIC_URL . 'index.php');
         }
     }
+
+    public function edit()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function delete()
+    {
+        if ( isset( $_SESSION['admin'] ) ) {
+            if ( isset($_GET['id']) ) {
+                $is_delete = Product::delete($_GET['id']);
+                if ( $is_delete ) {
+                    $_SESSION['status'] = 'success';
+                    $_SESSION['msg'] = 'Delete product successfully!...';
+                } else {
+                    $_SESSION['status'] = 'error';
+                    $_SESSION['msg'] = 'Delete product failed!...';
+                }
+            } else {
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'Delete product failed!...';
+            }
+
+            Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
+    }
     
 }

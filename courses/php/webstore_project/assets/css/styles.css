@@ -79,13 +79,26 @@ button, .buy-button {
     text-decoration: none;
     text-transform: uppercase;
     color: white !important;
-    
 }
 
 .button-sm {
     width: 100px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.button-edit {
+    width: 20px;
+    background-color: #3391ae;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.button-delete {
+    width: 20px;
+    background-color: #ee6e47;
+    border: 1px solid black;
+    text-align: center;
 }
 
 table {
