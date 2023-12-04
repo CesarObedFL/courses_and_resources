@@ -85,7 +85,7 @@ class Product
         return false;
     }
 
-    public static function delete()
+    public static function delete($id)
     {
         $db = Database::connect($id);
         $is_delete = $db->query("DELETE FROM products WHERE id = {$id}");
