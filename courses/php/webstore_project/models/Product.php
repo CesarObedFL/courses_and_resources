@@ -45,7 +45,6 @@ class Product
             
             if ( isset($this->$method_name) ) {
                 $this->$method_name = $arguments[0];
-                //var_dump($arguments);
             } else {
                 return "Inexistent Method!...";
             }
@@ -64,11 +63,11 @@ class Product
         return false;
     }
 
-    public static function get_all()
+    public static function retrieve($id)
     {
-        $db = Database::connect();
-        $products = $db->query("SELECT * FROM products ORDER BY id DESC");
-        return $products;
+        $db = Database::connect($id);
+        $product = $db->query("SELECT * FROM products WHERE id = {$id}");
+        return $product->fetch_object();
     }
 
     public static function delete()
@@ -76,6 +75,13 @@ class Product
         $db = Database::connect($id);
         $is_delete = $db->query("DELETE FROM products WHERE id = {$id}");
         return $is_delete;
+    }
+
+    public static function get_all()
+    {
+        $db = Database::connect();
+        $products = $db->query("SELECT * FROM products ORDER BY id DESC");
+        return $products;
     }
 
 

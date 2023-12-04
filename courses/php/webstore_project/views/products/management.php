@@ -26,8 +26,8 @@
         <td><?='$'.$product->price;?></td>
         <td><?=$product->stock;?></td>
         <td>
-            <a class="button button-edit" href="index?controller=Product&action=edit&id=<?=$product->id?>">Edit</a>
-            <a class="button button-delete" href="index?controller=Product&action=delete&id=<?=$product->id?>">Delete</a>
+            <a class="button button-edit" href="index.php?controller=Product&action=edit&id=<?=$product->id?>">Edit</a>
+            <a class="button button-delete" href="index.php?controller=Product&action=delete&id=<?=$product->id?>">Delete</a>
         </td>
     </tr>
 <?php endwhile; ?>

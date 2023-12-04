@@ -13,7 +13,7 @@ class ProductController {
     {
         if ( isset( $_SESSION['admin'] ) ) {
 
-         $products = Product::get_all();
+            $products = Product::get_all();
 
             require_once BASE_URL.'/views/products/management.php';
             
@@ -88,12 +88,33 @@ class ProductController {
 
     public function edit()
     {
-
+        if ( isset( $_SESSION['admin'] ) ) {
+            if (isset($_GET['id'])) {
+                $product = Product::retrieve($_GET['id']);
+                require_once BASE_URL.'/views/products/edit.php';
+            } else {
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'you need to select a valid product!...';
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+            }
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
     }
 
     public function update()
     {
-
+        if ( isset( $_SESSION['admin'] ) ) {
+            if (isset($_POST)) {
+                var_dump($_POST);
+            } else {
+                $_SESSION['status'] = 'error';
+                $_SESSION['msg'] = 'you need to complete al the input fields!...';
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+            }
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
     }
 
     public function delete()

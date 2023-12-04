@@ -92,6 +92,8 @@ button, .buy-button {
     background-color: #3391ae;
     border: 1px solid black;
     text-align: center;
+    padding: 3px;
+    font-size: 10px;
 }
 
 .button-delete {
@@ -99,6 +101,8 @@ button, .buy-button {
     background-color: #ee6e47;
     border: 1px solid black;
     text-align: center;
+    padding: 3px;
+    font-size: 10px;
 }
 
 table {
