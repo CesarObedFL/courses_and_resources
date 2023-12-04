@@ -106,14 +106,54 @@ class ProductController {
     {
         if ( isset( $_SESSION['admin'] ) ) {
             if (isset($_POST)) {
-                var_dump($_POST);
+                $name = isset($_POST['name']) ? $_POST['name'] : false;
+                $description = isset($_POST['description']) ? $_POST['description'] : false;
+                $price = isset($_POST['price']) ? $_POST['price'] : false;
+                $stock = isset($_POST['stock']) ? $_POST['stock'] : false;
+                $category = isset($_POST['category']) ? $_POST['category'] : false;
+                $offer = isset($_POST['offer']) ? $_POST['offer'] : false;
+                $image = false;
+                $file = $_FILES['image'];
+                $filename = $file['name'];
+                $mimetype = $file['type'];
+                
+                if ( $mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/jpg" ) {
+                    if ( !is_dir('assets/img/products') ) {
+                        mkdir('assets/img/products', 0777, true);
+                    }
+                    //move_uploaded_file($file['tmp_name'], 'assets/img/products/'.$filename);
+                    $image = true;
+                } 
+
+                if ( $name && $description && $price && $stock && $category && $offer && $image ) {
+
+                    $product = new Product(
+                        $_POST['name'],
+                        $_POST['description'],
+                        $_POST['price'],
+                        $_POST['stock'],
+                        $_POST['category'],
+                        $_POST['offer'],
+                        $filename
+                    );
+                    $product->setId($_GET['id']);
+
+                    $is_updated = $product->update();
+                    if ( $is_updated ) {
+                        $_SESSION['status'] = 'success';
+                        $_SESSION['msg'] = 'Product updated successfully!...';
+                    }
+
+                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+
+                } else {
+                    $_SESSION['status'] = 'error';
+                    $_SESSION['msg'] = 'you need to complete all the input fields!...';
+                    Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+                }
             } else {
-                $_SESSION['status'] = 'error';
-                $_SESSION['msg'] = 'you need to complete al the input fields!...';
-                Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+                Utils::redirect(PUBLIC_URL . 'index.php');
             }
-        } else {
-            Utils::redirect(PUBLIC_URL . 'index.php');
         }
     }
 

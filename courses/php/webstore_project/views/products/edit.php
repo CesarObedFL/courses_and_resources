@@ -8,7 +8,7 @@
 <?php endif;?>
 
 <div class="form-container">
-    <form action="index.php?controller=Product&action=update&id=<?=$product->id?>" method="POST">
+    <form action="index.php?controller=Product&action=update&id=<?=$product->id?>" method="POST" enctype="multipart/form-data">
         <label for="name">Name:</label>
         <input type="text" name="name" value="<?=$product->name?>">
 
@@ -33,7 +33,7 @@
         <input type="text" name="offer" value="<?=$product->offer?>">
 
         <label for="image">Image:</label>
-        <input type="file" name="image" value="<?=$product->image?>">
+        <input type="file" name="image">
 
         <br>
         <br>

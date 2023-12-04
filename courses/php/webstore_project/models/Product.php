@@ -28,8 +28,14 @@ class Product
         $this->image = (isset($image)) ? $this->db->real_escape_string($image) : '';
     }
 
+    public function setId($id)
+    {
+        $this->id = $this->db->real_escape_string($id);
+    }
+
     public function __call($name, $arguments)
     {
+
         $prefix_method = substr($name, 0, 3);
         
         if ( $prefix_method == 'get' ) {
@@ -68,6 +74,15 @@ class Product
         $db = Database::connect($id);
         $product = $db->query("SELECT * FROM products WHERE id = {$id}");
         return $product->fetch_object();
+    }
+
+    public function update()
+    {
+        $is_updated = $this->db->query("UPDATE products SET name = '{$this->getName()}', description = '{$this->getDescription()}', price = {$this->getPrice()}, stock = {$this->getStock()}, category_id = {$this->getCategory_id()}, offer = {$this->getOffer()}, image = '{$this->getImage()}' WHERE id = {$this->getId()}");
+        if ( $is_updated ) {
+            return true;
+        }
+        return false;
     }
 
     public static function delete()
