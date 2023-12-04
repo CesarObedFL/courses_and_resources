@@ -29,7 +29,6 @@ class ProductController {
 
     public function save()
     {
-        
         if ( isset( $_SESSION['admin'] ) ) {
 
             if ( isset($_POST) ) {
@@ -45,15 +44,15 @@ class ProductController {
                 $filename = $file['name'];
                 $mimetype = $file['type'];
 
-                if ( $mimetype == "image/jpg" && $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/jpg" ) {
+                if ( $mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" ) {
                     if ( !is_dir('assets/img/products') ) {
                         mkdir('assets/img/products', 0777, true);
                     }
-                    move_uploaded_file($file['tmp_name'], 'assets/img/products/'.$filename);
+                    //move_uploaded_file($file['tmp_name'], 'assets/img/products/'.$filename);
                     $image = true;
                 } 
 
-                if ( $name && $description && $price && $stock && $category && $offer & $image ) {
+                if ( $name && $description && $price && $stock && $category && $offer && $image ) {
 
                     $product = new Product(
                         $_POST['name'],

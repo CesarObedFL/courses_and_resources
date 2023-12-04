@@ -8,7 +8,7 @@
 <?php endif;?>
 
 <div class="form-container">
-    <form action="index.php?controller=Product&action=save" method="POST">
+    <form action="index.php?controller=Product&action=save" method="POST" enctype="multipart/form-data">
         <label for="name">Name:</label>
         <input type="text" name="name">
 
