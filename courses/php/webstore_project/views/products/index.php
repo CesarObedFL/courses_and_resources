@@ -1,6 +1,6 @@
 <h2>Some Products</h2>
 
-<?php $products = Product::get_all() ?>
+<?php $products = Product::get_random_products(6) ?>
 <?php if( isset($products) ):?>
     <?php while( $product = $products->fetch_object() ):?>
         <div class="product">

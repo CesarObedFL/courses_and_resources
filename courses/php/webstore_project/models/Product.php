@@ -95,7 +95,14 @@ class Product
     public static function get_all()
     {
         $db = Database::connect();
-        $products = $db->query("SELECT * FROM products ORDER BY id DESC");
+        $products = $db->query("SELECT * FROM products ORDER BY id ASC");
+        return $products;
+    }
+
+    public static function get_random_products($limit)
+    {
+        $db = Database::connect();
+        $products = $db->query("SELECT * FROM products ORDER BY RAND() LIMIT $limit");
         return $products;
     }
 
