@@ -1,6 +1,6 @@
 <h2>Some Products</h2>
 
-<?php $products = Product::get_random_products(6) ?>
+
 <?php if( isset($products) ):?>
     <?php while( $product = $products->fetch_object() ):?>
         <div class="product">
@@ -16,5 +16,10 @@
             <a href="#" class="buy-button">Buy</a>
         </div>
     <?php endwhile;?>
+<?php else: ?>
+    <div class="alert alert-error">
+        <strong>There aren't registered products!...</strong>
+        <span class="close-alert-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
 <?php endif; ?>
 

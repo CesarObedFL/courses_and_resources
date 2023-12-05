@@ -6,6 +6,7 @@ class ProductController {
 
     public function index()
     {
+        $products = Product::get_random_products(6);
         require_once BASE_URL.'/views/products/index.php';
     }
 
