@@ -24,11 +24,11 @@
             <!-- menu -->
             <nav id="menu">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <?php $categories = Utils::get_categories(); ?>
                     <?php if( isset($categories) ):?>
                         <?php while( $category = $categories->fetch_object() ):?>
-                            <li><a href="#"><?=$category->name;?></a></li>
+                            <li><a href="index.php?controller=Product&action=list&category_id=<?=$category->id?>"><?=$category->name;?></a></li>
                         <?php endwhile;?>
                     <?php endif; ?>
                 </ul>

@@ -106,5 +106,12 @@ class Product
         return $products;
     }
 
+    public static function get_by_category($category_id)
+    {
+        $db = Database::connect();
+        $products = $db->query("SELECT * FROM products WHERE category_id = {$category_id} ORDER BY RAND()");
+        return $products;
+    }
+
 
 }

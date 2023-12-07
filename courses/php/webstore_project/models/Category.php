@@ -41,6 +41,13 @@ class Category
         }
     }
 
+    public static function retrieve($id)
+    {
+        $db = Database::connect($id);
+        $category = $db->query("SELECT * FROM categories WHERE id = {$id}");
+        return $category->fetch_object();
+    }
+
     public function save()
     {
         $is_saved = $this->db->query("INSERT INTO categories VALUES(NULL, '{$this->getName()}') ");

@@ -1,6 +1,7 @@
 <?php
 
 require_once BASE_URL.'/models/Product.php';
+require_once BASE_URL.'/models/Category.php';
 
 class ProductController {
 
@@ -175,6 +176,20 @@ class ProductController {
             }
 
             Utils::redirect(PUBLIC_URL . 'index.php?controller=Product&action=management');
+
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
+    }
+
+    public function list()
+    {
+        if (isset($_GET['category_id'])) {
+
+            $category = Category::retrieve($_GET['category_id']);
+            $products = Product::get_by_category($_GET['category_id']);
+
+            require_once BASE_URL.'/views/products/list.php';
 
         } else {
             Utils::redirect(PUBLIC_URL . 'index.php');
