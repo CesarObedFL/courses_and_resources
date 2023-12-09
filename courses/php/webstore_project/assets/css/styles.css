@@ -339,6 +339,21 @@ table tr td {
     text-decoration: none;
 }
 
+.detail-product {
+    width: 100%;
+}
+
+.detail-product .detail-product-img img {
+    display: block;
+    width: 40%;
+    float: left;
+    margin-right: 40px;
+}
+
+.detail-product .detail-product-data {
+    float: right;
+    width: 50%;
+}
 
 /* footer styles */
 
