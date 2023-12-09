@@ -24,6 +24,15 @@ class ProductController {
         }
     }
 
+    public function show()
+    {
+        if ( isset($_GET['id']) ) {
+            $product = Product::retrieve($_GET['id']);
+        }
+        
+        require_once BASE_URL.'/views/products/show.php';
+    }
+
     public function create()
     {
         require_once BASE_URL.'/views/products/create.php';

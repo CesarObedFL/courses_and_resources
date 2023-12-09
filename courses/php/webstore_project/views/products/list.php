@@ -3,12 +3,13 @@
 <?php if( $products->num_rows > 0 ):?>
     <?php while( $product = $products->fetch_object() ):?>
         <div class="product">
-            <?php if($product->image != null): ?>
-                <img src="assets/img/products/<?=$product->image?>" alt="<?=$product->image?>" width="50" height="100">
-            <?php else: ?>
-                <img src="assets/img/products/sample-product.png" alt="product" width="50" height="100">
-            <?php endif; ?>
-
+            <a href="index.php?controller=Product&action=show&id=<?=$product->id?>">
+                <?php if($product->image != null): ?>
+                    <img src="assets/img/products/<?=$product->image?>" alt="<?=$product->image?>" width="50" height="100">
+                <?php else: ?>
+                    <img src="assets/img/products/sample-product.png" alt="product" width="50" height="100">
+                <?php endif; ?>
+            </a>
             <h2><?=$product->name?></h2>
             <p>$<?=$product->price?></p>
             <a href="#" class="buy-button">Buy</a>

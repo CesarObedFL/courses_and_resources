@@ -312,6 +312,15 @@ table tr td {
     margin-bottom: 10px;
 }
 
+.product a {
+    text-decoration: none;
+    color: black;
+}
+
+.product a:hover {
+    color: #555;
+}
+
 .product img {
     width: 100px;
     height: 100px;
