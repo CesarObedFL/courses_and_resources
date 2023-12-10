@@ -14,11 +14,20 @@ class CartController {
         if ( isset($_GET['product_id']) ) {
 
             $product = Product::retrieve($_GET['product_id']);
-            if ( is_object($product) ) {
-                if (isset($_SESSION['cart']) ) {
+            $product_included_into_cart = false;
 
-                } else {
-                    
+            if ( is_object($product) ) {
+            
+                if (isset($_SESSION['cart']) ) {
+                    foreach ( $_SESSION['cart'] as $index => $item ) {            
+                        if ( $item['product_id'] == $_GET['product_id'] ) {
+                            $_SESSION['cart'][$index]['units']++; 
+                            $product_included_into_cart = true;
+                        }
+                    }
+                }
+
+                if ( !$product_included_into_cart ) {
                     $_SESSION['cart'][] = array(
                         'product_id' => $product->id,
                         'prize' => $product->prize,
@@ -26,6 +35,7 @@ class CartController {
                     );
                 }
             }
+
         } else {
             Utils::redirect(PUBLIC_URL . 'index.php');
         }
