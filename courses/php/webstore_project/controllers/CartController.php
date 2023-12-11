@@ -6,7 +6,8 @@ class CartController {
 
     public function index()
     {
-        echo 'OrderController::index';
+        $cart = $_SESSION['cart'];
+        require_once BASE_URL.'/views/orders/cart/show.php';
     }
 
     public function add_to_cart()
@@ -31,7 +32,8 @@ class CartController {
                     $_SESSION['cart'][] = array(
                         'product_id' => $product->id,
                         'prize' => $product->prize,
-                        'units' => 1
+                        'units' => 1,
+                        'image' => $product->image
                     );
                 }
             }

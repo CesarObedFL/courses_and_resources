@@ -108,7 +108,7 @@ button, .buy-button {
 table {
     text-align: center;
     width: 100%;
-    border: 1px solid #555;
+    border: 1px solid #ccc;
 }
 
 table tr td {
@@ -353,6 +353,10 @@ table tr td {
 .detail-product .detail-product-data {
     float: right;
     width: 50%;
+}
+
+.thumbnail {
+    height: 80px;
 }
 
 /* footer styles */

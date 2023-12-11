@@ -30,6 +30,7 @@
                     <? endif; ?>
                     <li><a href="#">My Orders</a></li>
                     <li><a href="#">My Profile</a></li>
+                    <li><a href="<?=PUBLIC_URL?>index.php?controller=Cart&action=show">My Cart</a></li>
                     <li><a href="<?=PUBLIC_URL?>index.php?controller=User&action=logout">Logout</a></li>
                 </ul>
             <?php endif;?>
