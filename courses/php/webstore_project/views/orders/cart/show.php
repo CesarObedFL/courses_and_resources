@@ -5,8 +5,8 @@
         <tr>
             <th></th>
             <th>Name</th>
-            <th>Price</th>
             <th>Units</th>
+            <th>Price</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -21,10 +21,20 @@
                     <?php endif; ?>
                 </td>
                 <td><?=$item['name']?></td>
-                <td><?=$item['price']?></td>
                 <td><?=$item['units']?></td>
+                <td><?=$item['price']?></td>
                 <td></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
+    <tfoot>
+        <?php $cart_stats = Utils::get_cart_stats(); ?>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total: <?=$cart_stats['total']?></td>
+            <td></td>
+        </tr>
+    </tfoot>
 </table>
