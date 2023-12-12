@@ -13,7 +13,7 @@
             </a>
             <h2><?=$product->name?></h2>
             <p>$<?=$product->price?></p>
-            <a href="index?controller=Cart&action=add_to_cart&product_id=<?=$product->id?>" class="buy-button">Add to Cart</a>
+            <a href="index.php?controller=Cart&action=add_to_cart&product_id=<?=$product->id?>" class="buy-button">Add to Cart</a>
         </div>
     <?php endwhile;?>
 <?php else: ?>

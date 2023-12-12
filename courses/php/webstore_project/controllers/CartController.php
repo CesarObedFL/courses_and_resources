@@ -4,9 +4,11 @@ require_once BASE_URL.'/models/Product.php';
 
 class CartController {
 
-    public function index()
+    public function show()
     {
-        $cart = $_SESSION['cart'];
+        if ( isset($_SESSION['cart']) ) {
+            $cart = $_SESSION['cart'];
+        }
         require_once BASE_URL.'/views/orders/cart/show.php';
     }
 
@@ -31,16 +33,17 @@ class CartController {
                 if ( !$product_included_into_cart ) {
                     $_SESSION['cart'][] = array(
                         'product_id' => $product->id,
-                        'prize' => $product->prize,
+                        'name' => $product->name,
+                        'price' => $product->price,
                         'units' => 1,
                         'image' => $product->image
                     );
                 }
             }
 
-        } else {
-            Utils::redirect(PUBLIC_URL . 'index.php');
         }
+        
+        Utils::redirect(PUBLIC_URL . 'index.php');
     }
 
     public function remove()
