@@ -339,6 +339,17 @@ table tr td {
     text-decoration: none;
 }
 
+.remove-cart-button {
+    background-color: #ae4c33;
+    color: white !important;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 .detail-product {
     width: 100%;
 }

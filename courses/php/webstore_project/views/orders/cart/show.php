@@ -42,7 +42,9 @@
                 <td></td>
                 <td></td>
                 <td>Total: $<?=$cart_stats['total']?></td>
-                <td></td>
+                <td>
+                    <a href="index.php?controller=Cart&action=delete" class="remove-cart-button">remove all</a>
+                </td>
             </tr>
         </tfoot>
     </table>

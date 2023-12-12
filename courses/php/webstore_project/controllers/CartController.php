@@ -56,6 +56,7 @@ class CartController {
         if ( isset($_SESSION['cart']) ) {
             unset($_SESSION['cart']);
         }
+        Utils::redirect(PUBLIC_URL . 'index.php?controller=Cart&action=show');
     }
 
 }
