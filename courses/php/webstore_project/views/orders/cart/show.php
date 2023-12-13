@@ -31,7 +31,10 @@
                     <td><?=$item['name']?></td>
                     <td><?=$item['units']?></td>
                     <td><?='$'.$item['price']?></td>
-                    <td></td>
+                    <td>
+                        <a href="index.php?controller=Cart&action=add_to_cart&product_id=<?=$item['product_id']?>" class="action-button add-product-button">+</a>
+                        <a href="index.php?controller=Cart&action=substract_to_cart&product_id=<?=$item['product_id']?>" class="action-button substract-product-button">-</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -43,7 +46,7 @@
                 <td></td>
                 <td>Total: $<?=$cart_stats['total']?></td>
                 <td>
-                    <a href="index.php?controller=Cart&action=delete" class="remove-cart-button">remove all</a>
+                    <a href="index.php?controller=Cart&action=delete" class="action-button remove-cart-button">remove all</a>
                 </td>
             </tr>
         </tfoot>

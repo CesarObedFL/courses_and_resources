@@ -339,15 +339,30 @@ table tr td {
     text-decoration: none;
 }
 
-.remove-cart-button {
-    background-color: #ae4c33;
+.action-button {
     color: white !important;
     text-decoration: none;
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 5px;
     padding-left: 8px;
     padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.add-product-button {
+    background-color: #33ae37;
+    color: black !important;
+}
+
+.substract-product-button {
+    background-color: #cdea10;
+    color: black !important;
+}
+
+.remove-cart-button {
+    background-color: #ae4c33;
 }
 
 .detail-product {

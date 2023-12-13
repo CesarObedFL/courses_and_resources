@@ -43,7 +43,33 @@ class CartController {
 
         }
         
-        Utils::redirect(PUBLIC_URL . 'index.php');
+        Utils::redirect(PUBLIC_URL . 'index.php?controller=Cart&action=show');
+    }
+
+    public function substract_to_cart()
+    {
+        if ( isset($_GET['product_id']) ) {
+
+            $product = Product::retrieve($_GET['product_id']);
+
+            if ( is_object($product) && isset($_SESSION['cart']) ) {
+                foreach ( $_SESSION['cart'] as $index => $item ) {            
+                    if ( $item['product_id'] == $_GET['product_id'] ) {
+                        $_SESSION['cart'][$index]['units']--; 
+                        if ( $_SESSION['cart'][$index]['units'] == 0 ) {
+                            unset($_SESSION['cart'][$index]);
+                        }
+                    }
+                }
+
+                if ( count( $_SESSION['cart'] ) == 0 ) {
+                    $this->delete();
+                }
+            }
+
+        }
+        
+        Utils::redirect(PUBLIC_URL . 'index.php?controller=Cart&action=show');
     }
 
     public function remove()
