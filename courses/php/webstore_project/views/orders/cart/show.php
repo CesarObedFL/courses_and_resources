@@ -11,7 +11,7 @@
     <table>
         <thead>
             <tr>
-                <th></th>
+                <th>Product</th>
                 <th>Name</th>
                 <th>Units</th>
                 <th>Price</th>
@@ -23,14 +23,14 @@
                 <tr>
                     <td>
                         <?php if($item['image'] != null): ?>
-                            <img src="assets/img/products/<?=$item['image']?>" alt="<?=$item['image']?>" width="50" height="100">
+                            <img src="assets/img/products/<?=$item['image']?>" alt="<?=$item['image']?>" width="60" height="80">
                         <?php else: ?>
-                            <img src="assets/img/products/sample-product.png" alt="product" width="50" height="100">
+                            <img src="assets/img/products/sample-product.png" alt="product" width="60" height="80">
                         <?php endif; ?>
                     </td>
                     <td><?=$item['name']?></td>
                     <td><?=$item['units']?></td>
-                    <td><?='$'.$item['price']?></td>
+                    <td><?='$'.number_format($item['price'], 2)?></td>
                     <td>
                         <a href="index.php?controller=Cart&action=add_to_cart&product_id=<?=$item['product_id']?>" class="action-button add-product-button">+</a>
                         <a href="index.php?controller=Cart&action=substract_to_cart&product_id=<?=$item['product_id']?>" class="action-button substract-product-button">-</a>
@@ -41,12 +41,14 @@
         <tfoot>
             <?php $cart_stats = Utils::get_cart_stats(); ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>Total: $<?=$cart_stats['total']?></td>
                 <td>
                     <a href="index.php?controller=Cart&action=delete" class="action-button remove-cart-button">remove all</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td>Total: $<?=number_format($cart_stats['total'], 2)?></td>
+                <td>
+                    <a href="index.php?controller=Order&action=payment_form" class="action-button pay-order-button">pay order</a> 
                 </td>
             </tr>
         </tfoot>

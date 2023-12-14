@@ -108,7 +108,12 @@ button, .buy-button {
 table {
     text-align: center;
     width: 100%;
-    border: 1px solid #ccc;
+
+}
+
+table thead,
+table tfoot {
+    height: 40px;
 }
 
 table tr td {
@@ -352,17 +357,29 @@ table tr td {
 }
 
 .add-product-button {
-    background-color: #33ae37;
+    background-color: #00FFFF;
     color: black !important;
 }
 
 .substract-product-button {
-    background-color: #cdea10;
+    background-color: #FFFF00;
     color: black !important;
 }
 
 .remove-cart-button {
-    background-color: #ae4c33;
+    background-color: #FF0000;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pay-order-button {
+    background-color: #33AE3D;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .detail-product {
