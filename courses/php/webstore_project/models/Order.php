@@ -31,6 +31,32 @@ class Order
         $this->id = $this->db->real_escape_string($id);
     }
 
+    public function __call($name, $arguments)
+    {
+        $prefix_method = substr($name, 0, 3);
+        
+        if ( $prefix_method == 'get' ) {
+            $method_name = substr(strtolower($name), 3);
+
+            if ( isset($this->$method_name) ) {
+                return $this->$method_name;
+            } else {
+                return "Inexistent Method!...";
+            }
+        } else if ( $prefix_method = 'set' ) {
+            $method_name = substr(strtolower($name), 3);
+            
+            if ( isset($this->$method_name) ) {
+                $this->$method_name = $arguments[0];
+            } else {
+                return "Inexistent Method!...";
+            }
+            
+        } else {
+            return "Inexistent Method!...";
+        }
+    }
+
     public function save()
     {
         $is_saved = $this->db->query("INSERT INTO orders VALUES(NULL, {$this->getUser_id()}, '{$this->getCountry()}', '{$this->getState()}', '{$this->getAddress()}', '{$this->getDate()}', {$this->getAmount()}, {$this->getTotal()}) ");
