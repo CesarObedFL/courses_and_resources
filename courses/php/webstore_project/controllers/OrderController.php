@@ -1,6 +1,7 @@
 <?php
 
 require_once BASE_URL.'/models/Order.php';
+require_once BASE_URL.'/models/Item.php';
 
 class OrderController {
 
@@ -43,6 +44,7 @@ class OrderController {
                 );
 
                 $is_saved = $order->save();
+
                 if ( $is_saved ) {
                     $_SESSION['status'] = 'success';
                     $_SESSION['msg'] = 'Order paid successfully!...';

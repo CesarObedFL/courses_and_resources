@@ -61,6 +61,9 @@ class Order
     {
         $is_saved = $this->db->query("INSERT INTO orders VALUES(NULL, {$this->getUser_id()}, '{$this->getCountry()}', '{$this->getState()}', '{$this->getAddress()}', '{$this->getDate()}', {$this->getAmount()}, {$this->getTotal()}) ");
         if ( $is_saved ) {
+            $order_id = $this->db->query("SELECT LAST_INSERT_ID() AS 'order_id'");
+            $this->setId($order_id->fetch_object()->order_id);
+            
             return true;
         }
         return false;
