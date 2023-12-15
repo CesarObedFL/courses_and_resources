@@ -31,6 +31,11 @@ class Order
         $this->id = $this->db->real_escape_string($id);
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
     public function __call($name, $arguments)
     {
         $prefix_method = substr($name, 0, 3);
@@ -63,7 +68,7 @@ class Order
         if ( $is_saved ) {
             $order_id = $this->db->query("SELECT LAST_INSERT_ID() AS 'order_id'");
             $this->setId($order_id->fetch_object()->order_id);
-            
+
             return true;
         }
         return false;

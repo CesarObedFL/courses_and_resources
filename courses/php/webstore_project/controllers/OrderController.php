@@ -7,7 +7,7 @@ class OrderController {
 
     public function index()
     {
-        echo 'OrderController::index';
+        require_once BASE_URL.'/views/orders/index.php';
     }
 
     public function payment_form()
@@ -43,14 +43,25 @@ class OrderController {
                     $cart_stats['total'], 
                 );
 
-                $is_saved = $order->save();
+                $is_the_order_saved = $order->save();
+                
+                foreach( $_SESSION['cart'] as $product ) {
+                    $item = new Item(
+                        $order->getId(),
+                        $product['product_id'],
+                        $product['units']
+                    );
+                    $item->save();
+                }
 
-                if ( $is_saved ) {
+                if ( $is_the_order_saved ) {
+                    unset($_SESSION['cart']);
+
                     $_SESSION['status'] = 'success';
                     $_SESSION['msg'] = 'Order paid successfully!...';
                 }
 
-                Utils::redirect(PUBLIC_URL . 'index.php?controller=Order&action=list');
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Order&action=index');
 
             } else {
                 $_SESSION['status'] = 'error';

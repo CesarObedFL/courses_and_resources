@@ -50,7 +50,7 @@ CREATE TABLE orders (
 )ENGINE=InnoDb DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-CREATE TABLE item (
+CREATE TABLE items (
     id              INT(11) AUTO_INCREMENT NOT NULL,
     order_id        INT(11) NOT NULL,
     product_id      INT(11) NOT NULL,
