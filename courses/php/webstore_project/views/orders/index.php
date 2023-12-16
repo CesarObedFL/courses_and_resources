@@ -1,4 +1,4 @@
-<h2>My Orders</h2>
+<h2>Order List</h2>
 
 <?php if ( isset($_SESSION['msg']) ):?>
     <div class="alert alert-<?=$_SESSION['status']?>">

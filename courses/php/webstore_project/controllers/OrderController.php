@@ -7,7 +7,21 @@ class OrderController {
 
     public function index()
     {
-        require_once BASE_URL.'/views/orders/index.php';
+
+    }
+
+    public function my_orders()
+    {
+        if ( isset($_SESSION['user']) ) {
+            $orders = Order::my_orders();
+            require_once BASE_URL.'/views/orders/my_orders.php';
+
+        } else {
+            $_SESSION['msg'] = 'You need to login!...';
+            $_SESSION['status'] = 'error';
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
+
     }
 
     public function payment_form()
@@ -61,7 +75,7 @@ class OrderController {
                     $_SESSION['msg'] = 'Order paid successfully!...';
                 }
 
-                Utils::redirect(PUBLIC_URL . 'index.php?controller=Order&action=index');
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Order&action=my_orders');
 
             } else {
                 $_SESSION['status'] = 'error';

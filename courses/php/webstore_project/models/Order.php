@@ -88,4 +88,11 @@ class Order
         return $orders;
     }
 
+    public static function my_orders()
+    {
+        $db = Database::connect();
+        $my_orders = $db->query("SELECT * FROM orders WHERE user_id = " .$_SESSION['user']->id." ORDER BY id ASC");
+        return $my_orders;
+    }
+
 }
