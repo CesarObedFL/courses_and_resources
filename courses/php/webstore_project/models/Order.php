@@ -95,4 +95,11 @@ class Order
         return $my_orders;
     }
 
+    public static function get_products_by_order_id($order_id)
+    {
+        $db = Database::connect();
+        $products = $db->query("SELECT i.*, p.* FROM items AS i WHERE order_id = {$order_id} INNER JOIN products AS p ON i.product_id = p.id");
+        return $products;
+    }
+
 }

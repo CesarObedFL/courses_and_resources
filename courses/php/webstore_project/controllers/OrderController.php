@@ -24,6 +24,29 @@ class OrderController {
 
     }
 
+    public function order_detail()
+    {
+        if ( isset($_SESSION['user']) ) {
+            if ( isset($_GET['order_id']) ) {
+                
+                $order = Order::retrieve($_GET['order_id']);
+                $products = Order::get_products_by_order_id($_GET['order_id']);
+                require_once BASE_URL.'/views/orders/order_detail.php';
+
+            } else {
+                $_SESSION['msg'] = 'Incorrect order id!...';
+                $_SESSION['status'] = 'error';
+                Utils::redirect(PUBLIC_URL . 'index.php?controller=Order&action=my_orders');
+            }
+
+        } else {
+
+            $_SESSION['msg'] = 'You need to login!...';
+            $_SESSION['status'] = 'error';
+            Utils::redirect(PUBLIC_URL . 'index.php?controller=Cart&action=show');
+        }
+    }
+
     public function payment_form()
     {
         if ( isset($_SESSION['user']) ) {
