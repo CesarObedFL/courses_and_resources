@@ -135,6 +135,29 @@ table tr td {
     background-color: #f44336;
 }
 
+.badge {
+    color: #000000;
+    font-size: 15px;
+    min-width: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 10px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.badge-pending {
+    background-color: #f44336;
+}
+
+.badge-shipping {
+    background-color: #3391ae;
+}
+
+.badge-complete {
+    background-color: #409022;
+}
+
 /* The close button */
 .close-alert-btn {
     margin-left: 15px;

@@ -45,6 +45,7 @@ CREATE TABLE orders (
     date            DATETIME NOT NULL,
     amount          FLOAT(8,2) NOT NULL,
     total           FLOAT(8,2) NOT NULL,
+    status          ENUM('pending', 'shipping', 'complete') NOT NULL,
     CONSTRAINT pk_orders PRIMARY KEY(id),
     CONSTRAINT fk_order_user FOREIGN KEY(user_id) REFERENCES users(id)
 )ENGINE=InnoDb DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

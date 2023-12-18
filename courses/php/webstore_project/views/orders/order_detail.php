@@ -17,6 +17,7 @@
         <dt><strong>Information</strong></dt>
         <dd><?='Total: $'.$order->total?></dd>
         <dd><?='Amount: '.$order->amount?></dd>
+        <dd><span class="badge badge-<?=$order->status?>"><?=$order->status?></span></td></dd>
         <br>
 
         <dt><strong>Shipment Address</strong></dt>

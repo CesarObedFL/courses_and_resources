@@ -11,6 +11,7 @@ class Order
     private $date;
     private $amount;
     private $total;
+    private $status;
 
     private $db;
 
@@ -24,6 +25,7 @@ class Order
         $this->date = (new DateTime())->format('Y-m-d H:i:s');
         $this->amount = (isset($amount)) ? $this->db->real_escape_string($amount) : '';
         $this->total = (isset($total)) ? $this->db->real_escape_string($total) : '';
+        $this->status = 'pending';
     }
 
     public function setId($id)
@@ -64,7 +66,7 @@ class Order
 
     public function save()
     {
-        $is_saved = $this->db->query("INSERT INTO orders VALUES(NULL, {$this->getUser_id()}, '{$this->getCountry()}', '{$this->getState()}', '{$this->getAddress()}', '{$this->getDate()}', {$this->getAmount()}, {$this->getTotal()}) ");
+        $is_saved = $this->db->query("INSERT INTO orders VALUES(NULL, {$this->getUser_id()}, '{$this->getCountry()}', '{$this->getState()}', '{$this->getAddress()}', '{$this->getDate()}', {$this->getAmount()}, {$this->getTotal()}, '{$this->getStatus()}') ");
         if ( $is_saved ) {
             $order_id = $this->db->query("SELECT LAST_INSERT_ID() AS 'order_id'");
             $this->setId($order_id->fetch_object()->order_id);

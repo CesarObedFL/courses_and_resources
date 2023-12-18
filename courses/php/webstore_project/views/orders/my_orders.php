@@ -14,7 +14,7 @@
             <th>Order</th>
             <th>Date</th>
             <th>Total</th>
-            <th></th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@
                 </td>
                 <td><?=$order->datetime?></td>
                 <td><?='$'.$order->total?></td>
-                <td></td>
+                <td><span class="badge badge-<?=$order->status?>"><?=$order->status?></span></td>
             </tr>
         <?php endwhile;?>
     </tbody>
