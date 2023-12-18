@@ -12,8 +12,8 @@
     <thead>
         <tr>
             <th>Order</th>
-            <th>Total</th>
             <th>Date</th>
+            <th>Total</th>
             <th></th>
         </tr>
     </thead>
@@ -21,10 +21,10 @@
         <?php while( $order = $orders->fetch_object() ):?>
             <tr>
                 <td>
-                    <a href="index.php?controller=Order&action=order_detail&order_id=<?=$order_id?>"><?=$order->id?></a>
+                    <a href="index.php?controller=Order&action=order_detail&order_id=<?=$order->id?>"><?=$order->id?></a>
                 </td>
+                <td><?=$order->datetime?></td>
                 <td><?='$'.$order->total?></td>
-                <td><?=$order->date?></td>
                 <td></td>
             </tr>
         <?php endwhile;?>
