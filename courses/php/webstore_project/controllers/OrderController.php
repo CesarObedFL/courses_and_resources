@@ -7,7 +7,14 @@ class OrderController {
 
     public function index()
     {
+        if ( isset( $_SESSION['admin'] ) ) {
 
+            $orders = Order::get_all();
+            require_once BASE_URL.'/views/orders/index.php';
+
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
     }
 
     public function my_orders()

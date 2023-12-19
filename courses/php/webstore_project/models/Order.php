@@ -86,7 +86,7 @@ class Order
     public static function get_all()
     {
         $db = Database::connect();
-        $orders = $db->query("SELECT * FROM orders ORDER BY id ASC");
+        $orders = $db->query("SELECT o.*, u.name AS client FROM orders AS o INNER JOIN users AS u ON o.user_id = u.id ORDER BY id ASC");
         return $orders;
     }
 

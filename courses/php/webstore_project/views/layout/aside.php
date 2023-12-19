@@ -26,7 +26,7 @@
                     <? if ( isset($_SESSION['admin']) ):?>
                         <li><a href="<?=PUBLIC_URL?>index.php?controller=Category&action=index">Manage Categories</a></li>
                         <li><a href="<?=PUBLIC_URL?>index.php?controller=Product&action=management">Manage Products</a></li>
-                        <li><a href="#">Manage Orders</a></li>
+                        <li><a href="<?=PUBLIC_URL?>index.php?controller=Order&action=index">Manage Orders</a></li>
                     <? endif; ?>
                     <li><a href="#">My Orders</a></li>
                     <li><a href="#">My Profile</a></li>
