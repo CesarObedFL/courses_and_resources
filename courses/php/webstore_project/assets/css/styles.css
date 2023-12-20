@@ -87,6 +87,15 @@ button, .buy-button {
     margin-bottom: 20px;
 }
 
+.button-success {
+    width: 20px;
+    background-color: #33AE3D;
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+    font-size: 10px;
+}
+
 .button-edit {
     width: 20px;
     background-color: #3391ae;

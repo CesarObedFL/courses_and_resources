@@ -76,6 +76,15 @@ class Order
         return false;
     }
 
+    public function update()
+    {
+        $is_updated = $this->db->query("UPDATE orders SET country = '{$this->getCountry()}', state = '{$this->getState()}', address = '{$this->getAddress()}', status = '{$this->getStatus()}' WHERE id = {$this->getId()}");
+        if ( $is_updated ) {
+            return true;
+        }
+        return false;
+    }
+
     public static function retrieve($id)
     {
         $db = Database::connect($id);

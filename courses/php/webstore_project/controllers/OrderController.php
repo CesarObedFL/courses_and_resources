@@ -54,6 +54,49 @@ class OrderController {
         }
     }
 
+    public function change_status()
+    {
+        if ( isset( $_SESSION['admin'] ) ) {
+
+            if ( !isset($_GET['order_id']) ) {
+                
+                $_order = Order::retrieve($_GET['order_id']);
+                $order = new Order(
+                    $country = $_order->country, 
+                    $state = $_order->state, 
+                    $address = $_order->address, 
+                    $amount = $_order->amount, 
+                    $total = $_order->total
+                );
+                $order->setId($_order->id);
+                
+                if ( $_order->status == 'pending' ) {
+                    $order->setStatus('shipping');
+                } else if ( $_order->status == 'shipping' ) {
+                    $order->setStatus('complete');
+                }
+                $order->update();
+
+                $order = Order::retrieve($_GET['order_id']);
+                $products = Order::get_products_by_order_id($_GET['order_id']);
+
+                require_once BASE_URL.'/views/orders/order_detail.php';
+
+            } else {
+                $_SESSION['msg'] = 'something went wrong, try it again!...';
+                $_SESSION['status'] = 'error';
+                
+                $order = Order::retrieve($_GET['order_id']);
+                $products = Order::get_products_by_order_id($_GET['order_id']);
+
+                require_once BASE_URL.'/views/orders/order_detail.php';
+            }
+
+        } else {
+            Utils::redirect(PUBLIC_URL . 'index.php');
+        }
+    }
+
     public function payment_form()
     {
         if ( isset($_SESSION['user']) ) {

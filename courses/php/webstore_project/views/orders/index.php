@@ -17,6 +17,7 @@
                 <th>Date</th>
                 <th>Total</th>
                 <th>Status</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,13 @@
                     <td><?=$order->datetime?></td>
                     <td><?='$'.$order->total?></td>
                     <td><span class="badge badge-<?=$order->status?>"><?=$order->status?></span></td>
+                    <td>
+                        <?php if($order->status == 'pending'): ?>
+                            <a class="button button-edit" href="index.php?controller=Order&action=change_status&order_id=<?=$order->id?>">attend shipment</a>
+                        <?php elseif($order->status == 'shipping'): ?>
+                            <a class="button button-success" href="index.php?controller=Order&action=change_status&order_id=<?=$order->id?>">complete</a>
+                        <?php endif; ?>
+                    </td>
                 </tr>
             <?php endwhile;?>
         </tbody>

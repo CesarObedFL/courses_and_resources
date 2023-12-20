@@ -22,6 +22,15 @@
 
         <dt><strong>Shipment Address</strong></dt>
         <dd><?=$order->address . " " . $order->state . " " . $order->country?></dd>
+        <br>
+        <dt></dt>
+        <dd>
+            <?php if($order->status == 'pending'): ?>
+                <a class="button button-edit" href="index.php?controller=Order&action=change_status&order_id=<?=$order->id?>">attend shipment</a>
+            <?php elseif($order->status == 'shipping'): ?>
+                <a class="button button-success" href="index.php?controller=Order&action=change_status&order_id=<?=$order->id?>">complete</a>
+            <?php endif; ?>
+        </dd>
     </dl>
 
     <table>
