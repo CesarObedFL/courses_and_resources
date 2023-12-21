@@ -85,6 +85,26 @@ class Product
         return false;
     }
 
+    public static function increase_stock($product_id, $amount) 
+    {
+        $db = Database::connect();
+        $is_updated = $db->query("UPDATE products SET stock = (stock + {$amount}) WHERE id = {$product_id}");
+        if ( $is_updated ) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function decrease_stock($product_id, $amount)
+    {
+        $db = Database::connect();
+        $is_updated = $db->query("UPDATE products SET stock = (stock - {$amount}) WHERE id = {$product_id}");
+        if ( $is_updated ) {
+            return true;
+        }
+        return false;
+    }
+
     public static function delete($id)
     {
         $db = Database::connect($id);

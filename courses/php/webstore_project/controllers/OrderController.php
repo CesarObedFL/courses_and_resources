@@ -2,6 +2,7 @@
 
 require_once BASE_URL.'/models/Order.php';
 require_once BASE_URL.'/models/Item.php';
+require_once BASE_URL.'/models/Product.php';
 
 class OrderController {
 
@@ -139,6 +140,7 @@ class OrderController {
                         $product['units']
                     );
                     $item->save();
+                    Product::decrease_stock($product['product_id'], $product['units']);
                 }
 
                 if ( $is_the_order_saved ) {
