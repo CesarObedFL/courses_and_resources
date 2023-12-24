@@ -1,0 +1,211 @@
+* {
+    font-family: Nunito, sans-serif;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+    background-color: #f9cd8f;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 27px;
+    font-weight: 300;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    -webkit-box-shadow: 0 35px 31px -10px rgba(176, 136, 83, 1);
+    -moz-box-shadow: 0 35px 31px -10px rgba(176, 136, 83, 1);
+    box-shadow: 0 35px 31px -10px rgba(176, 136, 83, 1);
+}
+
+.post {
+    width: 700px;
+    height: 420px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.left-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    padding: 40px;
+    color: #fff;
+    border-radius: 3px 0 0 3px;
+    background-color: #484855;
+}
+
+.underline {
+    width: 41px;
+    height: 4.3px;
+    margin-left: 2px;
+    background-color: #e9745b;
+}
+
+.right-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    padding: 40px;
+    color: #435654;
+    border-radius: 0 3px 3px 0;
+    background-color: #fff;
+}
+
+.post-text {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 23px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 87%;
+    margin: 0;
+    padding: 59px 40px 40px;
+    -webkit-box-shadow: inset -1px -10px 11px -11px rgba(209, 207, 210, 1);
+    -moz-box-shadow: inset -1px -10px 11px -11px rgba(209, 207, 210, 1);
+    box-shadow: inset -1px -10px 11px -11px rgba(209, 207, 210, 1);
+}
+
+.post-text::first-letter {
+    font-size: 30px;
+}
+
+.close {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 30px;
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    color: #435654;
+}
+
+.footer {
+    line-height: 13%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 13%;
+    padding: 0 40px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    width: 16px;
+    height: 16px;
+    -webkit-transition: all .35s ease-out;
+    -moz-transition: all .35s ease-out;
+    -ms-transition: all .35s ease-out;
+    -o-transition: all .35s ease-out;
+    transition: all .35s ease-out;
+    transform: translateY(-50%);
+    stroke: #f3745b;
+    stroke-width: 2px;
+    fill: transparent;
+}
+
+.icon:hover {
+    cursor: pointer;
+    fill: #f3745b;
+}
+
+.icon.active {
+    right: 38px;
+    width: 20px;
+    height: auto;
+    fill: #f3745b;
+}
+
+.date {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 54.6px;
+    margin: 0;
+}
+
+.hour {
+    font-weight: 400;
+}
+
+.more-options {
+    font-size: 21px;
+    position: absolute;
+    top: 50%;
+    right: 74px;
+    height: 100%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #435654;
+}
+
+.more-options>i {
+    line-height: 54.6px;
+}
+
+.author {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+}
+
+.author-photo {
+    float: left;
+    width: 50px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 5px 10px 4px rgba(59, 59, 70, 1);
+    -moz-box-shadow: 0 5px 10px 4px rgba(59, 59, 70, 1);
+    box-shadow: 0 5px 10px 4px rgba(59, 59, 70, 1);
+    -webkit-transition: all .35s ease-out;
+    -moz-transition: all .35s ease-out;
+    -ms-transition: all .35s ease-out;
+    -o-transition: all .35s ease-out;
+    transition: all .35s ease-out;
+}
+
+.author-photo:hover {
+    transform: scale(1.25);
+}
+
+.author>p {
+    font-size: 11px;
+    line-height: 50px;
+    margin: 0;
+}
+
+.author-name {
+    font-weight: 300;
+    margin-left: 8px;
+}
