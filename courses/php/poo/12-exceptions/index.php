@@ -34,3 +34,7 @@ try {
 } finally {
     echo "ending the code block!...";
 }
+
+
+// En PHP 8: Ahora el throw en lugar de una declaración, se considera una expresión y se puede usar en más casos.
+throw new Exception('Something went wrong!');
