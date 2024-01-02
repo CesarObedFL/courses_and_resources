@@ -1,0 +1,31 @@
+/*  Estilo para el contenedor de la animación de cargando */
+.loading {
+	z-index: 20;
+	position: absolute;
+	width: 100%;
+	display: block;
+	overflow: auto;
+	height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.loading-content {
+	position: absolute;
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid rgb(111, 109, 109);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	top: 0;
+	left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+	animation: spin 2s linear infinite;
+}
+
+/* animación de carga */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

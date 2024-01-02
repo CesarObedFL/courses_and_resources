@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Ejemplo de Loading Fullpage</title>
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!-- add loading spinner functionallity -->
+        <script>
+            window.onload = function() {
+                document.querySelector('#loading').classList.remove('loading');
+                document.querySelector('#loading-content').classList.remove('loading-content');
+            }
+
+            $('.option_menu_button').on('click', function() {
+                document.querySelector('#loading').classList.add('loading');
+                document.querySelector('#loading-content').classList.add('loading-content');
+            });
+        </script>
+
+    </head>
+
+    <body>
+        
+        <section id="loading" class="loading">
+            <div id="loading-content" class="loading-content"></div>
+        </section>
+
+    </body>
+
+</html>
