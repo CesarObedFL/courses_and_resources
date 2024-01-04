@@ -1,0 +1,28 @@
+/** page setup **/
+.height {
+    height: 1000vh;
+}
+
+/** page scroll animation **/
+@keyframes progress {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+#progress {
+    animation: progress;
+    animation-timeline: scroll();
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform-origin: 0 center;
+    background: red;
+}
