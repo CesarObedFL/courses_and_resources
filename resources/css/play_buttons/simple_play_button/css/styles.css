@@ -1,0 +1,72 @@
+html,
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+
+.button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+
+input {
+    display: none;
+}
+
+.bar1,
+.bar2 {
+    background-color: white;
+    transition: 0.4s;
+}
+
+.bar2 {
+    height: 0;
+    width: 0;
+    border-top: 15px solid rgba(0, 0, 0, 0.4);
+    border-left: 20px solid white;
+    border-bottom: 15px solid rgba(0, 0, 0, 0.4);
+}
+
+.bar1 {
+    height: 30px;
+    width: 0;
+    border-top: 15px solid rgba(0, 0, 0, 0.4);
+    border-left: 20px solid white;
+    border-bottom: 15px solid rgba(0, 0, 0, 0.4);
+}
+
+input:checked~label .button .bar1 {
+    height: 45px;
+    width: 20px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #fff;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+input:checked~label .button .bar2 {
+    height: 45px;
+    width: 20px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #fff;
+}
+
+input:checked~label .button {
+    justify-content: center;
+}
