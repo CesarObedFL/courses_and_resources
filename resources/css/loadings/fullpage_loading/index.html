@@ -10,14 +10,19 @@
 
         <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+        <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
         <!-- add loading spinner functionallity -->
         <script>
             window.onload = function() {
-                document.querySelector('#loading').classList.remove('loading');
-                document.querySelector('#loading-content').classList.remove('loading-content');
+                /* you must to uncomment this lines for the loading to work */
+                //document.querySelector('#loading').classList.remove('loading');
+                //document.querySelector('#loading-content').classList.remove('loading-content');
             }
 
             $('.option_menu_button').on('click', function() {
+                /* you must to put the class into a button or a link for the loading work */
                 document.querySelector('#loading').classList.add('loading');
                 document.querySelector('#loading-content').classList.add('loading-content');
             });
