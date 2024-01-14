@@ -1,11 +1,170 @@
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
+#BackgroundMenu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    top: 0;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    justify-content: center;
+    pointer-events: none;
+    transition: all .6s ease;
+}
+
+#AsideMenuIcon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: var(--Secondary); Try it!!!*/
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    left: 0;
+    overflow: hidden;
+    border-radius: 0px 5px 0px 0px;
+    transition: all 0.6s ease;
+}
+
+#AsideMenuIcon i {
+    color: var(--OnBackground);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#AsideMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Surface);
+    width: 40px;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: auto;
+    transition: all 0.6s ease;
+    left: 0;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}
+
+#AsideList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+#AsideMenu:hover #AsideList {
+    opacity: 1;
+    transition: all 0.6s ease;
+}
+
+.AsideItem {
+    position: relative;
+    text-align: left;
+    list-style: none;
+}
+
+.AsideItem a {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 600;
+    color: transparent;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 1px var(--Secondary);
+    padding: 0;
+}
+
+.AsideItem a::before {
+    content: attr(data-text);
+    position: absolute;
+    display: inline-block;
+    color: #000;
+    overflow: hidden;
+    width: 0%;
+    border-right: #fff 2px solid;
+    transition: all 0.6s ease-out;
+}
+
+.AsideItem a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 55px var(--Primary));
+    color: var(--OnBackground);
+    -webkit-text-stroke: 1px var(--Secondary);
+    transition: all 0.6s ease;
+}
+
+#AsideMenu:hover {
+    width: 350px;
+    transition: all 0.6s ease;
+}
+
+#AsideMenu:hover #AsideMenuIcon {
+    opacity: 0;
+    width: 350px;
+    transition: all 0.6s ease;
+}
+
+#BackgroundMenu:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.6s ease;
+}
+
+
+/* Just page formatting */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --Background: #121212;
+    --Surface: #222222;
+    --Primary: #ff7597;
+    --Secondary: #ff0266;
+    --OnColor: #121212;
+    --OnBackground: #fff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Background);
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: #f0ffff;
+    height: 100vh;
+    width: 100%;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: var(--Surface);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+p {
+    text-align: justify;
 }
