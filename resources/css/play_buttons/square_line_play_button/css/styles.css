@@ -1,11 +1,63 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(10, 10, 30);
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    justify-content: center;
+}
+
+#checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+svg {
+    filter: drop-shadow(2px 2px 3px #F06292);
+    transform: translateX(-10px);
+}
+
+rect {
+    fill: #F06292;
+    visibility: hidden;
+}
+
+path {
+    fill: transparent;
+    stroke-width: 3;
+    stroke: #F06292;
+    stroke-linecap: round;
+    stroke-dasharray: 70, 5, 5, 5;
+}
+
+.playing {
+    stroke: #F06292;
+    stroke-width: 5;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 0;
+    fill: transparent;
+}
+
+#checkbox:checked+svg .pause {
+    visibility: hidden;
+}
+
+#checkbox:checked+svg .playing {
+    visibility: visible;
+    animation: play 10s linear 1;
+}
+
+#checkbox:checked+svg rect {
+    visibility: visible;
+}
+
+@keyframes play {
+    0% {
+        stroke-dashoffset: 400;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
