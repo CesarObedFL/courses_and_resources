@@ -1,11 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #1b2430;
+    --white: #a5c9ca;
+    --primary: orangered;
+}
 
 body {
     min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    background: var(--black);
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    filter: drop-shadow(0 0 0.25rem var(--primary));
+}
+
+.button-container {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.button-container button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-container svg#reticule {
+    opacity: 1;
+    scale: 1;
+    transform-origin: 50% 50%;
+}
+
+.button-container svg#reticule rect {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 1;
+}
+
+.button-container svg#reticule polyline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 2;
+}
+
+.button-container svg#playIcon polyline {
+    stroke: var(--white);
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    scale: 1;
+    transform-origin: 50% 50%;
+}
+
+.stats {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    grid-template-rows: 10px 1fr 10px;
+}
+
+.stats-bar {
+    width: 80px;
+    height: 10px;
+    background-image: repeating-linear-gradient(45deg,
+            var(--primary) 3px,
+            var(--primary) 6px,
+            transparent 3px,
+            transparent 9px);
+    background-repeat: repeat-x;
+    background-size: 200% 10px;
+    animation: backpos 6s linear infinite;
+}
+
+.stats-percent {
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: var(--primary);
+    font-family: "Share Tech Mono", monospace;
+}
+
+.stats-blocks {
+    height: 10px;
+}
+
+.stats-blocks line {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 6;
+}
+
+@keyframes backpos {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 100% 0%;
+    }
 }
