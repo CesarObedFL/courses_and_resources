@@ -1,11 +1,526 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 45px;
+    background-color: #F3F6F9;
+    padding: .5rem;
+}
+
+header .switch {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    width: 2.5rem;
+    padding: .25rem;
+    background-color: darkslateblue;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+header .btn-toggle {
+    width: 14px;
+    height: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    background-color: white;
+    -webkit-transition: -webkit-transform .1s;
+    transition: -webkit-transform .1s;
+    -moz-transition: transform .1s, -moz-transform .1s;
+    transition: transform .1s;
+    transition: transform .1s, -webkit-transform .1s, -moz-transform .1s;
+}
+
+/* Main */
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: #e0e5ea;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+.toggle-menu {
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    border-radius: .5rem;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.toggle-menu.active {
+    left: -webkit-calc(200px + .5rem);
+    left: -moz-calc(200px + .5rem);
+    left: calc(200px + .5rem);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.toggle-menu.active path:nth-of-type(1) {
+    stroke-dashoffset: -98px;
+}
+
+.toggle-menu.active path:nth-of-type(3) {
+    stroke-dashoffset: -138px;
+}
+
+.toggle-menu path {
+    fill: none;
+    -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    -moz-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.toggle-menu path:nth-of-type(1) {
+    stroke-dasharray: 40 139;
+}
+
+.toggle-menu path:nth-of-type(3) {
+    stroke-dasharray: 40 180;
+}
+
+/* Aside */
+aside {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0;
+    -moz-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    background-color: white;
+    -webkit-transform: translateX(-200px);
+    -moz-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    transform: translateX(-200px);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -moz-transition: transform .2s, -moz-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s, -moz-transform .2s;
+}
+
+aside.active {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 200px;
+    -moz-box-flex: 0;
+    -ms-flex: 0 0 200px;
+    flex: 0 0 200px;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+aside .menu {
+    padding: .25rem 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+aside .menu>li {
+    padding: .25rem .5rem;
+}
+
+aside .menu .main-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .75rem .5rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    border-radius: .25rem;
+    color: slategray;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+    cursor: pointer;
+}
+
+aside .menu .main-menu:hover {
+    background-color: #e0e5ea;
+}
+
+aside .menu .main-menu .arrow {
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -moz-transition: transform .2s, -moz-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s, -moz-transform .2s;
+}
+
+aside .menu .main-menu.active {
+    background-color: #e0e5ea;
+}
+
+aside .menu .main-menu.active .arrow {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+aside .menu .main-menu div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+aside .menu .main-menu div svg {
+    fill: darkslateblue;
+    margin-right: .5rem;
+}
+
+aside .menu .main-menu .arrow {
+    fill: slategray;
+}
+
+aside .menu .sub-menu {
+    display: none;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+}
+
+aside .menu .sub-menu.active {
+    margin: .25rem auto .5rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+aside .menu .sub-menu.active a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: .5rem;
+    -webkit-border-radius: .25rem;
+    -moz-border-radius: .25rem;
+    border-radius: .25rem;
+    margin-bottom: .25rem;
+    text-indent: .5rem;
+    color: slategray;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+}
+
+aside .menu .sub-menu.active a:hover {
+    background-color: darkslateblue;
+    color: white;
+}
+
+/* Section */
+section {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cards {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.cards .card {
+    position: relative;
+    width: 17rem;
+    height: 17rem;
+    margin: .5rem;
+    border: 1px solid #EEE;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -moz-background-size: 100%;
+    background-size: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: background-size .4s;
+    -moz-transition: background-size .4s, -moz-background-size .4s;
+    transition: background-size .4s;
+    transition: background-size .4s, -moz-background-size .4s;
+}
+
+.cards .card:hover {
+    -moz-background-size: 110%;
+    background-size: 110%;
+}
+
+.cards .card:hover::before {
+    opacity: 1;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -moz-background-size: 110%;
+    background-size: 110%;
+}
+
+.cards .card:hover .title {
+    opacity: 1;
+    -webkit-transform: translateY(13rem);
+    -moz-transform: translateY(13rem);
+    -ms-transform: translateY(13rem);
+    transform: translateY(13rem);
+}
+
+.cards .card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -moz-background-size: 100%;
+    background-size: 100%;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+}
+
+.cards .card .title {
+    opacity: 0;
+    font-size: 12px;
+    padding: 1rem;
+    -webkit-transform: translateY(13.5rem);
+    -moz-transform: translateY(13.5rem);
+    -ms-transform: translateY(13.5rem);
+    transform: translateY(13.5rem);
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+}
+
+.cards .card .dark .title {
+    color: white;
+}
+
+.cards .card.velvet-underground,
+.cards .card.velvet-underground::before {
+    background-image: url("https://source.unsplash.com/300x300/?moon/1");
+}
+
+.cards .card.beatles,
+.cards .card.beatles::before {
+    background-image: url("https://source.unsplash.com/300x300/?moon/2");
+}
+
+.cards .card.nirvana,
+.cards .card.nirvana::before {
+    background-image: url("https://source.unsplash.com/300x300/?moon/3");
+}
+
+.cards .card.pink-floyd,
+.cards .card.pink-floyd::before {
+    background-image: url("https://source.unsplash.com/300x300/?moon/4");
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #333;
+}
+
+.dark-theme header {
+    background-color: #28272f;
+}
+
+.dark-theme .switch {
+    background-color: #4d486d;
+}
+
+.dark-theme .btn-toggle {
+    -webkit-transform: translateX(17px);
+    -moz-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+.dark-theme .toggle-menu path {
+    stroke: #4d486d;
+}
+
+.dark-theme aside {
+    background-color: #1b1a21;
+}
+
+.dark-theme aside .menu .main-menu {
+    color: #a9a7b9;
+}
+
+.dark-theme aside .menu .main-menu:hover,
+.dark-theme aside .menu .main-menu.active {
+    background-color: #0f0f15;
+}
+
+.dark-theme aside .sub-menu a {
+    color: #a9a7b9 !important;
+}
+
+.dark-theme main {
+    background-color: #0f0f15;
+}
+
+.dark-theme .card {
+    border-color: rgba(255, 255, 255, 0.1);
 }
