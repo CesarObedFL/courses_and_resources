@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Image Preloader Progress Bar Example</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!-- https://codepen.io/MrHill/pen/AbjzYR -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <!-- PRELOADER IS LOADING ACTUAL IMAGES TO SHOW FUNCTIONALITY. BROWSER CACHES IMAGES AFTER FIRST LOAD SO SUBSEQUENT LOADS WILL BE FASTER. -->
+
+    <!-- RELOAD PEN OR CLICK A COLOR THUMBNAIL TO CHANGE THE SKIN -->
+
+    <!-- skins -->
+    <div class="skins">
+        Click to change skin
+        <div class="skin" id="red"></div>
+        <div class="skin" id="blue"></div>
+        <div class="skin" id="green"></div>
+        <div class="skin" id="yellow"></div>
+        <div class="skin" id="purple"></div>
+        <div class="skin" id="gray"></div>
+    </div>
+
+    <!-- actual preloader -->
+    <div class="loader">
+        <div class="progress-bar">
+            <div class="progress-stripes"></div>
+            <div class="percentage">0%</div>
+        </div>
+    </div>
+
+    <span>Loading...</span>
+
+</body>
+
+</html>
