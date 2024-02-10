@@ -1,11 +1,141 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    background: #f1f1f1;
+    padding: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.account-page #column-left {
+    width: 360px;
+    padding-right: 30px;
+    padding-left: 0;
+    float: none;
+    height: auto;
+    overflow: hidden;
+}
+
+.account-pages-menu-wrapper {
+    width: 360px;
+    padding-right: 30px;
+}
+
+.list-unstyled {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-page-menu-item {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    cursor: pointer;
+    -webkit-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.account-page-menu-item a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.black {
+    color: #1d1d1b;
+}
+
+.account-page-menu-item:hover {
+    background-color: #fafafa;
+}
+
+
+/* New style for panel */
+.aside-menu {
+    position: relative;
+}
+
+.conf-button {
+    cursor: pointer;
+}
+
+.conf-button svg {
+    width: 13px;
+    position: absolute;
+    transition: .4s;
+}
+
+.open .conf-button svg {
+    fill: #ddd;
+}
+
+#column-left {
+    padding-left: 20px;
+}
+
+.list-unstyled {
+    overflow: hidden;
+}
+
+.account-pages-menu-wrapper .account-page-menu-item {
+    transform: translateX(-150%);
+}
+
+.account-pages-menu-wrapper .account-page-menu-item:nth-child(1) {
+    animation: example2 .4s cubic-bezier(.71, .19, .6, .73) 0.1s both;
+}
+
+.account-pages-menu-wrapper .account-page-menu-item:nth-child(2) {
+    animation: example2 .4s cubic-bezier(.71, .19, .6, .73) 0.2s both;
+}
+
+.account-pages-menu-wrapper .account-page-menu-item:nth-child(3) {
+    animation: example2 .4s cubic-bezier(.71, .19, .6, .73) 0.3s both;
+}
+
+.account-pages-menu-wrapper .account-page-menu-item:nth-child(4) {
+    animation: example2 .4s cubic-bezier(.71, .19, .6, .73) 0.4s both;
+}
+
+.open .account-pages-menu-wrapper .account-page-menu-item:nth-child(1) {
+    animation: example .4s cubic-bezier(.71, .19, .6, .73) 0.1s both;
+}
+
+.open .account-pages-menu-wrapper .account-page-menu-item:nth-child(2) {
+    animation: example .4s cubic-bezier(.71, .19, .6, .73) 0.2s both;
+}
+
+.open .account-pages-menu-wrapper .account-page-menu-item:nth-child(3) {
+    animation: example .4s cubic-bezier(.71, .19, .6, .73) 0.3s both;
+}
+
+.open .account-pages-menu-wrapper .account-page-menu-item:nth-child(4) {
+    animation: example .4s cubic-bezier(.71, .19, .6, .73) 0.4s both;
+}
+
+
+
+
+@keyframes example {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes example2 {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-150%);
+    }
 }
