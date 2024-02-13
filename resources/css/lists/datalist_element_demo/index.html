@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Datalist Element Demo</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!-- https://codepen.io/matt-west/pen/AXvWzb -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <div id="page-wrapper">
+        <h1>Datalist Element Demo</h1>
+
+        <label for="default">Pick a programming language</label>
+        <input type="text" id="default" list="languages" placeholder="e.g. JavaScript">
+
+        <datalist id="languages">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="Java">
+            <option value="Ruby">
+            <option value="PHP">
+            <option value="Go">
+            <option value="Erlang">
+            <option value="Python">
+            <option value="C">
+            <option value="C#">
+            <option value="C++">
+        </datalist>
+
+
+        <label for="ajax">Pick an HTML Element (options loaded using AJAX)</label>
+        <input type="text" id="ajax" list="json-datalist" placeholder="e.g. datalist">
+        <datalist id="json-datalist"></datalist>
+
+
+    </div>
+
+</body>
+
+</html>
