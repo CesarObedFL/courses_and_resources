@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HTML Resources</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!--  -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+
+    <h1>HTML Resources</h1>
+
+    <p>
+        <h2>Accept Attribute</h2>
+        <parragraph>You can use the accept attribute with the &lt;input&gt; element (only for file type) to specify the types of files a server can accept.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;input type="file" accept=".jpg, .jpeg, .png" /&gt;
+            </code>
+        </pre>
+
+        <h2>Alt Attribute</h2>
+        <parragraph>You can use the <i>alt</i> attribute with the &lt;img&gt; element to specify an alternate text in case the image can’t be displayed on the web page.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;img src="nature.png" alt="A beautiful sunset" /&gt;
+            </code>
+        </pre>
+
+        <h2>Autocomplete Attribute</h2>
+        <parragraph>You can use the autocomplete attribute with the &lt;form&gt;, &lt;input&gt; and &lt;textarea&gt; elements to control the browser’s autocomplete feature.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;input type="text" name="name" autocomplete="on" /&gt;
+            </code>
+        </pre>
+
+        <h2>Contenteditable Attribute</h2>
+        <parragraph>You can use the <i>contenteditable</i> attribute to specify whether the element’s content is editable or not. It allows users to modify the content within the element.
+
+            This is a global attribute which means you can use this attribute with all HTML elements.
+        </parragraph>
+    
+        <pre>
+            <code>
+                &lt;div contenteditable="true"&gt;You can edit this content.&lt;/div&gt;
+            </code>
+        </pre>
+
+        <h2>Download Attribute</h2>
+        <parragraph>You can use the download attribute with the &lt;a&gt; element to specify that when a user clicks the link, the linked resource should be downloaded rather than navigated to.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;a href="document.pdf" download="document.pdf"&gt;Download PDF&lt;/a&gt;
+            </code>
+        </pre>
+
+        <h2>Hidden Attribute</h2>
+        <parragraph>You can use the hidden attribute to hide the element on the web page. This is useful for controlling visibility through JavaScript or CSS.
+
+            This is a global attribute which means you can use this attribute with all HTML elements.
+        </parragraph>
+    
+        <pre>
+            <code>
+                &lt;div hidden&gt;This is hidden content.&lt;/div&gt;
+            </code>
+        </pre>
+
+        <h2>Loading Attribute</h2>
+        <parragraph>You can use the loading attribute with the &lt;img&gt; element to control how the browser loads the image. It has three values: “eager,” “lazy,” and “auto.”</parragraph>
+    
+        <pre>
+            <code>
+                &lt;img src="image.png" loading="lazy" /&gt;
+            </code>
+        </pre>
+
+        <h2>Multiple Attribute</h2>
+        <parragraph>You can use the <i>multiple</i> attribute with the &lt;input&gt; and &lt;select&gt; elements to allow users to select/enter multiple values at once.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;input type="file" multiple /&gt;
+                &lt;select multiple&gt;
+                    &lt;option value="java"&gt;Java&lt;/option&gt;
+                    &lt;option value="javascript"&gt;JavaScript&lt;/option&gt;
+                    &lt;option value="typescript"&gt;TypeScript&lt;/option&gt;
+                    &lt;option value="rust"&gt;Rust&lt;/option&gt;
+                &lt;/select&gt;
+            </code>
+        </pre>
+
+        <h2>Poster Attribute</h2>
+        <parragraph>You can use the <i>poster</i> attribute with the &lt;video&gt; element to display an image until the user plays the video.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;video controls poster="image.png" width="500"&gt;
+                    &lt;source src="video.mp4" type="video/mp4" /&gt;
+                &lt;/video&gt;
+            </code>
+        </pre>
+
+        <h2>Readonly Attribute</h2>
+        <parragraph>You can use the <i>readonly</i> attribute with the &lt;input&gt; element to specify that the element is read-only, not editable.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;input type="text" value="This is readonly." readonly /&gt;
+            </code>
+        </pre>
+
+        <h2>Srcset Attribute</h2>
+        <parragraph>You can use the srcset attribute with the &lt;img&gt; and &lt;source&gt; (in &lt;picture&gt;) elements to provide a list of image sources. This helps the browser to select different images for different screen sizes.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;img src="image.jpg" srcset="image.jpg, image-2x.jpg, image-3x.jpg" /&gt;
+            </code>
+        </pre>
+
+        <h2>Spellcheck Attribute</h2>
+        <parragraph>You can use the <i>spellcheck</i> attribute with &lt;input&gt; elements (not passwords), content-editable elements, and &lt;textarea&gt; element to enable or disable spell checking by the browser.</parragraph>
+    
+        <pre>
+            <code>
+                &lt;input type="text" spellcheck="false" /&gt;
+            </code>
+        </pre>
+
+        <h2>Title Attribute</h2>
+        <parragraph>You can use the <i>title</i> attribute to provide additional information about an element. This information is typically displayed when the user hovers over the element.
+
+            This is a global attribute which means you can use this attribute with all HTML elements.
+        </parragraph>
+    
+        <pre>
+            <code>
+                &lt;a href="document.pdf" title="Click to download"&gt;Download File&lt;/a&gt;
+            </code>
+        </pre>
+    </p>
+
+
+</body>
+
+</html>
