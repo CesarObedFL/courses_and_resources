@@ -1,11 +1,9 @@
+ul {
+    list-style-type: none;
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+ul li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -20px;
 }
