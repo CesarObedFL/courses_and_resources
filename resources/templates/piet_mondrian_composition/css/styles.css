@@ -1,11 +1,74 @@
-
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.art-canvas {
+    width: 400px;
+    height: 460px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+}
+
+.block-1 {
+    width: 100px;
+    height: 110px;
+    border: 10px solid black;
+}
+
+.block-2 {
+    width: 100px;
+    height: 200px;
+    border: 10px solid black;
+}
+
+.block-3 {
+    width: 100px;
+    height: 140px;
+    border: 10px solid black;
+    background: blue;
+    position: absolute;
+    margin-top: -10px;
+}
+
+.block-4 {
+    margin: 10px 90px;
+    width: 290px;
+    height: 310px;
+    border: 10px solid black;
+    position: absolute;
+    margin-top: -310px;
+    background: red;
+}
+
+.block-5 {
+    width: 230px;
+    height: 140px;
+    border: 10px solid black;
+    margin: -10px 90px;
+    position: absolute;
+}
+
+.block-6 {
+    width: 70px;
+    height: 70px;
+    border: 10px solid black;
+    position: absolute;
+    margin: -10px 310px;
+}
+
+.block-7 {
+    width: 70px;
+    height: 80px;
+    border: 10px solid black;
+    position: absolute;
+    margin: 50px 310px;
+    background: yellow;
+}
+
+.caption {
+    text-align: center;
+
 }
