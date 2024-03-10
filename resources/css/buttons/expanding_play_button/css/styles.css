@@ -1,11 +1,145 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+	background-image: linear-gradient(
+		210deg,
+		hsl(240deg 43% 53%) 0%,
+		hsl(308deg 40% 53%) 11%,
+		hsl(343deg 72% 67%) 21%,
+		hsl(10deg 95% 75%) 31%,
+		hsl(30deg 97% 77%) 41%,
+		hsl(55deg 81% 83%) 51%,
+		hsl(42deg 100% 86%) 61%,
+		hsl(33deg 100% 87%) 71%,
+		hsl(23deg 100% 89%) 80%,
+		hsl(12deg 100% 91%) 90%,
+		hsl(0deg 82% 91%) 100%
+	);
+	font-family: "Pacifico", cursive;
+}
+h1 {
+	position: absolute;
+	color: white;
+	width: 100%;
+	text-align: center;
+	top: 12vh;
+	font-size: 70px;
+	text-decoration: underline;
+	line-height: 5px;
+}
+#button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+#bar {
+	transition: 500ms;
+	background-color: rgb(22, 22, 22);
+	padding: 20px;
+	border-radius: 1rem;
+	width: fit-content;
+}
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+i {
+	color: white;
+	font-size: 50px;
+	margin: 20px;
+}
+#line {
+	width: 70vw;
+	height: 5px;
+	background-color: gray;
+}
+#progress {
+	width: 70%;
+	height: 5px;
+	background-color: red;
+}
+#dot {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: red;
+	position: absolute;
+	margin-top: -5px;
+	left: 63%;
+}
+.right {
+	float: right;
+}
+.hidden {
+	position: absolute;
+	visibility: hidden;
+}
+@keyframes bar {
+	0% {
+		width: 10vw;
+	}
+	100% {
+		width: 70vw;
+	}
+}
+@keyframes barback {
+	0% {
+		width: 70vw;
+	}
+	100% {
+		width: 90px;
+		height: 90px;
+	}
+}
+@keyframes icons {
+	0% {
+		position: absolute;
+		opacity: 0;
+	}
+	100% {
+		position: relative;
+		opacity: 1;
+	}
+}
+@keyframes iconsback {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		position: absolute;
+		opacity: 0;
+	}
+}
+@keyframes line {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes lineback {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+@keyframes dot {
+	0% {
+		left: 30%;
+	}
+	100% {
+		left: 63%;
+	}
+}
+@keyframes dotback {
+	0% {
+		left: 63%;
+	}
+	100% {
+		left: 40%;
+		opacity: 0;
+	}
 }
