@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Visible Aside Menu</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!-- https://codepen.io/facundocorradini/pen/VQZjdx -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <aside class="no-aside">
+        <a class="toggle">
+            <i></i>
+        </a>
+    </aside>
+    <main>
+        <h1> Transitions on grid-template-columns (sort of..)</h1>
+        <p>CSS Grid is supposed to have five animatable properties:
+            <code>grid-gap, grid-row-gap, grid-column-gap, grid-template-columns and grid-template-rows</code></p>
+        <p>But browsers have not implemented it so far.</p>
+        <p>Here's a typical example where we would like to animate the <code>grid-template-columns</code>: adjusting the
+            column track width for the aside menu. Unfortunatelly, that's not possible at the moment.</p>
+        <p> But we can use this hack, which consist on animating the width of the aside instead, while setting the
+            <code>grid-template-columns</code> as <code>min-content 1fr</code> </p>
+        <p><strong>Toggle the menu</strong> to check it </p>
+    </main>
+
+</body>
+
+</html>
