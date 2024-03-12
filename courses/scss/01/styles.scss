@@ -1,0 +1,18 @@
+/* variables */
+$global-font: sans-serif, Helvetica, Arial;
+$global-background-color: #ccc;
+$letter-color: red;
+$secondary-letter-color: rgb(84, 29, 29);
+
+body {
+    background-color: $global-background-color;
+}
+
+h1 {
+    color: $letter-color;
+    font-family: $global-font;
+}
+
+p {
+    color: $secondary-letter-color;
+}
