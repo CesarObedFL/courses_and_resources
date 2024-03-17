@@ -1,11 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    transition: 1s;
+    background-color: white;
+}
+
+#darkBtn {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5em;
+}
+
+#darkBtn:hover {
+    cursor: pointer;
+}
+
+.darkMode {
+    background-color: black;
+}
+
+#container {
+    display: flex;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+h1 {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 3em;
+    transition: 1s;
+}
+
+/* play button style */
+
+.play {
+    background-color: black;
+}
+
+.playBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: black;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: 3em;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.playBtn::after {
+    position: absolute;
+    content: "";
+    left: -100px;
+    height: 100%;
+    width: 70px;
+    background-color: rgb(221, 217, 217);
+    opacity: 0.5;
+    filter: opacity(50%);
+    transform: skewX(25deg);
+    box-shadow: 5px 5px 10px white;
+    transition: 0.3s;
+}
+
+.fa-play {
+    color: white;
+    animation-name: playAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.pauseAnimate {
+    animation-name: rotateAnimation;
+    animation-duration: 0.5s;
+    /* animation-delay: .3s; */
+}
+
+/* Play icon animation */
+
+@keyframes playAnimation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(10px);
+    }
+}
+
+/* Rotate the pause icon */
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.playBtn:hover {
+    cursor: pointer;
+    text-shadow: 3px 3px 10px white;
+}
+
+.playBtn:hover::after {
+    left: 225px;
+}
+
+.playBtn span {
+    position: absolute;
+}
+
+.playBtn span:nth-child(2) {
+    display: none;
 }
