@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Spinning Play Button</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!-- https://codepen.io/ruhd/pen/LYJoxMx -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <button id="darkBtn">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+        <span>Dark Mode</span>
+    </button>
+    <div id="container">
+        <h1>Click The Play Button</h1>
+        <audio>
+            <source src="https://learn.shayhowe.com.s3-website-us-east-1.amazonaws.com/assets/misc/courses/html-css/adding-media/jazz.ogg" type="audio/mpeg" />
+            Audio Not Supported By Your Browser
+        </audio>
+        <button draggable="false" class="playBtn">
+            <span class="play">
+                <i class="fa-solid fa-play" style="color: #1f4551;"></i>
+                Play
+            </span>
+            <span class="pause">
+                <i class="fa-sharp fa-solid fa-pause"></i>
+                Pause
+            </span>
+        </button>
+    </div>
+
+</body>
+
+</html>
