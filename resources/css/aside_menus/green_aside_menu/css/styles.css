@@ -1,11 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: lightgrey;
+    text-decoration: none;
+    font-family: sans-serif;
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+.main-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: lightgrey;
+    text-decoration: none;
+    position: fixed;
+
+    left: -200px;
+
+    -webkit-transition: left 1s ease;
+    -moz-transition: left 1s ease;
+    -ms-transition: left 1s ease;
+    -o-transition: left 1s ease;
+    transition: left 1s ease;
+}
+
+.main-menu-open {
+    left: 0px;
+}
+
+.main-menu:after {
+    font-family: 'FontAwesome';
+    content: '\f039';
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 40px;
+    padding-top: 5px;
+    background: #2ABB9B;
+    cursor: pointer;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.menu-wrapper {
+    width: 200px;
+    height: 2000px;
+    background: #4a4a4a;
+}
+
+.menu-li {
+    text-transform: uppercase;
+    background: #454545;
+}
+
+/* Option swag colors on both even-odd element :p */
+.menu-li:nth-child(even):hover a {
+    background: #4E4E4E;
+    color: #37A2CA;
+}
+
+.menu-li:nth-child(odd):hover a {
+    background: #4E4E4E;
+    color: #2ABB9B;
+}
+
+.menu-li a {
+    display: block;
+    padding: 5% 5%;
+    text-align: center;
 }
