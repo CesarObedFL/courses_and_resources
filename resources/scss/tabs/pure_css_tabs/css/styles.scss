@@ -1,4 +1,4 @@
-@import url('compass/css3.css');
+/* @import url('compass/css3.css'); */
 
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
@@ -8,7 +8,10 @@ $tabs-base-color: #8e44ad;
 * {
     margin: 0;
     padding: 0;
-    @include box-sizing(border-box);
+    /* @include box-sizing(border-box); */
+    -webkit-box-sizing: border-box; /* Safari, Chrome, etc. */
+    -moz-box-sizing: border-box;    /* Firefox */
+    box-sizing: border-box;
 }
 
 body {
@@ -64,7 +67,8 @@ h1 {
         cursor: pointer;
         position: relative;
         top: 4px;
-        @include transition(all 0.2s ease-in-out);
+        /* @include transition(all 0.2s ease-in-out); */
+        transition: all 0.2s ease-in-out;
 
         &:hover {
             background: darken($tabs-base-color, 10);
@@ -109,7 +113,8 @@ p.link {
         padding: 5px 10px;
         margin: 0 5px;
         background-color: darken($tabs-base-color, 15);
-        @include transition(all 0.2s ease-in);
+        /* @include transition(all 0.2s ease-in); */
+        transition: all 0.2s ease-in-out;
 
         &:hover {
             background-color: darken($tabs-base-color, 20);

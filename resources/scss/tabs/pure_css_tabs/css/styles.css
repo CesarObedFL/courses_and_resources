@@ -1,17 +1,109 @@
-/* Error: Undefined mixin.
- *    ,
- * 12 |     @include box-sizing(border-box);
- *    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   styles.scss 12:5  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 12 \2502      @include box-sizing(border-box);\d\a    \2502      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   styles.scss 12:5  root stylesheet";
+/* @import url('compass/css3.css'); */
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0;
+  padding: 0;
+  /* @include box-sizing(border-box); */
+  -webkit-box-sizing: border-box; /* Safari, Chrome, etc. */
+  -moz-box-sizing: border-box; /* Firefox */
+  box-sizing: border-box;
 }
+
+body {
+  padding: 20px;
+  text-align: left;
+  font-family: Lato;
+  color: #fff;
+  background: #9b59b6;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  float: left;
+  margin: 20px 0 100px 10px;
+}
+h1 span {
+  font-size: 13px;
+  display: block;
+  padding-left: 4px;
+}
+
+.tabs {
+  width: 650px;
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 80px 0 0 10px;
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 2px 2px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: #8e44ad;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  /* @include transition(all 0.2s ease-in-out); */
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: #703688;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  background: #612e76;
+}
+.tabs [id^=tab]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: #612e76;
+}
+.tabs [id^=tab]:checked ~ [id^=tab-content] {
+  display: block;
+}
+
+p.link {
+  clear: both;
+  margin: 380px 0 0 15px;
+}
+p.link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #612e76;
+  /* @include transition(all 0.2s ease-in); */
+  transition: all 0.2s ease-in-out;
+}
+p.link a:hover {
+  background-color: #522764;
+}
+
+/*# sourceMappingURL=styles.css.map */
