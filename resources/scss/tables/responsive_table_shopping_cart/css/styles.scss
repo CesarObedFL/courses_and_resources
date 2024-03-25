@@ -1,7 +1,5 @@
-@import "compass/css3";
-
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
-@import "compass/reset";
+
 $fontSans : 'Montserrat', sans-serif;
 $fontSerif : 'Droid Serif', serif;
 
@@ -152,7 +150,7 @@ img {
     .items {
         display: block;
         width: 100%;
-        vertical-align: middle;
+        /* vertical-align: middle; */
         padding: 1.5em;
 
         border-bottom: 1px solid #fafafa;
@@ -376,7 +374,7 @@ a.remove {
 
     .promoCode & {
         font-size: .85em;
-        paddding: .5em 2em;
+        padding: .5em 2em;
     }
 }
 
