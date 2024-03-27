@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+#burger {
+  margin: 50px;
+  z-index: 5;
+  position: relative;
+}
+#burger:hover {
+  cursor: pointer;
+}
+
+.aside {
+  background: #BDBDBD;
+  color: yellow;
+  width: 400px;
+  height: 100vh;
+  position: absolute;
+  padding: 120px 50px;
+  top: 0;
+  left: -400px;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=styles.css.map */
