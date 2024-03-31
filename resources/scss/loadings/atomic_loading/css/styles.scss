@@ -1,11 +1,47 @@
-
+/* Demo */
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    height: 100vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    justify-content: center;
+    background: linear-gradient(#ecf0f1, #fff);
+}
+
+/* Animation */
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Variables */
+$loader-size: 100px;
+
+/* Loading Icon */
+.loading {
+    width: $loader-size;
+    height: $loader-size;
+
+    &__ring {
+        position: absolute;
+        width: $loader-size;
+        height: $loader-size;
+
+        &:first-child {
+            transform: skew(30deg, 20deg);
+        }
+
+        &:last-child {
+            transform: skew(-30deg, -20deg) scale(-1, 1);
+
+            svg {
+                animation-delay: -0.5s;
+            }
+        }
+
+        svg {
+            animation: rotate 1s linear infinite;
+            fill: rgba(0, 0, 0, 0.2);
+        }
+    }
 }
