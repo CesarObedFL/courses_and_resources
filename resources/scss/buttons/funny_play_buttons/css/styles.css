@@ -1,0 +1,519 @@
+body {
+  background: #fff;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+#button-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+#button-row > div {
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+#button-row > div:last-of-type {
+  z-index: 0;
+}
+#button-row > div:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  background: transparent;
+  box-shadow: 0 0 0 1px #ccc, 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+  z-index: 9;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+#button-row:has(button.playing) > div:after {
+  box-shadow: 0 0 0 0px #ccc, 0 20px 40px -95px rgba(0, 0, 0, 0.25);
+  transform: scale(2);
+}
+#button-row:has(#button-container-1 button.playing) #button-container-2 {
+  transform: scale(0);
+}
+#button-row:has(#button-container-1 button:hover) #button-container-2:after {
+  box-shadow: 0 0 0 0px #ccc, 0 20px 40px -95px rgba(0, 0, 0, 0.25);
+}
+#button-row:has(#button-container-2 button.playing) #button-container-1 {
+  transform: scale(0);
+}
+#button-row:has(#button-container-2 button:hover) #button-container-1:after {
+  box-shadow: 0 0 0 0px #ccc, 0 20px 40px -95px rgba(0, 0, 0, 0.25);
+}
+
+#button-container-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
+  position: relative;
+}
+#button-container-1 > div {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  position: relative;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: border-radius 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s, box-shadow 0.35s ease-in-out 0s;
+  box-shadow: inset 0 0 0 0px #000, inset 0 0 0 -2px #fff;
+  overflow: hidden;
+}
+#button-container-1 > div:before, #button-container-1 > div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  transition: opacity 0.3s ease-in-out;
+  background: conic-gradient(hsl(240, 43%, 53%) 0%, hsl(308, 40%, 53%) 11%, hsl(343, 72%, 67%) 21%, hsl(10, 95%, 75%) 31%, hsl(30, 97%, 77%) 41%, hsl(55, 81%, 83%) 51%, hsl(42, 100%, 86%) 61%, hsl(33, 100%, 87%) 71%, hsl(23, 100%, 89%) 80%, hsl(308, 40%, 53%) 90%, hsl(240, 43%, 53%) 100%);
+  mix-blend-mode: darken;
+  border-radius: inherit;
+  pointer-events: none;
+  -webkit-mask: radial-gradient(circle at center, transparent 50%, #000 25%);
+  opacity: 0.75;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#button-container-1 > div:after {
+  opacity: 0;
+  width: 150%;
+  height: 150%;
+  left: -25%;
+  top: -25%;
+  -webkit-mask: radial-gradient(circle at center, transparent 25%, #000 25%);
+}
+#button-container-1 > div > div {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #222 50%, #fff 50%) 50% -50px/100% 200% no-repeat, #fff;
+  transition: clip-path 0.3s cubic-bezier(0.9, 0.885, 0.32, 1), transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-position 0.3s ease-in-out;
+  transition-delay: 0.5s, 0.125s;
+  transform: scale(0.35) translateX(12.5%);
+  clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+#button-container-1 > div > div:before, #button-container-1 > div > div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #000 50%, transparent 50%) 0px 0px/50% 200% no-repeat, linear-gradient(to right, transparent 40%, #000 40%, #000 60%, transparent 60%) 50% 50%/100% 100% no-repeat, #fff;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, background-size 0.3s ease-in-out;
+  z-index: 2;
+}
+#button-container-1 > div > div:before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -25%) scaleY(0) scaleX(0.5);
+  transform-origin: top;
+}
+#button-container-1 > div > div:after {
+  z-index: 3;
+  opacity: 0;
+  background: linear-gradient(to right, hsl(240, 43%, 53%) 16.6666666667%, hsl(308, 40%, 53%) 16.6666666667%, hsl(308, 40%, 53%) 33.3333333333%, hsl(343, 72%, 67%) 33.3333333333%, hsl(343, 72%, 67%) 50%, hsl(10, 95%, 75%) 50%, hsl(10, 95%, 75%) 66.6666666667%, hsl(30, 97%, 77%) 66.6666666667%, hsl(30, 97%, 77%) 83.3333333333%, hsl(55, 81%, 83%) 83.3333333333%, hsl(55, 81%, 83%) 100%) 50% 50%/100% 0px, radial-gradient(circle at bottom, hsl(240, 43%, 53%) 10px, hsl(308, 40%, 53%) 12px, transparent 14px) 0px 100%/30px 20px repeat-x, radial-gradient(circle at bottom, hsl(240, 43%, 53%) 8px, hsl(308, 40%, 53%) 10px, transparent 12px) 10px 100%/30px 20px repeat-x, linear-gradient(to top, hsl(240, 43%, 53%) -50%, hsl(308, 40%, 53%) 11%, hsl(343, 72%, 67%) 21%, hsl(10, 95%, 75%) 31%, hsl(30, 97%, 77%) 41%, hsl(55, 81%, 83%) 51%, hsl(42, 100%, 86%) 61%, hsl(33, 100%, 87%) 71%, hsl(23, 100%, 89%) 80%, hsl(12, 100%, 91%) 90%, hsl(0, 82%, 91%) 100%);
+  background-size: 100% 0px, 30px 20px, 30px 20px, 100% 100%;
+  mix-blend-mode: darken;
+  animation: float 6s linear infinite;
+}
+@keyframes float {
+  from {
+    background-position: 50% 50%, 0px calc(100% + 5px), 15px 100%, 50% 50%;
+  }
+  to {
+    background-position: 50% 50%, -145px calc(100% + 5px), -130px 100%, 50% 50%;
+  }
+}
+#button-container-1 > div > div span {
+  position: absolute;
+  width: calc(16.6666666667% + 2px);
+  height: 125%;
+  background: #fff;
+  bottom: 0;
+  box-shadow: 0 0 0 1px #fff, inset 0 0 0 0px #000;
+  animation: play calc(-2 * var(--timing)) ease-in-out 0 alternate;
+  transform-origin: bottom;
+  --delay: -0.5;
+  --timing: -1.25s;
+  --low: 0px;
+  --mid: 0px;
+  --high: 0px;
+  transition: clip-path 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+#button-container-1 > div > div span:nth-of-type(3n) {
+  --delay: -0.15;
+  --timing: -1s;
+}
+#button-container-1 > div > div span:nth-of-type(4) {
+  --delay: -0.35;
+  --timing: -0.5s;
+}
+@keyframes play {
+  0%, 100% {
+    transform: translateY(var(--high));
+  }
+  25%, 75% {
+    transform: translateY(var(--low));
+  }
+  50% {
+    transform: translateY(var(--mid));
+  }
+}
+#button-container-1 > div > div span:nth-of-type(1) {
+  left: calc(0% - 1px);
+  animation-delay: calc(0.5s * var(--delay) + 0.5s);
+}
+#button-container-1 > div > div span:nth-of-type(2) {
+  left: calc(16.6666666667% - 1px);
+  animation-delay: calc(1s * var(--delay) + 0.5s);
+}
+#button-container-1 > div > div span:nth-of-type(3) {
+  left: calc(33.3333333333% - 1px);
+  animation-delay: calc(1.5s * var(--delay) + 0.5s);
+}
+#button-container-1 > div > div span:nth-of-type(4) {
+  left: calc(50% - 1px);
+  animation-delay: calc(2s * var(--delay) + 0.5s);
+}
+#button-container-1 > div > div span:nth-of-type(5) {
+  left: calc(66.6666666667% - 1px);
+  animation-delay: calc(2.5s * var(--delay) + 0.5s);
+}
+#button-container-1 > div > div span:nth-of-type(6) {
+  left: calc(83.3333333333% - 1px);
+  animation-delay: calc(3s * var(--delay) + 0.5s);
+}
+#button-container-1 button:not(.playing):hover ~ div {
+  box-shadow: inset 0 0 0 5px #000, inset 0 0 0 6.5px #fff, 0 5px 15px -5px rgba(0, 0, 0, 0.75);
+}
+#button-container-1 button:not(.playing):hover ~ div > div:after {
+  opacity: 0.75;
+  transform: scale(2) translateY(-25%);
+}
+#button-container-1 button.playing {
+  animation: noClick 2s linear 1 forwards;
+}
+@keyframes noClick {
+  0%, 75% {
+    pointer-events: none;
+  }
+}
+#button-container-1 button.playing ~ div {
+  border-radius: 0px;
+  transition: border-radius 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, box-shadow 0.35s ease-in-out 0s;
+  box-shadow: inset 0 0 0 2px #000, inset 0 0 0 -2px #fff, 0 5px 15px -5px rgba(0, 0, 0, 0.75);
+}
+#button-container-1 button.playing ~ div:before {
+  opacity: 0;
+}
+#button-container-1 button.playing ~ div > div {
+  transition: clip-path 0.3s ease-in-out, transform 0.3s ease-in-out, background-position 0.6s ease-in-out;
+  background-position: 50% 0px;
+  transform: scale(0.75);
+  transition-delay: 0s, 0s, 0s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+#button-container-1 button.playing ~ div > div:after {
+  opacity: 0.75;
+  transition-delay: 0.5s, 0.5s, 0s;
+}
+#button-container-1 button.playing ~ div > div > span {
+  box-shadow: 0 0 0 -1px #fff, inset 0 0 0 3px #000;
+  --low: 35px;
+  --mid: 20px;
+  --high: 10px;
+  animation-iteration-count: infinite;
+  transition-delay: 0.3s, 0.6s;
+}
+#button-container-1 button.playing:not(:hover) ~ div > div:after {
+  background-size: 100% 100%, 30px 20px, 30px 20px, 100% 100%;
+}
+#button-container-1 button.playing:not(:hover) ~ div > div > span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+#button-container-1 button.playing:hover ~ div {
+  box-shadow: inset 0 0 0 5px #000, inset 0 0 0 7px #fff, 0 5px 15px -5px rgba(0, 0, 0, 0.75);
+}
+#button-container-1 button.playing:hover ~ div:after {
+  opacity: 0.75;
+  transition-delay: 0s;
+}
+#button-container-1 button.playing:hover ~ div > div:before {
+  transform: translate(-50%, -25%) scaleY(0.5) scaleX(0.5);
+  transition-delay: 0s, 0s, 0.125s;
+  background-position: 0px 100%, 50%, 50%;
+}
+#button-container-1 button.playing:hover ~ div > div:after {
+  transform: scale(2) translateY(-25%);
+}
+#button-container-1 button.playing:hover ~ div > div span {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition-delay: 0s, 0.3s;
+}
+
+#button-container-2 {
+  position: relative;
+}
+#button-container-2 * {
+  transform-style: preserve-3d;
+}
+#button-container-2 *:before, #button-container-2 *:after {
+  transform-style: preserve-3d;
+}
+#button-container-2:before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  background: #fff;
+  opacity: 1;
+  z-index: 9;
+  top: 65px;
+  left: calc(50% - 200px);
+  backdrop-filter: blur(2px);
+  transition: 0.3s ease-in-out 0s;
+}
+#button-container-2:has(button.playing):before {
+  opacity: 0.9;
+  transition: 0.6s ease-in-out 1s;
+}
+#button-container-2 > div {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 0 50px;
+  pointer-events: none;
+  filter: drop-shadow(0 0px 0 #000) drop-shadow(0 0px 0 #000) drop-shadow(0px 0 #000) drop-shadow(0px 0 0 #000);
+  transition: 0.15s ease-in-out;
+  transition-delay: 0.3s;
+  perspective: 300px;
+  -webkit-box-reflect: below 20px;
+}
+#button-container-2 > div * {
+  pointer-events: none;
+}
+#button-container-2 > div > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #000;
+  transform-style: preserve-3d;
+  transform-origin: 50% 125% 15px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+#button-container-2 > div > div > span,
+#button-container-2 > div > div > span:last-of-type {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+  transform: scale(0.35) translateX(12.5%);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), clip-path 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 3;
+  transition-delay: 0.3s;
+}
+#button-container-2 > div > div > span:first-of-type:before, #button-container-2 > div > div > span:first-of-type:after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(to right, #000 40%, transparent 40%, transparent 60%, #000 60%);
+  left: 25%;
+  top: 20%;
+  transition: 0.15s ease-in-out;
+  transform: scaleY(0);
+}
+#button-container-2 > div > div > span:first-of-type:before {
+  transform-origin: bottom;
+}
+#button-container-2 > div > div > span:first-of-type:after {
+  z-index: 2;
+  opacity: 0;
+  background: hsl(240, 43%, 53%);
+  mix-blend-mode: lighten;
+  transform: scaleY(1);
+}
+#button-container-2 > div > div > span:last-of-type {
+  z-index: 3;
+  transform: translate(-50%, -50%) scaleX(0);
+  left: 50%;
+  top: 50%;
+  transition-delay: 0s, 0.3s;
+  background: linear-gradient(to right, #fff 40%, transparent 40%, transparent 60%, #fff 60%);
+  clip-path: none;
+}
+#button-container-2 > div > div > span:last-of-type:before, #button-container-2 > div > div > span:last-of-type:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: repeating-linear-gradient(-45deg, #000 1px, transparent 1px, transparent 4px, #000 4px, #000 5px), repeating-linear-gradient(45deg, #000 1px, transparent 1px, transparent 4px, #000 4px, #000 5px), #ccc;
+  box-shadow: inset 0 0 0 2px #000;
+  border-radius: 100%;
+  top: 50%;
+  transform: translate(0, -50%) scale(0);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  left: 5px;
+  transition-delay: 0s;
+}
+#button-container-2 > div > div > span:last-of-type:after {
+  left: auto;
+  right: 5px;
+}
+#button-container-2 > div > div > span:last-of-type > div {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, 0) scaleX(0);
+  z-index: -1;
+  perspective: 300px;
+}
+#button-container-2 > div > div > span:last-of-type > div > div {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0) translateZ(-10px) rotateX(90deg);
+  transform-origin: bottom;
+  width: 30px;
+  height: 15px;
+  background: transparent;
+  border: 5px solid #fff;
+  top: -15px;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0s;
+}
+#button-container-2 > div > div > span:last-of-type > div:before, #button-container-2 > div > div > span:last-of-type > div:after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 100%;
+  background: #fff;
+  left: -36px;
+  transform-origin: right;
+  transition: 0.3s ease-in-out;
+  transition-delay: 0s;
+  --rotate: -90deg;
+}
+#button-container-2 > div > div > span:last-of-type > div:after {
+  left: auto;
+  right: -36px;
+  transform-origin: left;
+  --rotate: 90deg;
+}
+#button-container-2 button:not(.playing):hover ~ div > div {
+  box-shadow: inset 0 0 0 5px #000, inset 0 0 0 6.5px #fff;
+}
+#button-container-2 button.playing {
+  animation: noClick 2s linear 1 forwards;
+}
+#button-container-2 button.playing:hover ~ div > div {
+  animation-play-state: paused;
+}
+#button-container-2 button.playing:hover ~ div > div span:first-of-type:after {
+  opacity: 1;
+}
+#button-container-2 button.playing ~ div {
+  filter: drop-shadow(0 2px 0 #000) drop-shadow(0 -2px 0 #000) drop-shadow(-2px 0 #000) drop-shadow(2px 0 0 #000);
+  transition-delay: 0s;
+}
+#button-container-2 button.playing ~ div > div {
+  animation: bouncing 1.125s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite 1.5s;
+}
+@keyframes bouncing {
+  10%, 70% {
+    transform: rotate(10deg) translateY(-2.5px) rotateY(27.5deg) rotateX(-5deg);
+  }
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px) rotateY(0deg) translateZ(-5px) scaleY(0.9);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0px) rotateY(0deg) translateZ(5px) scaleY(0.9);
+  }
+  80%, 30% {
+    transform: rotate(-10deg) translateY(-2.5px) rotateY(-27.5deg) rotateX(-5deg);
+  }
+}
+#button-container-2 button.playing ~ div > div div {
+  transform: translate(-50%, 0) scaleX(1);
+}
+#button-container-2 button.playing ~ div > div div > div {
+  transform: translate(-50%, 0) translateZ(-10px) rotateX(0deg);
+  border-color: #ccc;
+  transition-delay: 1s;
+}
+#button-container-2 button.playing ~ div > div div:before, #button-container-2 button.playing ~ div > div div:after {
+  opacity: 1;
+  background: #ccc;
+  transform: rotateY(var(--rotate));
+  transition-delay: 0.8s;
+}
+#button-container-2 button.playing ~ div > div > span,
+#button-container-2 button.playing ~ div > div > span:last-of-type {
+  transform: scale(1) translateX(0%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition-delay: 0s;
+}
+#button-container-2 button.playing ~ div > div > span:first-of-type:after {
+  transition: opacity 0.3s ease-in-out 0s;
+}
+#button-container-2 button.playing ~ div > div > span:first-of-type:before {
+  transform: scaleY(1) scale(0.75);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s;
+}
+#button-container-2 button.playing ~ div > div > span:last-of-type {
+  width: 225%;
+  transform: translate(-50%, -50%) scaleX(1);
+  transition-delay: 0.3s, 0s;
+  clip-path: none;
+}
+#button-container-2 button.playing ~ div > div > span:last-of-type:before, #button-container-2 button.playing ~ div > div > span:last-of-type:after {
+  transform: translate(0, -50%) scale(1);
+  transition-delay: 0.5s;
+  animation: pulsing 0.05s ease-in-out infinite alternate 1.5s;
+}
+@keyframes pulsing {
+  to {
+    transform: translate(0, -50%) scale(0.9);
+  }
+}
+
+button {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
