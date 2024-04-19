@@ -1,11 +1,10 @@
+.split-list ul {
+    float: left;
+    margin-left: 1em;
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+.split-list li {
+    padding-right: 2em;
+    line-height: 1.5em;
+    font-size: 12px;
 }
