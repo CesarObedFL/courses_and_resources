@@ -1,11 +1,14 @@
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+
+html,body{
+  margin:0px;
+}
+
+.main-container{
+	height:100%;
+}
+
+.section-one{
+	height:100%;
+	background: linear-gradient(#0a365d, #030f1b);
 }
