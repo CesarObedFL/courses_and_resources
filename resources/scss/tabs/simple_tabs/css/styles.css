@@ -1,0 +1,49 @@
+.tab {
+  font-family: "georgia";
+  text-transform: capitalize;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #111;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.menu li {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #ccc;
+  cursor: default;
+}
+.menu li:hover {
+  background: #d9d9d9;
+}
+.menu li:active {
+  background: #bfbfbf;
+}
+.menu li.active {
+  background: #fff;
+  border: 1px solid #111;
+  border-bottom: 1px solid #fff;
+}
+
+.content {
+  min-height: 200px;
+  border: 1px solid #111;
+  margin-top: -1px;
+}
+.content > div {
+  padding: 10px;
+}
+.content > div:nth-last-of-type(1) {
+  display: none;
+}
+.content > div:nth-last-of-type(2) {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

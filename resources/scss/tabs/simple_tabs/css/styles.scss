@@ -1,11 +1,54 @@
+.tab {
+    font-family: "georgia";
+    text-transform: capitalize;
+    background: #fff;
+    margin-bottom: 10px;
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #111;
+    -webkit-user-select: none;
+    user-select: none;
+
+    li {
+        display: inline-block;
+        padding: 0.5em 1em;
+        background: #ccc;
+        cursor: default;
+
+        &:hover {
+            background: lighten(#ccc, 5%);
+        }
+
+        &:active {
+            background: darken(#ccc, 5%);
+        }
+
+        &.active {
+            background: #fff;
+            border: 1px solid #111;
+            border-bottom: 1px solid #fff;
+        }
+    }
+}
+
+.content {
+    min-height: 200px;
+    border: 1px solid #111;
+    margin-top: -1px;
+
+    >div {
+        padding: 10px;
+
+        &:nth-last-of-type(1) {
+            display: none;
+        }
+
+        &:nth-last-of-type(2) {
+            display: none;
+        }
+    }
 }
