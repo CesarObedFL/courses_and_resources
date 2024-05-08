@@ -63,8 +63,8 @@ $size: 3em;
 
         width: $size*$multi;
         height: $size*$multi;
-        margin-left: -calc(calc($size*$multi)/2);
-        margin-top: -calc(calc($size*$multi)/2);
+        margin-left: - calc(calc($size*$multi)/2);
+        margin-top: - calc(calc($size*$multi)/2);
 
         border-top: 1px solid $glow3;
         border-bottom: 1px solid $glow2;
@@ -84,8 +84,8 @@ $size: 3em;
             $multi: 7;
             width: $size*$multi;
             height: $size*$multi;
-            margin-left: -calc(calc($size*$multi)/2);
-            margin-top: -calc(calc($size*$multi)/2);
+            margin-left: - calc(calc($size*$multi)/2);
+            margin-top: - calc(calc($size*$multi)/2);
         }
 
     }
@@ -104,8 +104,8 @@ $size: 3em;
             $multi: 1.6;
             width: $size*$multi;
             height: $size*$multi;
-            margin-left: -calc(calc($size*$multi)/2);
-            margin-top: -calc(calc($size*$multi)/2);
+            margin-left: - calc(calc($size*$multi)/2);
+            margin-top: - calc(calc($size*$multi)/2);
 
         }
 

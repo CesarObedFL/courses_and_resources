@@ -29,8 +29,8 @@
   top: 50%;
   width: 4.65em;
   height: 4.65em;
-  margin-left: -calc(4.65em/2);
-  margin-top: -calc(4.65em/2);
+  margin-left: -2.325em;
+  margin-top: -2.325em;
   border-top: 1px solid #3bff00;
   border-bottom: 1px solid #ff3f00;
 }
@@ -44,8 +44,8 @@
   opacity: 0;
   width: 21em;
   height: 21em;
-  margin-left: -calc(21em/2);
-  margin-top: -calc(21em/2);
+  margin-left: -10.5em;
+  margin-top: -10.5em;
 }
 .loading.ok {
   border-color: #3bff00;
@@ -57,8 +57,8 @@
   opacity: 0;
   width: 4.8em;
   height: 4.8em;
-  margin-left: -calc(4.8em/2);
-  margin-top: -calc(4.8em/2);
+  margin-left: -2.4em;
+  margin-top: -2.4em;
 }
 
 @keyframes rotate {
