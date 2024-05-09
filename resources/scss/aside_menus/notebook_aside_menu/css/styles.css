@@ -1,0 +1,147 @@
+body {
+  background: url("https://raw.github.com/OmarKhanfer/AskNofal/master/images/bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 30px;
+}
+
+.stacked-papers {
+  border-bottom: 1px solid #e2e2e2;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 5px 0 -4px #fff, 0 5px 0 -3px #e2e2e2, 0 11px 0 -8px #fff, 0 11px 0 -7px #e2e2e2;
+}
+
+.menu {
+  position: relative;
+  width: 210px;
+}
+.menu .menu__header {
+  background: url("https://raw.github.com/OmarKhanfer/AskNofal/master/images/category-header.png") no-repeat;
+  color: #986618;
+  font-family: Rockwell;
+  font-size: 16px;
+  margin-left: -1px;
+  padding: 20px 0px 24px;
+  position: relative;
+  text-align: center;
+  text-shadow: 1px 1px 1px #f8e7cb;
+  width: 212px;
+  z-index: 40;
+}
+
+.menu-items {
+  background: #fff url("https://raw.github.com/OmarKhanfer/AskNofal/master/images/pink-lines.png") repeat-y 10px;
+  border: solid #ddd;
+  border-width: 1px 1px 0px 1px;
+  margin: -6px 0px 0px;
+  padding: 0px;
+  position: relative;
+  width: 208px;
+  z-index: 2;
+}
+.menu-items li {
+  border-bottom: 1px solid #ddd;
+  color: #595f65;
+  font-family: arial;
+  font-size: 12px;
+  line-height: 40px;
+  list-style: none;
+  padding-left: 55px;
+}
+.menu-items li.technology:before {
+  background-position: -30px 0px;
+}
+.menu-items li.sport:before {
+  background-position: -60px 0px;
+}
+.menu-items li.fainance:before {
+  background-position: -90px 0px;
+}
+.menu-items li.education:before {
+  background-position: -120px 0px;
+}
+.menu-items li.furniture:before {
+  background-position: -150px 0px;
+}
+.menu-items li.home:before {
+  background-position: -180px 0px;
+}
+.menu-items li.construction:before {
+  background-position: -210px 0px;
+}
+.menu-items li.auto:before {
+  background-position: -240px 0px;
+}
+.menu-items li.wedding:before {
+  background-position: -270px 0px;
+}
+.menu-items li.travel:before {
+  background-position: -300px 0px;
+}
+.menu-items li.cafe:before {
+  background-position: -330px 0px;
+}
+.menu-items li.medical:before {
+  background-position: -360px 0px;
+}
+.menu-items li.food:before {
+  background-position: -390px 0px;
+}
+.menu-items li:hover {
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#fbc254, #faad43);
+  box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.3), inset 0 0 0 1px rgba(201, 118, 28, 0.4);
+  transition: background 2s;
+}
+.menu-items li:hover.technology:before {
+  background-position: -30px -30px;
+}
+.menu-items li:hover.sport:before {
+  background-position: -60px -30px;
+}
+.menu-items li:hover.fainance:before {
+  background-position: -90px -30px;
+}
+.menu-items li:hover.education:before {
+  background-position: -120px -30px;
+}
+.menu-items li:hover.furniture:before {
+  background-position: -150px -30px;
+}
+.menu-items li:hover.home:before {
+  background-position: -180px -30px;
+}
+.menu-items li:hover.construction:before {
+  background-position: -210px -30px;
+}
+.menu-items li:hover.auto:before {
+  background-position: -240px -30px;
+}
+.menu-items li:hover.wedding:before {
+  background-position: -270px -30px;
+}
+.menu-items li:hover.travel:before {
+  background-position: -300px -30px;
+}
+.menu-items li:hover.cafe:before {
+  background-position: -330px -30px;
+}
+.menu-items li:hover.medical:before {
+  background-position: -360px -30px;
+}
+.menu-items li:hover.food:before {
+  background-position: -390px -30px;
+}
+.menu-items li:before {
+  background: url(https://raw.github.com/OmarKhanfer/AskNofal/master/images/icons.png);
+  content: "";
+  height: 30px;
+  left: 0px;
+  position: absolute;
+  margin: 5px 0px 0px 20px;
+  width: 29px;
+}
+
+/*# sourceMappingURL=styles.css.map */

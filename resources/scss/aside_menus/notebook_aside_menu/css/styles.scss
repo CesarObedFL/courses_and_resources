@@ -1,11 +1,99 @@
+$border-color: #e2e2e2;
+$sheet-color: #fff;
+$experimental-support-for-svg: true;
+$icons: technology sport fainance education furniture home construction auto wedding travel cafe medical food;
+
+$shadow1: 0 5px 0 -4px $sheet-color;
+$shadow2: 0 5px 0 -3px $border-color;
+$shadow3: 0 11px 0 -8px $sheet-color;
+$shadow4: 0 11px 0 -7px $border-color;
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    background: url('https://raw.github.com/OmarKhanfer/AskNofal/master/images/bg.png') no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 30px;
+}
+
+.stacked-papers {
+    border-bottom: 1px solid #e2e2e2;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: $shadow1, $shadow2, $shadow3, $shadow4;
+}
+
+.menu {
+    position: relative;
+    width: 210px;
+
+    .menu__header {
+        background: url('https://raw.github.com/OmarKhanfer/AskNofal/master/images/category-header.png') no-repeat;
+        color: #986618;
+        font-family: Rockwell;
+        font-size: 16px;
+        margin-left: -1px;
+        padding: 20px 0px 24px;
+        position: relative;
+        text-align: center;
+        text-shadow: 1px 1px 1px #f8e7cb;
+        width: 212px;
+        z-index: 40;
+
+    }
+}
+
+.menu-items {
+    background: #fff url('https://raw.github.com/OmarKhanfer/AskNofal/master/images/pink-lines.png') repeat-y 10px;
+    border: solid #ddd;
+    border-width: 1px 1px 0px 1px;
+    margin: -6px 0px 0px;
+    padding: 0px;
+    position: relative;
+    width: 208px;
+    z-index: 2;
+
+    li {
+        border-bottom: 1px solid #ddd;
+        color: #595f65;
+        font-family: arial;
+        font-size: 12px;
+        line-height: 40px;
+        list-style: none;
+        padding-left: 55px;
+
+        @for $i from 1 through length($icons) {
+            $item: nth($icons, $i);
+
+            &.#{$item}:before {
+                background-position: $i*-30px 0px;
+            }
+        }
+
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+            text-shadow: 0 1px rgba(#000, .3);
+            background: linear-gradient(rgba(#fbc254, 1), #faad43);
+            box-shadow: inset 0 2px 0px rgba(#fff, .3), 
+                        inset 0 0 0 1px rgba(#c9761c, .4);
+            transition: background 2s;
+
+            @for $i from 1 through length($icons) {
+                $item: nth($icons, $i);
+
+                &.#{$item}:before {
+                    background-position: $i*-30px -30px;
+                }
+            }
+        }
+
+        &:before {
+            background: url(https://raw.github.com/OmarKhanfer/AskNofal/master/images/icons.png);
+            content: "";
+            height: 30px;
+            left: 0px;
+            position: absolute;
+            margin: 5px 0px 0px 20px;
+            width: 29px;
+        }
+    }
 }
