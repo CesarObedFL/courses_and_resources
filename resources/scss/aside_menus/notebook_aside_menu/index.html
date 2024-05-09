@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Notebook Aside Menu</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/OmarKhanfer/pen/nLxoXy -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <div class="menu stacked-papers">
+        <div class="menu__header">
+            CATEGORIES
+        </div>
+        <ul class="menu-items" data-bind="foreach:menuItems">
+            <li data-bind="css:icon">
+                <span data-bind="text:caption"></span>
+            </li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
