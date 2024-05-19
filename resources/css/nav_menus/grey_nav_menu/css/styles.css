@@ -1,11 +1,47 @@
-
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+.nav-container {
+    padding: 20px;
+    background-color: #a2a2a2;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-container>p {
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+aside {
+    background-color: #a2a2a2;
+    padding: 20px;
+    transform: translate(0px, -200px);
+    transition: all 700ms ease-in-out;
+}
+
+aside .menu li {
+    color: aliceblue;
+    list-style-type: none;
+    padding-top: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+aside .menu li:hover {
+    border-bottom: 1px solid aliceblue;
+}
+
+.is-clicked {
+    transform: translate(0px, -30px);
+}
+
+.nav-clicked {
+    background-color: #333;
 }
