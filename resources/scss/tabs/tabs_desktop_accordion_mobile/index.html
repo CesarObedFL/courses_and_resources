@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tabs Desktop Accordion Mobile</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/gsarig/pen/GWgNdx -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <p class="warning">
+        This is an old and outdated implementation. Check the <a href="https://codepen.io/gsarig/pen/ExKJEoM"
+            target="_blank">updated pen</a> and <a class="more"
+            href="https://www.gsarigiannidis.gr/tabs-on-desktop-accordion-on-mobile/?GWgNdx" target="_blank">read more
+            about the logic</a>
+    </p>
+
+    <h2>Tabs on top</h2>
+    <article class="tabbed-content">
+        <nav class="tabs">
+            <ul>
+                <li><a href="#tab1" class="active">Tab 1</a></li>
+                <li><a href="#tab2">Tab 2</a></li>
+                <li><a href="#tab3">Tab 3</a></li>
+            </ul>
+        </nav>
+        <section id="tab1" class="item active" data-title="Tab 1">
+            <div class="item-content">
+                <p>A simple solution for having tabbed content on a large screen but turn it into accordion on a smaller
+                    one. Just resize your screen below 800 pixels to see the tabbed interface transforming into an
+                    accordion.</p>
+                <p>In order to keep the HTML as clean as possible, without duplicating elements, we use element
+                    attributes as CSS content to display the accordion tabs.</p>
+            </div>
+        </section>
+        <section id="tab2" class="item" data-title="Tab 2">
+            <div class="item-content">
+                Tab 2 content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede.
+            </div>
+        </section>
+        <section id="tab3" class="item" data-title="Tab 3">
+            <div class="item-content">
+                Tab 3 content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede.
+            </div>
+        </section>
+    </article>
+
+    <h2>Tabs on the side</h2>
+    <article class="tabbed-content tabs-side">
+        <nav class="tabs">
+            <ul>
+                <li><a href="#side_tab1" class="active">Tab 1</a></li>
+                <li><a href="#side_tab2">Tab 2</a></li>
+                <li><a href="#side_tab3">Tab 3</a></li>
+            </ul>
+        </nav>
+        <section id="side_tab1" class="item active" data-title="Tab 1">
+            <div class="item-content">
+                <p>This example brings the tabs at the left side by simply adding an extra class "tabs-side" at the
+                    ".tabbed-content" container. Just resize your screen below 800 pixels to see the tabbed interface
+                    transforming into an accordion.</p>
+                <p>The change applies only on large screens. On smaller screens (in this example: below 800 pixels) it
+                    falls back to the same accordion we have on the previous example.</p>
+            </div>
+        </section>
+        <section id="side_tab2" class="item" data-title="Tab 2">
+            <div class="item-content">
+                Tab 2 content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede.
+            </div>
+        </section>
+        <section id="side_tab3" class="item" data-title="Tab 3">
+            <div class="item-content">
+                Tab 3 content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat
+                mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit,
+                posuere a, pede.
+            </div>
+        </section>
+    </article>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
