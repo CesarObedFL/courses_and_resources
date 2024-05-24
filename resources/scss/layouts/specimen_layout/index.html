@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Specimen Layout</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/phowie74/pen/MWwypMG -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+
+    <!--
+        MAKE PEN WITH ONLY VARIABLES IN CSS (SCSS)
+        Set Font(s)
+        Spacing
+        Colours
+        Links to Normalize, Base, Grid, Form, Tables, Menus
+    -->
+
+    <div class="ccm-page">
+        <h1 class="specimen">Specimen Sheet (purecss.io)</h1>
+
+
+        <nav class="specimen">
+            <ul>
+                <li class="is-active">
+                    <a class="tab__link" data-tab="colors" href="#colors">Colours</a>
+                </li>
+                <li class="">
+                    <a class="tab__link" data-tab="type" href="#type">Typography</a>
+                </li>
+                <li>
+                    <a class="tab__link" data-tab="grids" href="#grids">Grids</a>
+                </li>
+                <li>
+                    <a class="tab__link" data-tab="forms" href="#forms">Forms</a>
+                </li>
+                <li>
+                    <a class="tab__link" data-tab="tables" href="#tables">Tables</a>
+                </li>
+                <li>
+                    <a class="tab__link" data-tab="menus" href="#menus">Menus</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="content">
+            <div class="content__item is-active" data-content="colors">
+                <h2 class="specimen">Colours</h2>
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Brand Colours</h3>
+                        <div class="grid">
+                            <div class="col1-3 brand-primary"></div>
+                            <div class="col2-3">
+                                <p>Brand Primary</p>
+                            </div>
+                            <div class="col1-3 brand-secondary"></div>
+                            <div class="col2-3">
+                                <p>Brand Secondary</p>
+                            </div>
+                            <div class="col1-3 brand-highlight"></div>
+                            <div class="col2-3">
+                                <p>Brand Highlight</p>
+                            </div>
+                        </div>
+                        <h3 class="specimen">Grayscale</h3>
+                        <div class="grid">
+                            <div class="col1-3 col-black"></div>
+                            <div class="col2-3">
+                                <p>Black(ish)</p>
+                            </div>
+                            <div class="col1-3 col-gray"></div>
+                            <div class="col2-3">
+                                <p>Gray</p>
+                            </div>
+                            <div class="col1-3 col-silver"></div>
+                            <div class="col2-3">
+                                <p>Silver</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Generic Colours <small>clrs.cc</small></h3>
+                        <div class="grid">
+                            <div class="col1-3 col-navy"></div>
+                            <div class="col2-3">
+                                <p>Navy</p>
+                            </div>
+                            <div class="col1-3 col-blue"></div>
+                            <div class="col2-3">
+                                <p>Blue</p>
+                            </div>
+                            <div class="col1-3 col-aqua"></div>
+                            <div class="col2-3">
+                                <p>Aqua</p>
+                            </div>
+                            <div class="col1-3 col-teal"></div>
+                            <div class="col2-3">
+                                <p>Teal</p>
+                            </div>
+                            <div class="col1-3 col-olive {"></div>
+                            <div class="col2-3">
+                                <p>Olive</p>
+                            </div>
+                            <div class="col1-3 col-green"></div>
+                            <div class="col2-3">
+                                <p>Green</p>
+                            </div>
+                            <div class="col1-3 col-lime"></div>
+                            <div class="col2-3">
+                                <p>Lime</p>
+                            </div>
+                            <div class="col1-3 col-yellow"></div>
+                            <div class="col2-3">
+                                <p>Yellow</p>
+                            </div>
+                            <div class="col1-3 col-orange"></div>
+                            <div class="col2-3">
+                                <p>Orange</p>
+                            </div>
+                            <div class="col1-3 col-red"></div>
+                            <div class="col2-3">
+                                <p>Red</p>
+                            </div>
+                            <div class="col1-3 col-maroon"></div>
+                            <div class="col2-3">
+                                <p>Maroon</p>
+                            </div>
+                            <div class="col1-3 col-fuschia"></div>
+                            <div class="col2-3">
+                                <p>Fuschia</p>
+                            </div>
+                            <div class="col1-3 col-purple"></div>
+                            <div class="col2-3">
+                                <p>Purple</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content__item" data-content="type">
+                <h2 class="specimen">Typography</h2>
+
+
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h1>H1 Heading</h1>
+                        <p class="text-lead">Lead Text - Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Quaerat ullam quibusdam rerum adipisci laborum pariatur. Laudantium veritatis praesentium
+                            cum repellendus sunt fuga eligendi. Alias accusamus laborum qui optio veritatis iste?</p>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h2>H2 Heading</h2>
+                        <p>Standard Text - Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab mollitia iusto
+                            numquam consectetur, molestias porro et sint at incidunt fuga quod quam sit dignissimos quas
+                            esse qui ipsum dicta itaque.</p>
+                        <p><small>Small Text - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+                                ratione tempore nemo sit quaerat obcaecati. In sequi eligendi veritatis consectetur
+                                cupiditate perspiciatis reiciendis ad molestiae similique soluta, dignissimos aspernatur
+                                rem.</small></p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3>H3 Heading</h3>
+                        <p><strong>Strong Text</strong></p>
+                        <ul>
+                            <li>Unordered List</li>
+                            <li>Unordered List</li>
+                            <li>Unordered List
+                                <ul>
+                                    <li>Nested Unordered List</li>
+                                    <li>Nested Unordered List</li>
+                                </ul>
+                            </li>
+                            <li>Unorederd List</li>
+                        </ul>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h4>H4 Heading</h4>
+                        <p><em>Emphasis Text - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quisquam
+                                libero voluptas quo dolorem neque, recusandae iure ut sapiente, blanditiis laudantium
+                                commodi voluptatem atque aspernatur et animi impedit distinctio nam.</em></p>
+                        <ol>
+                            <li>Ordered List</li>
+                            <li>Ordered List</li>
+                            <li>Ordered List
+                                <ol>
+                                    <li>Nested Ordered List</li>
+                                    <li>Nested Ordered List</li>
+                                </ol>
+                            </li>
+                            <li>Ordered List</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h5>H5 Heading</h5>
+                        <blockquote>
+                            <p>Blockquote - Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis est commodi
+                                ab rerum quos fugit numquam, aperiam, voluptas adipisci non delectus! Ad atque nostrum,
+                                suscipit sapiente neque quas ipsam eius!</p>
+                        </blockquote>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h6>H6 Heading</h6>
+                        <dl>
+                            <dt>Description lists</dt>
+                            <dd>A description list is perfect for defining terms.</dd>
+                            <dt>Euismod</dt>
+                            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem.</dd>
+                            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                            <dt>Malesuada porta</dt>
+                            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                        </dl>
+                    </div>
+                </div>
+
+
+
+
+            </div><!-- Typography -->
+            <div class="content__item" data-content="grids">
+                <h2 class="specimen">Grids</h2>
+
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Single Column</h3>
+                        <h4 class="specimen">All Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-1">One Column</div>
+                        </div>
+                        <h4 class="specimen">Responsive Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-2 col1-1-sml">One Column from Small up</div>
+                            <div class="col1-2 col1-1-sml">One Column from Small up</div>
+                        </div>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Two Column</h3>
+                        <h4 class="specimen">All Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-2">Two Column</div>
+                            <div class="col1-2">Two Column</div>
+                        </div>
+                        <h4 class="specimen">Responsive Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-2-sml">Two Column from Small up</div>
+                            <div class="col1-2-sml">Two Column from Small up</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="grid">
+                    <div class="col1-2-sml">
+
+                        <h3 class="specimen">Three Column</h3>
+                        <h4 class="specimen">All Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-3">Three Column</div>
+                            <div class="col1-3">Three Column</div>
+                            <div class="col1-3">Three Column</div>
+                        </div>
+                        <h4 class="specimen">Responsive Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-3-sml">Three Column from Small up</div>
+                            <div class="col1-3-sml">Three Column from Small up</div>
+                            <div class="col1-3-sml">Three Column from Small up</div>
+                        </div>
+                        <h4 class="specimen">Uneven Split</h4>
+                        <div class="grid demo">
+                            <div class="col2-3-sml">2/Three Column from Small up</div>
+                            <div class="col1-3-sml">Three Column from Small up</div>
+                        </div>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Four Column</h3>
+                        <h4 class="specimen">All Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-4">Four Column</div>
+                            <div class="col1-4">Four Column</div>
+                            <div class="col1-4">Four Column</div>
+                            <div class="col1-4">Four Column</div>
+                        </div>
+                        <h4 class="specimen">Responsive Breakpoints</h4>
+                        <div class="grid demo">
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                        </div>
+                        <h4 class="specimen">Uneven Split</h4>
+                        <div class="grid demo">
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                            <div class="col1-2-sml">2/Four Column from Small up</div>
+                            <div class="col1-4-sml">Four Column from Small up</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <hr>
+                <h3 class="specimen">Five Column</h3>
+                <h4 class="specimen">All Breakpoints</h4>
+                <div class="grid demo">
+                    <div class="col1-5">Five Column</div>
+                    <div class="col1-5">Five Column</div>
+                    <div class="col1-5">Five Column</div>
+                    <div class="col1-5">Five Column</div>
+                    <div class="col1-5">Five Column</div>
+                </div>
+                <h4 class="specimen">Responsive Breakpoints</h4>
+                <div class="grid demo">
+                    <div class="col1-5-sml">Five Column from Small up</div>
+                    <div class="col1-5-sml">Five Column from Small up</div>
+                    <div class="col1-5-sml">Five Column from Small up</div>
+                    <div class="col1-5-sml">Five Column from Small up</div>
+                    <div class="col1-5-sml">Five Column from Small up</div>
+                </div>
+                <h4 class="specimen">Uneven Split</h4>
+                <div class="grid demo">
+                    <div class="col2-5-sml">2/Five Column from Small up</div>
+                    <div class="col3-5-sml">3/Five Column from Small up</div>
+                </div>
+            </div><!-- Grids -->
+            <div class="content__item" data-content="forms">
+                <h2 class="specimen">Forms & Buttons</h2>
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Standard Form</h3>
+                        <form class="">
+                            <fieldset>
+                                <legend>A Stacked Form</legend>
+
+                                <label for="email">Email</label>
+                                <input id="email" type="email" placeholder="Email">
+                                <span class="form-message">This is a form-message.</span>
+
+                                <label for="password">Password</label>
+                                <input id="password" type="password" placeholder="Password">
+
+                                <label for="state">State</label>
+                                <select id="state">
+                                    <option>AL</option>
+                                    <option>CA</option>
+                                    <option>IL</option>
+                                </select>
+
+                                <label for="remember" class="checkbox">
+                                    <input id="remember" type="checkbox"> Remember me
+                                </label>
+
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Form State</h3>
+
+
+                        <form class="">
+                            <fieldset>
+                                <legend>Form Field States</legend>
+                                <label for="required" class="">Required</label>
+                                <input type="text" id="required" placeholder="Required input" required>
+
+                                <label for="disabled" class="">Disabled</label>
+                                <input type="text" id="disabled" placeholder="Disabled input" disabled>
+
+                                <label for="readonly" class="">Read only</label>
+                                <input type="text" id="readonly" placeholder="Read only" readonly>
+                            </fieldset>
+                        </form>
+
+
+
+                    </div>
+                </div>
+                <hr>
+
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Aligned Form</h3>
+                        <form class="form-aligned">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="name">Username</label>
+                                    <input id="name" type="text" placeholder="Username">
+                                    <span class="form-message-inline">Required</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input id="email" type="email" placeholder="Email Address">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="foo">Supercalifragilistic Label</label>
+                                    <input id="foo" type="text" placeholder="Enter something here...">
+                                </div>
+
+                                <div class="pure-controls">
+                                    <label for="cb" class="pure-checkbox">
+                                        <input id="cb" type="checkbox"> I've read the terms and conditions
+                                    </label>
+
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Search Form Group</h3>
+                        <form class="search-form">
+                            <input id="search" type="text" placeholder="Search...">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+
+                    </div>
+
+                </div>
+                <hr>
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h4 class="specimen">Default Buttons</h4>
+
+                        <p><a class="btn" href="#">A btn Link</a></p>
+                        <p><button class="btn">A btn Button</button></p>
+                        <p><a class="btn active" href="#">A btn Active Link</a></p>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h4 class="specimen">Alternate Buttons</h4>
+                        <p><a class="btn disabled" href="#">A btn Disabled Link</a></p>
+                        <p><a class="btn btn-primary" href="#">A btn Primary Link</a></p>
+                    </div>
+                </div>
+
+
+
+            </div><!-- Forms -->
+            <div class="content__item" data-content="tables">
+                <h2 class="specimen">Tables</h2>
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Default Table</h3>
+                        <table class="">
+                            <caption>Cars Caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Honda</td>
+                                    <td>Accord</td>
+                                    <td>2009</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Toyota</td>
+                                    <td>Camry</td>
+                                    <td>2012</td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Hyundai</td>
+                                    <td>Elantra</td>
+                                    <td>2010</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Responsive Table</h3>
+                        <div class="table-responsive">
+                            <table class="">
+                                <caption>Cars Caption</caption>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Year</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Honda</td>
+                                        <td>Really Long Name for a car model</td>
+                                        <td>2009</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Toyota</td>
+                                        <td>Camry</td>
+                                        <td>2012</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Hyundai</td>
+                                        <td>Elantra</td>
+                                        <td>2010</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Tables -->
+            <div class="content__item" data-content="menus">
+                <h2 class="specimen">Menus</h2>
+                <div class="grid">
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">Vertical Menu</h3>
+                        <div class="list-group">
+                            <h3>List Group</h3>
+                            <ul>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Messenger</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+                                <li class="menu-heading">More Sites</li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
+                                <li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col1-2-sml">
+                        <h3 class="specimen">?</h3>
+                    </div>
+                    <div class="col1-1">
+                        <h3 class="specimen">Navbar</h3>
+
+                        <div class="navBar">
+                            <a href="#" class="menu-heading">BRAND</a>
+                            <ul class="">
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Sports</a></li>
+                                <li><a href="#">Finance</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- Menus -->
+        </section>
+        <p>&nbsp;</p>
+        <hr>
+
+    </div><!-- ccm-page -->
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/romulomachado/simpletabs/master/dist/simpletabs.js"></script>
+
+</body>
+
+</html>
