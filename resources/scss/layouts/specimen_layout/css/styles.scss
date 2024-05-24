@@ -1,11 +1,884 @@
+$brand-primary: #1aa5b4 !default;
+$brand-secondary: #ff736e !default;
+$brand-highlight: #efc50a !default;
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+// grayscale
+$col-black: #222222 !default;
+$col-gray: #aaa !default;
+$col-silver: #ddd !default;
+
+// clrs.cc palette
+$col-navy: #001f3f !default;
+$col-blue: #0074d9 !default;
+$col-aqua: #7FDBFF !default;
+$col-teal: #39CCCC !default;
+$col-olive: #3d9970 !default;
+$col-green: #2ECC40 !default;
+$col-lime: #01ff70 !default;
+$col-yellow: #FFDC00 !default;
+$col-orange: #FF851B !default;
+$col-red: #ff4136 !default;
+$col-maroon: #85144b !default;
+$col-fuschia: #f012be !default;
+$col-purple: #B10DC9 !default;
+
+
+
+$theme-font: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif !default;
+//$specimen-font: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif !default;
+$specimen-font: 'Trebuchet MS', sans-serif !default;
+
+
+
+$break-mob: 450px !default;
+$break-sml: 750px !default;
+$break-lge: 900px !default;
+$break-xlg: 1100px !default;
+
+* {
     box-sizing: border-box;
+}
+
+.ccm-page {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+
+    font-family: $theme-font;
+}
+
+.specimen {
+    color: #999;
+    font-family: $specimen-font;
+    text-align: center;
+}
+
+nav.specimen {
+    display: block;
+    box-shadow: inset 0 -1px 0 #cccccc;
+}
+
+.specimen ul {
+    display: block;
+    margin: 0 auto;
+}
+
+.specimen li {
+    display: inline-block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fafafa;
+    border: 1px solid #cccccc;
+}
+
+.specimen li.is-active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.specimen li a {
+    display: block;
+    padding: 0 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+.content__item {
+    border: 1px solid #CCC;
+    border-top: none;
+    padding: 1rem;
+}
+
+.grid.demo [class^="col"] {
+    background: #f2f2f2;
+    background-clip: content-box;
+    padding: 1rem;
+}
+
+.brand-primary {
+    background: $brand-primary;
+}
+
+.brand-secondary {
+    background: $brand-secondary;
+}
+
+.brand-highlight {
+    background: $brand-highlight;
+}
+
+.col-black {
+    background: $col-black;
+}
+
+.col-gray {
+    background: $col-gray;
+}
+
+.col-silver {
+    background: $col-silver;
+}
+
+.col-navy {
+    background: $col-navy;
+}
+
+.col-blue {
+    background: $col-blue;
+}
+
+.col-aqua {
+    background: $col-aqua;
+}
+
+.col-teal {
+    background: $col-teal;
+}
+
+.col-olive {
+    background: $col-olive;
+}
+
+.col-green {
+    background: $col-green;
+}
+
+.col-lime {
+    background: $col-lime;
+}
+
+.col-yellow {
+    background: $col-yellow;
+}
+
+.col-orange {
+    background: $col-orange;
+}
+
+.col-red {
+    background: $col-red;
+}
+
+.col-maroon {
+    background: $col-maroon;
+}
+
+.col-fuschia {
+    background: $col-fuschia;
+}
+
+.col-purple {
+    background: $col-purple;
+}
+
+/* ==========================================================================
+   Base styles (AFTER NORMALIZE)
+   ========================================================================== */
+
+/**
+ * Add Responsive Hidden e.g. .hidden-sm
+ */
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+//.pure-img // remove class for responsive image
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+
+.grid {
+    font-size: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+[class^="col"] {
+    font-size: 1rem;
+    display: inline-block;
+    *display: inline;
+    /* IE < 8: fake inline-block */
+    zoom: 1;
+    padding: 0 1rem;
+    vertical-align: top;
+}
+
+.col1-1 {
+    width: 100%;
+}
+
+.col2-3 {
+    width: 66.6666%;
+}
+
+.col3-5 {
+    width: 60%;
+}
+
+.col1-2 {
+    width: 50%;
+}
+
+.col2-5 {
+    width: 40%;
+}
+
+.col1-3 {
+    width: 33.3333%;
+}
+
+.col1-4 {
+    width: 25%;
+}
+
+.col1-5 {
+    width: 20%;
+}
+
+@media (min-width: $break-mob) {
+    .col1-1-mob {
+        width: 100%;
+    }
+
+    .col2-3-mob {
+        width: 66.6666%;
+    }
+
+    .col3-5-mob {
+        width: 60%;
+    }
+
+    .col1-2-mob {
+        width: 50%;
+    }
+
+    .col2-5-mob {
+        width: 40%;
+    }
+
+    .col1-3-mob {
+        width: 33.3333%;
+    }
+
+    .col1-4-mob {
+        width: 25%;
+    }
+
+    .col1-5-mob {
+        width: 20%;
+    }
+}
+
+@media (min-width: $break-sml) {
+    .col1-1-sml {
+        width: 100%;
+    }
+
+    .col2-3-sml {
+        width: 66.6666%;
+    }
+
+    .col3-5-sml {
+        width: 60%;
+    }
+
+    .col1-2-sml {
+        width: 50%;
+    }
+
+    .col2-5-sml {
+        width: 40%;
+    }
+
+    .col1-3-sml {
+        width: 33.3333%;
+    }
+
+    .col1-4-sml {
+        width: 25%;
+    }
+
+    .col1-5-sml {
+        width: 20%;
+    }
+}
+
+@media (min-width: $break-lge) {
+    .col1-1-lge {
+        width: 100%;
+    }
+
+    .col2-3-lge {
+        width: 66.6666%;
+    }
+
+    .col3-5-lge {
+        width: 60%;
+    }
+
+    .col1-2-lge {
+        width: 50%;
+    }
+
+    .col2-5-lge {
+        width: 40%;
+    }
+
+    .col1-3-lge {
+        width: 33.3333%;
+    }
+
+    .col1-4-lge {
+        width: 25%;
+    }
+
+    .col1-5-lge {
+        width: 20%;
+    }
+}
+
+@media (min-width: $break-xlg) {
+    .col1-1-xlg {
+        width: 100%;
+    }
+
+    .col2-3-xlg {
+        width: 66.6666%;
+    }
+
+    .col3-5-xlg {
+        width: 60%;
+    }
+
+    .col1-2-xlg {
+        width: 50%;
+    }
+
+    .col2-5-xlg {
+        width: 40%;
+    }
+
+    .col1-3-xlg {
+        width: 33.3333%;
+    }
+
+    .col1-4-xlg {
+        width: 25%;
+    }
+
+    .col1-5-xlg {
+        width: 20%;
+    }
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 3px #ddd;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+input:not([type]) {
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 3px #ddd;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+input[type=color] {
+    padding: .2em .5em
+}
+
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus {
+    outline: 0;
+    border-color: #129fea
+}
+
+input:not([type]):focus {
+    outline: 0;
+    border-color: #129fea
+}
+
+input[type=checkbox]:focus,
+input[type=file]:focus,
+input[type=radio]:focus {
+    outline: thin solid #129fea;
+    outline: 1px auto #129fea
+}
+
+label.checkbox,
+label.radio {
+    margin: .5em 0;
+    display: block
+}
+
+input[type=color][disabled],
+input[type=date][disabled],
+input[type=datetime-local][disabled],
+input[type=datetime][disabled],
+input[type=email][disabled],
+input[type=month][disabled],
+input[type=number][disabled],
+input[type=password][disabled],
+input[type=search][disabled],
+input[type=tel][disabled],
+input[type=text][disabled],
+input[type=time][disabled],
+input[type=url][disabled],
+input[type=week][disabled],
+select[disabled],
+textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3
+}
+
+input:not([type])[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    background-color: #eee;
+    color: #777;
+    border-color: #ccc
+}
+
+input:focus:invalid,
+select:focus:invalid,
+textarea:focus:invalid {
+    color: #b94a48;
+    border-color: #e9322d
+}
+
+input[type=checkbox]:focus:invalid:focus,
+input[type=file]:focus:invalid:focus,
+input[type=radio]:focus:invalid:focus {
+    outline-color: #e9322d
+}
+
+select {
+    height: 2.25em;
+    border: 1px solid #ccc;
+    background-color: #fff
+}
+
+select[multiple] {
+    height: auto
+}
+
+label {
+    margin: .5em 0 .2em
+}
+
+fieldset {
+    margin: 0;
+    padding: .35em 0 .75em;
+    border: 0
+}
+
+legend {
+    display: block;
+    width: 100%;
+    padding: .3em 0;
+    margin-bottom: .3em;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5
+}
+
+// pure form stacked
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=file],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+label,
+select,
+textarea {
+    display: block;
+    margin: .25em 0;
+    width: 100%;
+}
+
+input:not([type]) {
+    display: block;
+    margin: .25em 0
+}
+
+.form-aligned input,
+.form-aligned select,
+.form-aligned textarea,
+.form-message-inline {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+.form-aligned textarea {
+    vertical-align: top
+}
+
+.form-aligned .form-group {
+    margin-bottom: .5em
+}
+
+.form-aligned .form-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0
+}
+
+.form-aligned .pure-controls {
+    margin: 1.5em 0 0 11em
+}
+
+
+
+.form-message-inline {
+    display: inline-block;
+    padding-left: .3em;
+    color: #666;
+    vertical-align: middle;
+    font-size: .875em
+}
+
+.form-message {
+    display: block;
+    color: #666;
+    font-size: .875em
+}
+
+.search-form {
+    font-size: 0;
+}
+
+.search-form input {
+    display: inline-block;
+    font-size: 1rem;
+    width: auto;
+    border-color: #0078e7;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-form .btn {
+    font-size: 1rem;
+    border: 1px solid #0078e7;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn,
+button.btn {
+    display: inline-block;
+    zoom: 1;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    user-select: none;
+    box-sizing: border-box
+}
+
+.btn::-moz-focus-inner,
+button.btn::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+
+.btn,
+button.btn {
+    font-family: inherit;
+    font-size: 100%;
+    padding: .5em 1em;
+    color: #444;
+    color: rgba(0, 0, 0, .8);
+    border: 1px solid #999;
+    border: none transparent;
+    background-color: #e6e6e6;
+    text-decoration: none;
+    border-radius: 2px
+}
+
+.btn:hover,
+button.btn:hover,
+.btn:focus,
+button.btn:focus {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1))
+}
+
+.btn:focus,
+button.btn:focus {
+    outline: 0
+}
+
+.btn.active,
+button.btn.active,
+.btn:active,
+button.btn:active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
+    border-color: #000
+}
+
+
+.btn.disabled,
+button.btn.disabled,
+.btn.disabled:active,
+button.btn.disabled:active,
+.btn.disabled:focus,
+button.btn.disabled:focus,
+.btn.disabled:hover,
+button.btn.disabled:hover,
+.btn[disabled],
+button.btn[disabled] {
+    border: none;
+    background-image: none;
+    opacity: .4;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    pointer-events: none
+}
+
+.btn.hidden,
+button.btn.hidden {
+    display: none
+}
+
+.btn.btn-primary,
+button.btn.primary {
+    background-color: #0078e7;
+    color: #fff
+}
+
+
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+// .pure-table // remove class to make default styling
+table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+    //width: 100%;
+}
+
+table caption {
+    color: #000;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+}
+
+td,
+th {
+    border-left: 1px solid #cbcbcb;
+    /*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    /*to make ths where the title is really long work*/
+    padding: 0.5em 1em;
+    /* cell padding */
+}
+
+table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+/* STRIPED - comment if not needed */
+table tr:nth-child(2n-1) td {
+    background-color: #f2f2f2;
+}
+
+/* BORDERED TABLES - comment if not needed */
+table td {
+    border-bottom: 1px solid #cbcbcb;
+}
+
+table tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}
+
+/* HORIZONTAL LINES ONLY - add class horizontal */
+table.horizontal td,
+table.horizontal th {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+table.horizontal tbody>tr:last-child>td {
+    border-bottom-width: 0;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+    width: auto;
+}
+
+/* ==========================================================================
+   Menus
+   ========================================================================== */
+
+ul.list-group,
+.list-group>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.list-group li {
+    padding: 0;
+    margin: 0;
+    height: 100%
+}
+
+.list-group h3,
+.list-group li.list-heading,
+.list-group li a {
+    display: block; // inline-block; //to limit width
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+
+
+.list-group h3,
+.list-group li.list-heading,
+.list-group li a {
+    text-transform: uppercase;
+    color: #565d64;
+}
+
+
+
+
+.list-group li a {
+    color: #777
+}
+
+.list-group .menu-disabled,
+.list-group>h3,
+.list-group .menu-heading,
+.list-group a {
+    padding: .5em 1em
+}
+
+.list-group .menu-active>a,
+.list-group a:focus,
+.list-group a:hover {
+    background-color: #eee
+}
+
+.nav-selected>a,
+.nav-selected>a:visited {
+    color: #000
+}
+
+
+
+.navBar {
+    width: 100%;
+    white-space: nowrap
+}
+
+.navBar li {
+    display: inline-block
+}
+
+.navBar .menu-heading,
+.navBar li,
+.navBar .menu-separator {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle
 }
