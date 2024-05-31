@@ -1,0 +1,74 @@
+:root {
+  --bg-color: #ddd;
+  --p-color: #333;
+  --a-color: Teal;
+  --a-hover-color: LightSeaGreen;
+  --citation-bg-color: #1E0519;
+  --citation-p-color: Salmon;
+  --citation-a-color: MediumVioletRed;
+  --citation-a-hover-color: DeepPink;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*:focus,
+*::before:focus,
+*::after:focus {
+  outline: none;
+}
+
+* {
+  font-family: monaco, courier;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.container {
+  width: 90%;
+  overflow: hidden;
+  border-top: 1px solid black;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 -1px 0 0;
+  padding: 0;
+  list-style: none;
+  background-color: yellow;
+}
+
+li {
+  flex-grow: 1;
+  padding: 10px 40px;
+  text-align: center;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+li:hover {
+  background: #eee;
+}
+
+/*# sourceMappingURL=styles.css.map */
