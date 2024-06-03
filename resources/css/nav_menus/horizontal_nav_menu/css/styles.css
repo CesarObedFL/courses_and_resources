@@ -1,11 +1,150 @@
+/* --------- */
+/*   MENU    */
+/* --------- */
+nav#menu {
+    text-align: center;
+    margin: 10px 0;
+    padding: 0;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px #9c9c9c;
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
+/* --------- */
+nav#menu ul,
+nav#menu ul li {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav#menu>ul a {
+    display: block;
+    padding: 10px 10px;
+    color: #999;
+    font: normal 1em Arial, Helvetica;
+    text-decoration: none;
+}
+
+/* --------- */
+/*  Level 1  */
+nav#menu>ul {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+nav#menu>ul>li>a {
+    padding: 15px 20px;
+}
+
+/* HOVER */
+nav#menu>ul li:hover>a {
+    color: #fafafa;
+}
+
+nav#menu>ul li:hover>ul {
+    display: block;
+}
+
+/* --------- */
+/* Level 2 + */
+nav#menu>ul ul {
+    position: absolute;
+    display: none;
+    /* HIDE */
+    min-width: 100%;
+    max-width: 200%;
+    top: 100%;
+    left: 0;
+    padding: 2px 0 0;
+    z-index: 99999;
+}
+
+nav#menu>ul ul li {
+    background: #333;
+    box-shadow: 0 1px 0 #111111 inset, 0 2px 0 #777777 inset;
+}
+
+nav#menu>ul ul li:first-child,
+nav#menu>ul ul li:first-child>a {
+    border-radius: 5px 5px 0 0;
+    box-shadow: none;
+}
+
+nav#menu>ul ul li:last-child,
+nav#menu>ul ul li:last-child>a {
+    border-radius: 0 0 5px 5px;
+}
+
+/* :hover */
+nav#menu>ul ul a:hover {
+    background: #0186ba;
+    /* blue */
+}
+
+/* --------- */
+/*  Level 3  */
+nav#menu>ul ul ul {
+    top: 0;
+    left: 100%;
+    padding: 0 2px 0;
+}
+
+nav#menu>ul ul ul li {
+    background: #444;
+}
+
+/* --------- */
+/*  ARROWS   */
+nav#menu>ul ul li:first-child>a:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #333;
+}
+
+nav#menu>ul ul ul li:first-child a:after {
+    left: -8px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-left: 0;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-right: 8px solid #444;
+}
+
+nav#menu>ul ul li:first-child a:hover:after {
+    border-bottom-color: #0186ba;
+}
+
+nav#menu>ul ul ul li:first-child a:hover:after {
+    border-right-color: #0186ba;
+    border-bottom-color: transparent;
+}
+
+/* ------- */
+/* SPECIAL */
+/* Temporisation à la fermeture*/
+nav#menu li>ul {
+    display: block !important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav#menu li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+nav#menu li:not(:hover)>ul {
+    transition: visibility 0.5s, opacity 0.5s linear;
 }
