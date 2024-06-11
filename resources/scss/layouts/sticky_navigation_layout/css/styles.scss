@@ -1,11 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Black Ops One', cursive;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
     display: flex;
+    justify-content: space-around;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 30px;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    font-size: 2rem;
+    color: white;
+}
+
+section img {
+    height: 60vh;
+    border-radius: 100vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+#fish {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+#socks {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(158, 0, 89, 1) 35%, rgba(255, 107, 237, 1) 100%);
+}
+
+#skunk {
+    background: rgb(37, 18, 5);
+    background: linear-gradient(90deg, rgba(37, 18, 5, 1) 0%, rgba(232, 133, 64, 1) 38%, rgba(153, 130, 114, 1) 100%);
+}
+
+#punk {
+    background: rgb(6, 10, 9);
+    background: linear-gradient(90deg, rgba(6, 10, 9, 1) 0%, rgba(43, 43, 43, 1) 38%, rgba(103, 102, 102, 1) 100%);
+}
+
+.indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    background: #FFBD00;
+    width: 25%;
 }
