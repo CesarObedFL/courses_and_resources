@@ -1,11 +1,64 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    font-family: sans-serif;
+    background-color: #dae3e7;
+}
+
+.vegetables {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px #363c3b;
+}
+
+.page {
+    list-style: none;
+    padding: 0;
+}
+
+.page li {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 8px 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 1px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagebtn {
+    padding: 0;
+    background-color: white;
+    color: black;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+    margin: 0 1px;
+}
+
+.pagebtn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
