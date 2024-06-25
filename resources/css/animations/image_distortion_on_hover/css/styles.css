@@ -1,11 +1,23 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    height: 100vh;
+    margin: 0px;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+svg {
+    position: absolute;
+    z-index: -1;
+}
+
+img {
+    max-width: 80vw;
+    max-height: 80vh;
+    cursor: pointer;
+}
+
+img.distort {
+    filter: url(#distort);
 }
