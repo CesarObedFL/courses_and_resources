@@ -1,11 +1,15 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    margin: 0;
+}
+
+body>svg {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bmc {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
