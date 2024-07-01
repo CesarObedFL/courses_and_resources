@@ -1,11 +1,56 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* .navbarScroll.navbarDark {
+    background-color: black;
+} */
+
+.nav-link {
+    color: rgb(247, 246, 246);
+}
+
+section {
+    height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    font-size: 2rem;
+    color: white;
+}
+
+#portfolio {
+    background-image: url("https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    color: white;
+}
+
+#press {
+    background: linear-gradient(45deg, #ffb3b3, #ffcccc, #ccccff, #23d5ab);
+
+}
+
+
+#shop {
+    background-image: url("https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    color: white;
+}
+
+#about {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+}
+
+h2 {
+    font-family: Garamond, sans-serif;
 }
