@@ -1,11 +1,70 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
     display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #0096FF;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    color: #0047AB;
+    transform: translateY(-5px);
+    transition: .5s ease-in-out;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    font-size: 2rem;
+    color: white;
+}
+
+#portfolio {
+    background: url('https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+#press {
+    background: url(https://images.pexels.com/photos/130621/pexels-photo-130621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#shop {
+    background: url(https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#about {
+    background: url(https://images.pexels.com/photos/12829679/pexels-photo-12829679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
