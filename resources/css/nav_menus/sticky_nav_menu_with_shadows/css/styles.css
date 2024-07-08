@@ -1,11 +1,193 @@
+:root {
+    font-size: 16px;
+    font-family: sans-serif;
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
+
+    --color-purple-dark: #2A0016;
+    --color-purple-pastel: #ff9fd1;
+
+    --color-grey-dark: #121212;
+    --color-white-light: #FEFEFE;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100vw;
+    box-shadow:
+        0 0 .1rem var(--color-purple-pastel),
+        0 0 .3rem var(--color-purple-pastel),
+        0 0 .5rem var(--color-purple-pastel),
+        0 0 1rem var(--color-purple-pastel),
+        0 0 2rem var(--color-purple-pastel);
+}
+
+nav::before {
+    content: '';
+    z-index: 0;
+    width: 100vw;
+    height: 6rem;
+    background-color: var(--color-purple-dark);
+    filter: blur(.2rem);
+    position: absolute;
+}
+
+nav a {
+    z-index: 1;
+    position: relative;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    gap: 1rem;
+
+    color: var(--color-white-light);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* @BEGIN SVG ICON */
+nav svg {
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 25%;
+    color: var(--color-white-light);
+    padding: 1rem;
+    transition: .5s;
+    box-shadow: 0 0 0 transparent;
+}
+
+nav a:hover svg {
+    color: var(--color-grey-dark);
+    background-color: var(--color-purple-pastel);
+    box-shadow:
+        0 0 .1rem var(--color-purple-pastel),
+        0 0 .5rem var(--color-purple-pastel),
+        0 0 1rem var(--color-purple-pastel),
+        0 0 2rem var(--color-purple-pastel);
+    transition: .5s;
+}
+
+nav a:active svg,
+nav a:active span.nav-text--hover {
+    box-shadow:
+        0 0 .1rem transparent,
+        0 0 .5rem transparent,
+        0 0 1rem transparent,
+        0 0 2rem transparent,
+        0 0 .5rem var(--color-grey-dark),
+        inset 0 0 .5rem var(--color-grey-dark);
+}
+
+nav a.active svg {
+    color: var(--color-grey-dark);
+    background-color: var(--color-purple-pastel);
+    box-shadow:
+        0 0 .1rem var(--color-purple-pastel),
+        0 0 .5rem var(--color-purple-pastel),
+        0 0 1rem var(--color-purple-pastel),
+        0 0 2rem var(--color-purple-pastel);
+}
+
+nav svg::after {}
+
+/* @END SVG ICON */
+
+/* @BEGIN TEXT */
+nav .nav-text {
+    opacity: 0;
+    transition: .5s;
+}
+
+nav a.active .nav-text {
+    opacity: 1;
+}
+
+nav a span.nav-text--hover {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    transition: .5s;
+}
+
+
+nav a:hover span.nav-text--hover {
+    opacity: 1;
+    bottom: -3.7rem;
+
+    background-color: var(--color-purple-pastel);
+    border-radius: 0 1rem 1rem 1rem;
+
+    box-shadow:
+        0 0 .1rem var(--color-grey-dark),
+        0 0 .5rem var(--color-grey-dark),
+        0 0 1rem var(--color-grey-dark);
+
+    transition: .5s;
+}
+
+nav a:hover span.nav-text--hover:hover {
+    box-shadow:
+        0 0 .1rem var(--color-purple-pastel),
+        0 0 .5rem var(--color-purple-pastel),
+        0 0 1rem var(--color-purple-pastel);
+    transition: .5s;
+}
+
+nav a:active span.nav-text--hover,
+nav a:active span.nav-text--hover:active {
+    box-shadow:
+        0 0 .1rem transparent,
+        0 0 .5rem transparent,
+        0 0 1rem transparent,
+        0 0 2rem transparent,
+        0 0 .5rem var(--color-grey-dark),
+        inset 0 0 .5rem var(--color-grey-dark);
+}
+
+nav a.active:hover span.nav-text--hover {
+    opacity: 0;
+}
+
+/* @END TEXT */
+
+
+/* PRE STUFF */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+#portfolio {
+    background-color: #390099;
+}
+
+#press {
+    background-color: #9e0059;
+}
+
+#shop {
+    background-color: #ff0054;
+}
+
+#about {
+    background-color: #390099;
 }
