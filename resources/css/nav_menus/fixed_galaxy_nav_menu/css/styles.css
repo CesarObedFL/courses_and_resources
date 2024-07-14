@@ -1,11 +1,74 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color:black;
+	background-image:url("https://e0.pxfuel.com/wallpapers/366/194/desktop-wallpaper-most-popular-outer-space-stars-background-full-for-pc-star-background-aesthetic-space-background-doodle-space-aesthetic.jpg");
+
+
 }
+*{
+	scroll-behavior:smooth
+
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color:#110e2300;
+	backdrop-filter:blur(5px);
+	color: white;
+	padding: 10px 0;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+	z-index:100;
+	border-bottom:1px solid rgba(206, 206, 206, 0.249)
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+}
+
+section {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	color: white;
+}
+
+#earth, #venus, #mars {
+	animation:rotation 10s infinite linear;
+}
+
+@keyframes rotation{
+ from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+nav>a::after{
+	display:block;
+	border-bottom:1px solid white;
+	content:"";
+	width:3rem;
+	transform:translateX(50%,-50%);
+	scale:0;
+	transition: scale 0.3s ease-out;
+}
+
+nav>a:hover::after{
+	scale:1
+}
+
+
