@@ -1,11 +1,136 @@
+header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 8vh;
+    background-color: rgba(187, 187, 187, 0.5);
+}
 
-body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+.solidHeader {
+    background-color: rgba(187, 187, 187, 1);
+}
+
+.rodri {
+    color: #d4af37;
+    text-shadow: 2px 2px 8px #e7b923;
+}
+
+h3 {
+    font-family: Italianno;
+    padding-left: 10%;
+    padding-top: 5%;
+}
+
+.btn {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: rgba(221, 221, 238, 0.7);
+    z-index: 5;
+}
+
+.btn1 {
+    background-color: #CCAABB;
+    color: #fff;
+}
+
+.btn2 {
+    background-color: #F05F40;
+    color: #fff;
+}
+
+.imgintro {
+    width: 100%;
+    margin: 0px 0px 0px -15px;
+    position: absolute;
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 30%;
+    font-size: 4vw;
+    color: #bb4422;
+}
+
+.fa-arrow-circle-down {
+    color: #bb4422;
+    position: absolute;
+    top: 20%;
+    left: 48%;
+    text-shadow: 2px 2px 8px #ccaabb;
+}
+
+.aboutTitle {
+    text-align: center;
+    padding-top: 20%;
+    padding-bottom: 1%;
+    color: #CCAABB;
+}
+
+p {
+    text-align: center;
+    padding-right: 25%;
+    padding-left: 25%;
+    color: #fff;
+}
+
+.rounded-circle {
+    width: 75%;
+    margin: auto;
+    padding: 2% 2% 2% 2%;
+}
+
+.about {
+    background-color: #F05F40;
+}
+
+.portfolio {
+    background-color: #AA7766;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+
+.portfolioTitle {
+    color: #CCAABB;
+    font-size: 3vw;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.thumbnail {
+    width: 100%;
+    margin-top: 1%;
+}
+
+.contact {
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.fa-4x {
+    color: #f05f40;
+}
+
+.shadeC {
+    text-shadow: 2px 2px 8px #f05f40;
+}
+
+.col-md-1 {
+    padding-bottom: 2%;
+}
+
+.firma {
+    width: 100%;
+    font-size: 0.6vw;
+    color: #000000;
+    background-color: #BBBBBB;
+    text-align: center;
+    padding: 2% 0% 2% 0%;
+}
+
+a {
+    z-index: 100;
 }
