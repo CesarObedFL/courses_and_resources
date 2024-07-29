@@ -1,11 +1,158 @@
-
+/* by Luca Rensch Ellypite */
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Navigation */
+#retract {
+    height: 100px;
+    width: 1000px;
+    border-radius: 50px;
+    left: 50%;
+    right: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    transition: 0.4s;
+    margin-top: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.1);
+    border: 2px solid #2b2b2b;
+}
+
+#retract:hover {
+    -webkit-box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 54px 5px rgba(255, 255, 255, 0.2);
+}
+
+#retract a {
+    color: #6b6b6b;
+    text-decoration: none;
+    padding: 80px;
+    font-size: 20px;
+    font-family: 'arial';
+    opacity: 1;
+}
+
+#text {
+    margin-top: 36px;
+    display: block;
+}
+
+#text a:hover {
+    color: #d5d5d5;
+    transition: 0.5s;
+}
+
+/* Small-Navigation */
+#menu {
+    background-image: url('https://abload.de/img/menubmddm.png');
+    background-size: cover;
+    height: 106px;
+    width: 106px;
+    margin-top: -130px;
+    margin-left: -3px;
+    transition: 0.5s;
+    display: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#menu:hover {
+    opacity: 1;
+}
+
+#menu:focus~span>#btnClick {
+    opacity: 1;
+}
+
+#little_nav {
+    height: 80px;
+    width: 1000px;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    position: absolute;
+    margin-left: -450px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: 2px solid #2b2b2b;
+    -webkit-animation: slide-down .5s ease-out;
+    -moz-animation: slide-down .5s ease-out;
+    z-index: -1;
+}
+
+@-webkit-keyframes slide-down {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes slide-down {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        -moz-transform: translateY(0);
+    }
+}
+
+#text2 {
+    margin-top: 30px;
+    display: block;
+}
+
+#text2 a:hover {
+    color: #ffff;
+    transition: 0.5s;
+}
+
+section {
+    height: 2160px;
+    color: white;
+}
+
+/* Sections */
+#portfolio {
+    background: #220e17;
+    margin: 10 auto 0 auto;
+    background-image: url('https://abload.de/img/pexels-anh-nguyen-1694hf6n.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#press {
+    background: #220e17;
+    margin: 10 auto 0 auto;
+    background-image: url('https://abload.de/img/pexels-anh-nguyen-169gmdkr.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#shop {
+    background: #220e17;
+    margin: 10 auto 0 auto;
+    background-image: url('https://abload.de/img/pexels-anh-nguyen-169dqeqt.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about {
+    background: #220e17;
+    margin: 10 auto 0 auto;
+    background-image: url('https://abload.de/img/pexels-anh-nguyen-169w3fuw.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
