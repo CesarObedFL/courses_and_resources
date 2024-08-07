@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events with Vue</title>
+        
+    </head>
+    <body>
+        
+        <div id="myApp">
+            <h1>{{ welcome_message }}</h1>
+            <p>{{ name }}</p>
+
+            <button v-on:click="change_name">Click me to change name!...</button>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
