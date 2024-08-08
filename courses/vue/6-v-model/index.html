@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>v-model with VueJS</title>
+        
+    </head>
+    <body>
+        
+        <div id="myApp">
+            <h1>Batman quotes</h1>
+            <hr>
+            <h5>total quotes: {{ total_quotes }}</h5>
+            <br>
+            <input type="text" placeholder="Add quote" v-on:keypress.enter="add_quote" v-model="new_quote">
+            <br><br>
+            <button v-on:click="toggle_author">Toggle author</button>
+            <!-- <button v-on:click="add_quote">Add Quote</button> -->
+            <ul>
+                <li v-for="({ quote, author }, index) in quotes">
+                    <span>{{ index + 1 }} - {{ quote }}</span>
+                    <!-- v-if => destroys the element from the DOM -->
+                    <blockquote v-if="show_author">{{ author }}</blockquote>
+                    <!-- v-show => put the style="display: none;" at the DOM element -->
+                    <blockquote v-show="show_author">{{ author }}</blockquote>
+                </li>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
