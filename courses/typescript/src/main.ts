@@ -3,6 +3,7 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 
 //import './bases/01-const-let';
+//import './bases/02-objects';
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
