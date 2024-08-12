@@ -1,6 +1,6 @@
-import heroes, { owners } from "../data/heroes";
+import heroes, { type Owner } from "../data/heroes";
 
-console.log( heroes, owners );
+console.log( heroes );
 
 
 export const get_hero_by_id = ( id: number ) => {
@@ -11,7 +11,7 @@ console.log( get_hero_by_id(1) );
 
 console.log( get_hero_by_id(100) );
 
-export const get_hero_by_owner = ( owner: string ) => {
+export const get_hero_by_owner = ( owner: Owner ) => {
     return heroes.filter( hero => hero.owner === owner ) ?? {};
 };
 
