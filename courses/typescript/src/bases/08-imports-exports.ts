@@ -4,7 +4,7 @@ console.log( heroes );
 
 
 export const get_hero_by_id = ( id: number ) => {
-    return heroes.find( hero => hero.id === id ) ?? {};
+    return heroes.find( hero => hero.id === id );
 }; 
 
 console.log( get_hero_by_id(1) );
