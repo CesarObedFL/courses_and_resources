@@ -38,6 +38,87 @@
         </button>
     </div>
 
+
+    <!-- GRID SYSTEM -->
+    <div class="container mx-auto mt-5 text-center hover:border hover:bg-gray-100 p-2">
+        <h1 class="text-center uppercase p-2 m-5 text-2xl border shadow-md">grid system</h1>
+        <div class="grid grid-cols-3 gap-4 my-4">
+            <div class="bg-red-400">A</div>
+            <div class="bg-red-400">B</div>
+            <div class="bg-red-400">C</div>
+            <div class="bg-red-400">D</div>
+            <div class="bg-red-400">E</div>
+        </div>
+
+        <!-- responsive grid: screens sm -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
+            <div class="bg-blue-400">A</div>
+            <div class="bg-blue-400">B</div>
+            <div class="bg-blue-400">C</div>
+            <div class="bg-blue-400">D</div>
+            <div class="bg-blue-400">E</div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 my-4">
+            <div class="bg-pink-400 col-span-2">A</div>
+            <div class="bg-pink-400">B</div>
+            <div class="bg-pink-400">C</div>
+            <div class="bg-pink-400 col-span-4">D</div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-4 my-4">
+            <div class="bg-green-400">A</div>
+            <div class="bg-green-400">B</div>
+            <div class="bg-green-400">C</div>
+            <div class="bg-green-400">D</div>
+            <div class="bg-green-400">E</div>
+            <div class="bg-green-400">F</div>
+            <div class="bg-green-400">G</div>
+            <div class="bg-green-400">H</div>
+            <div class="bg-green-400">I</div>
+            <div class="bg-green-400">J</div>
+            <div class="bg-green-400">K</div>
+            <div class="bg-green-400">L</div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-4 my-4">
+            <div class="bg-gray-400 col-span-4">A</div>
+            <div class="bg-gray-400 col-span-4">B</div>
+            <div class="bg-gray-400 col-span-4">C</div>
+        </div>
+
+        <div class="grid grid-cols-8 gap-4 my-4">
+            <div class="bg-yellow-400 col-start-2">A</div>
+            <div class="bg-yellow-400">B</div>
+            <div class="bg-yellow-400">C</div>
+            <div class="bg-yellow-400 col-end-8">D</div>
+        </div>
+    </div>
+    <!-- /. GRID SYSTEM -->
+
+    <div class="container mx-auto mt-5 text-center hover:border hover:bg-gray-100 p-2">
+        <h1 class="text-center uppercase p-2 m-5 text-2xl border shadow-md">row system</h1>
+        <div class="grid grid-rows-8 gap-4">
+            <div class="bg-orange-400 row-start-2">A</div>
+            <div class="bg-orange-400 row-span-2">B</div>
+            <div class="bg-orange-400">C</div>
+            <div class="bg-orange-400 row-end-8">D</div>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-5 text-center hover:border hover:bg-gray-100 p-2">
+        <h1 class="text-center uppercase p-2 m-5 text-2xl border shadow-md">grid & row</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-5 grid-rows-6 sm:grid-rows-12 gap-4">
+            <div class="bg-green-400 row-span-6">A</div>
+            <div class="bg-yellow-400 row-span-6">B</div>
+            <div class="bg-red-400 col-span-1 sm:col-span-3 row-span-6 sm:row-span-12">C</div>
+            <div class="bg-blue-400 row-span-6">D</div>
+            <div class="bg-pink-400 row-span-6">E</div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
 </body>
 
 </html>
