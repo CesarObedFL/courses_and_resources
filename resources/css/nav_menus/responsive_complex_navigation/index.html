@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Responsive Complex Navigation</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/nilimadas/pen/BavrMKZ -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <header class="menu_wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <ion-icon name="logo-codepen"></ion-icon>
+                </a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item  dropdown dropdown-mega position-static">
+                            <a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                data-bs-auto-close="outside">Products</a>
+                            <div class="dropdown-menu shadow">
+                                <div class="mega-content px-md-4">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                                                <h5 class="mb-3">Dog Supplies</h5>
+                                                <img src="http://placehold.it/150x120">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item">Food & Treats</a>
+                                                    <a href="#" class="list-group-item">Toys</a>
+                                                    <a href="#" class="list-group-item">Beds & Furniture</a>
+                                                    <a href="#" class="list-group-item">Outdoor Supplies</a>
+                                                    <a href="#" class="list-group-item">Clothing</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                                                <h5 class="mb-3">Cat Supplies</h5>
+                                                <img src="http://placehold.it/150x120">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item">Food & Treats</a>
+                                                    <a href="#" class="list-group-item">Toys</a>
+                                                    <a href="#" class="list-group-item">Beds & Furniture</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                                                <h5 class="mb-3">Bird Supplies</h5>
+                                                <img src="http://placehold.it/150x120">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item">Food & Treats</a>
+                                                    <a href="#" class="list-group-item">Toys</a>
+                                                    <a href="#" class="list-group-item">Furniture</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 py-4 px-xl-5 px-4">
+                                                <h5 class="mb-3">Fish Supplies</h5>
+                                                <img src="http://placehold.it/150x120">
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item">Food</a>
+                                                    <a href="#" class="list-group-item">Aquariums</a>
+                                                    <a href="#" class="list-group-item">Rocks & Decorations</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">Service</a>
+                            <ul class="dropdown-menu">
+                                <!-- Dropdown Left -->
+                                <li class="dropstart">
+                                    <a href="#" class="dropdown-item dropdown-toggle"
+                                        data-bs-toggle="dropdown">Grooming</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Coat Care</a></li>
+                                        <li><a class="dropdown-item" href="#">Nail Care</a></li>
+                                        <li><a class="dropdown-item" href="#">Doggie Deluxe Spa Day</a </li>
+                                    </ul>
+                                </li>
+                                <!-- Dropdown Right -->
+                                <li class="dropend">
+                                    <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Boarding</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="dropdown-item">Short Term Boarding</a></li>
+                                        <li><a href="#" class="dropdown-item">Doggie Daycare</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">Locations & Hours</a>
+                            <ul class="dropdown-menu shadow">
+                                <li><a href="#" class="dropdown-item">North America</a></li>
+                                <li><a href="#" class="dropdown-item">Europe</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                data-bs-auto-close="outside">About Us</a>
+                            <ul class="dropdown-menu">
+                                <!-- Dropdown Left -->
+                                <li class="dropstart">
+                                    <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Our
+                                        Team</a>
+                                </li>
+                                <!-- Dropdown Right -->
+                                <li class="dropend">
+                                    <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside">Contact Us</a>
+                                    <!-- contact form  -->
+                                    <div class="dropdown-container dropdown-menu shadow">
+                                        <div class="contact-form-wrapper d-flex justify-content-right">
+                                            <form class="contact-form">
+                                                <h5 class="title mb-3">Contact us</h5>
+                                                <p class="description mb-3">Feel free to contact us if you need any
+                                                    assistance,
+                                                    any help or question.</p>
+                                                <div> <input type="text"
+                                                        class="form-control rounded border-white mb-3 form-input"
+                                                        id="name" placeholder="Name" required></div>
+                                                <div><input type="email"
+                                                        class="form-control rounded border-white mb-3 form-input"
+                                                        placeholder="Email" required></div>
+                                                <div><textarea id="message"
+                                                        class="form-control rounded border-white mb-3 form-text-area"
+                                                        rows="5" cols="30" placeholder="Message" required></textarea>
+                                                </div>
+                                                <div class="submit-button-wrapper">
+                                                    <input type="submit" value="Send">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><!-- /dropdown-container -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- search form -->
+                    <form class="d-flex ms-auto">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Search" area-label="search">
+                            <button class="btn" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+</body>
+
+</html>
