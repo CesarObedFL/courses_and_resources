@@ -1,11 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --primary-color: #0000ff;
+    --secondary-color: #273469;
+    --white-color: #fff;
+    --black-color: #3F3B51;
+}
+
+/* custom css */
+button:focus,
+.navbar-toggler:focus,
+.input-group .btn:focus,
+input.form-control:focus {
+    outline: 0;
+    box-shadow: none;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    background-color: var(--secondary-color);
+    font-family: "Inter", sans-serif;
+}
+
+.menu_wrapper {
+    background-color: var(--white-color);
+    padding: 10px 0;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--black-color);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* mega menu */
+.dropdown-mega .dropdown-menu {
+    width: 100%;
+}
+
+.dropdown-mega .h5 {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    margin: 0;
+}
+
+.dropdown-mega .list-group-item {
+    font-size: 1rem;
+    color: var(--black-color);
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    padding: 12px 0;
+}
+
+.dropdown-mega .list-group-item:hover {
+    color: var(--primary-color);
+}
+
+
+/* search form */
+form input.form-control {
+    border: 1px solid var(--primary-color);
+}
+
+form .btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* contact form */
+.dropdown-container {
+    padding: 10px 0px ! important;
+    width: 450px;
+    border-radius: 0;
+    margin-top: 0px;
+
+}
+
+.contact-form-wrapper {
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+.contact-form {
+    padding: 30px 40px;
+    background-color: #f5e0e5;
+    border-radius: 12px;
+    max-width: 400px;
+}
+
+.contact-form .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.contact-form .description {
+    color: #aeb4b9;
+    font-size: 14px;
+    text-align: center;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .form-input,
+.form-text-area {
+    background-color: #f0f4f5;
+    height: 50px;
+    padding-left: 16px;
+}
+
+.contact-form .form-text-area {
+    background-color: #f0f4f5;
+    height: auto;
+    padding-left: 16px;
+}
+
+.contact-form .form-control::placeholder {
+    color: #aeb4b9;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.contact-form .form-control:focus {
+    border-color: #f33fb0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.07), 0 0 8px #f33fb0;
+}
+
+.contact-form .submit-button-wrapper {
+    text-align: center;
+}
+
+.contact-form .submit-button-wrapper input {
+    border: none;
+    border-radius: 4px;
+    background-color: #f23292;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 60px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* responsive */
+@media (max-width: 991px) {
+    .menu_wrapper .navbar-brand img {
+        width: 120px;
+    }
+
+    .navbar-collapse {
+        padding-top: 25px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 10px;
+    }
+
+    form {
+        margin: 30px 0;
+    }
 }
