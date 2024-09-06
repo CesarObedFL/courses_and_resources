@@ -25,7 +25,7 @@
 
     <br><br><br><br><br>
 
-    <div x-data="{ open_menu: false }">
+    <div x-data="{ open_menu: null }" x-init="{ open_menu = false }">
         <button x-on:click="open_menu = !open_menu"> Menu </button>
 
         <nav x-show="open_menu" x-on:click.away="open_menu = false">
@@ -39,7 +39,7 @@
 
     <br><br><br><br><br>
 
-    <div x-data="open_menu_function()">
+    <div x-data="open_menu_function()" x-init="start()">
         <button x-on:click="isOpen()"> Menu with functions </button>
 
         <nav x-show="open_menu" x-on:click.away="close_menu()">
@@ -55,7 +55,10 @@
     <script>
         function open_menu_function() {
             return {
-                open_menu: false,
+                open_menu: null,
+                start() {
+                    this.open_menu = false;
+                },
                 isOpen() {
                     this.open_menu = !this.open_menu;
                 },
