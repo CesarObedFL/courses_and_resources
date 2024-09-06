@@ -35,9 +35,36 @@
                 <li>Logout</li>
             </ul>
         </nav>
-
     </div>
 
+    <br><br><br><br><br>
+
+    <div x-data="open_menu_function()">
+        <button x-on:click="isOpen()"> Menu with functions </button>
+
+        <nav x-show="open_menu" x-on:click.away="close_menu()">
+            <ul>
+                <li>Profile</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <script>
+        function open_menu_function() {
+            return {
+                open_menu: false,
+                isOpen() {
+                    this.open_menu = !this.open_menu;
+                },
+                close_menu() {
+                    this.open_menu = false;
+                }
+            }
+        }
+    </script>
 
 </body>
 
