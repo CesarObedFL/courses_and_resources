@@ -51,6 +51,26 @@
         </nav>
     </div>
 
+    <br><br><br><br><br>
+
+    <div x-data="{
+        src: 'https://picsum.photos/200',
+        alt: 'this is a random picture',
+        width: 200
+    }">
+        <img x-bind:src="src" x-bind:alt="alt" x-bind:width="width">
+    </div>
+
+    <br><br>
+
+    <div x-data="{
+        src: 'https://picsum.photos/200',
+        alt: 'this is the second random picture',
+        width: 200
+    }">
+        <img :src="src" :alt="alt" :width="width">
+    </div>
+
 
     <script>
         function open_menu_function() {
