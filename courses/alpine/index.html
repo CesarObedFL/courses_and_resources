@@ -79,6 +79,15 @@
         <p x-text="message"></p>
     </div>
 
+    <br>
+
+    <div x-data="{ message: '' }">
+        <input type="text" x-model="message">
+        <button @click="$refs.msg.innerText = message">Send</button>
+        <br>
+        <p x-ref="msg"></p>
+    </div>
+
     <script>
         function open_menu_function() {
             return {
