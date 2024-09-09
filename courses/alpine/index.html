@@ -105,7 +105,12 @@
         <h3>products</h3>
         <ul>
             <template x-for="product in Object.values(products)">
-                <li><span x-text="product.name"></span> :<span x-text="product.stock"></span></li>
+                <li>
+                    <span x-text="product.name"></span> 
+                    :
+                    <span x-text="product.stock"></span>
+                    <template x-if="product.stock === 0"><span>&nbsp;<i>sold</i></span></template>
+                </li>
             </template>
         </ul>
     </div>
@@ -174,7 +179,7 @@
                     4: {
                         id: 4,
                         name: 'shoes',
-                        stock: 20,
+                        stock: 0,
                     } 
                 }
             }
