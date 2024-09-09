@@ -88,6 +88,17 @@
         <p x-ref="msg"></p>
     </div>
 
+    <br>
+
+    <div x-data="data()">
+        <h3>products</h3>
+        <ul>
+            <template x-for="product in products">
+                <li><span x-text="product.name"></span> :<span x-text="product.stock"></span></li>
+            </template>
+        </ul>
+    </div>
+
     <script>
         function open_menu_function() {
             return {
@@ -101,6 +112,33 @@
                 close_menu() {
                     this.open_menu = false;
                 }
+            }
+        }
+
+        function data() {
+            return {
+                products: [ 
+                    {
+                        id: 1,
+                        name: 't-shirt',
+                        stock: 10,
+                    }, 
+                    {
+                        id: 2,
+                        name: 'jeans',
+                        stock: 15,
+                    }, 
+                    {
+                        id: 3,
+                        name: 'jacket',
+                        stock: 5,
+                    }, 
+                    {
+                        id: 4,
+                        name: 'shoes',
+                        stock: 20,
+                    } 
+                ]
             }
         }
     </script>
