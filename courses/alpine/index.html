@@ -99,6 +99,17 @@
         </ul>
     </div>
 
+    <br>
+
+    <div x-data="data_2()">
+        <h3>products</h3>
+        <ul>
+            <template x-for="product in Object.values(products)">
+                <li><span x-text="product.name"></span> :<span x-text="product.stock"></span></li>
+            </template>
+        </ul>
+    </div>
+
     <script>
         function open_menu_function() {
             return {
@@ -139,6 +150,33 @@
                         stock: 20,
                     } 
                 ]
+            }
+        }
+
+        function data_2() {
+            return {
+                products: { 
+                    1: {
+                        id: 1,
+                        name: 't-shirt',
+                        stock: 10,
+                    }, 
+                    2: {
+                        id: 2,
+                        name: 'jeans',
+                        stock: 15,
+                    }, 
+                    3: {
+                        id: 3,
+                        name: 'jacket',
+                        stock: 5,
+                    }, 
+                    4: {
+                        id: 4,
+                        name: 'shoes',
+                        stock: 20,
+                    } 
+                }
             }
         }
     </script>
