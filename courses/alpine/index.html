@@ -137,6 +137,12 @@
         <input type="text" x-model="message" @keydown.enter="console.log(message)">
     </div>
 
+    <br>
+
+    <div x-data="{ open: true }" @resize.window="open = window.outerWidth > 768 ? true : false">
+        <p x-show="open">This message is only for large screens</p>
+    </div>
+
     <script>
         function open_menu_function() {
             return {
