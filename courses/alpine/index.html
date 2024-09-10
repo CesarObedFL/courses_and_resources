@@ -115,6 +115,18 @@
         </ul>
     </div>
 
+    <br>
+
+    <div x-data="{ message: null }">
+        <form action="#" @submit.prevent="console.log('message')">
+            <input type="text" x-model="message">
+            <button >Submit</button>
+        </form>
+
+    </div>
+
+    <br>
+
     <script>
         function open_menu_function() {
             return {
