@@ -130,6 +130,13 @@
         <input type="text" x-model="message" @keydown="console.log(message)">
     </div>
 
+    <br>
+
+    <div x-data="{ message: null }">
+        <label for="">press enter to send</label>
+        <input type="text" x-model="message" @keydown.enter="console.log(message)">
+    </div>
+
     <script>
         function open_menu_function() {
             return {
