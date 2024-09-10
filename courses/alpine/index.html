@@ -122,10 +122,13 @@
             <input type="text" x-model="message">
             <button >Submit</button>
         </form>
-
     </div>
 
     <br>
+
+    <div x-data="{ message: null }">
+        <input type="text" x-model="message" @keydown="console.log(message)">
+    </div>
 
     <script>
         function open_menu_function() {
