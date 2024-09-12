@@ -20,7 +20,7 @@
     <div x-data="{ show_main_menu: false }">
         <!-- burger button -->
         <template x-if="!show_main_menu">
-            <div @click="show_main_menu = true" class="bg-transparent m-3 w-6 h-6 rounded-md text-white hover:bg-sky-100">
+            <div @click="show_main_menu = true" class="absolute bg-transparent m-3 w-6 h-6 rounded-md text-white hover:bg-sky-100">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-grow-0 flex-shrink-0 text-slate-400 w-6 h-6 mx-auto duration-300 hover:text-sky-800">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>              
