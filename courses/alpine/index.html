@@ -143,6 +143,13 @@
         <p x-show="open">This message is only for large screens</p>
     </div>
 
+    <br>
+
+    <div x-init>
+        <input type="text" @input="console.log($event.target.value)">
+    </div>
+    
+
     <script>
         function open_menu_function() {
             return {
