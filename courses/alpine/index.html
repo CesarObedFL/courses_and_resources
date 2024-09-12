@@ -158,6 +158,14 @@
     <div x-data="{ message: null }" @custom-event.window="message = $event.detail">
         <input type="text" x-model="message">
     </div>
+
+    <br>
+
+    <div x-data="{ name: null, touppercase() { this.name = this.name.toUpperCase() } }">
+        <input type="text" x-model="name">
+        <span x-text="name"></span>
+        <button @click="touppercase">to uppercase</button>
+    </div>
     
 
     <script>
