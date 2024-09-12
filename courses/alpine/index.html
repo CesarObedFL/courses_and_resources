@@ -166,6 +166,23 @@
         <span x-text="name"></span>
         <button @click="touppercase">to uppercase</button>
     </div>
+
+    <br>
+
+    <form 
+        @submit.prevent="get_image"
+        x-data="{ 
+            query: '', 
+            src_img: '', 
+            get_image () {
+                this.src_img = `https://source.unsplash.com/search/photos?query=${this.query}`;
+            } 
+        }"
+    >
+        <input type="text" x-model="query">
+        <button type="submit">Search</button> <br>
+        <img :src="src_img" :alt="query" style="width:300px;">
+    </form>
     
 
     <script>
