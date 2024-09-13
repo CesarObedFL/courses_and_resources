@@ -169,20 +169,22 @@
 
     <br>
 
-    <form 
-        @submit.prevent="get_image"
-        x-data="{ 
-            query: '', 
-            src_img: '', 
-            get_image () {
-                this.src_img = `https://source.unsplash.com/search/photos?query=${this.query}`;
-            } 
-        }"
-    >
-        <input type="text" x-model="query">
-        <button type="submit">Search</button> <br>
-        <img :src="src_img" :alt="query" style="width:300px;">
-    </form>
+    <div x-data="{ 
+        query: '', 
+        src_img: '', 
+        get_image () {
+            this.src_img = `https://source.unsplash.com/search/photos?query=${this.query}`;
+        } 
+    }">
+        <form @submit.prevent="get_image">
+            <input type="text" x-model="query">
+            <button type="submit">Search</button> <br>
+        </form>
+        <div x-show="src_img">
+            <img :src="src_img" :alt="query" style="width:300px;">
+        </div>
+
+    </div>
     
 
     <script>
