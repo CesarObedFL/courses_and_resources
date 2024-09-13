@@ -185,6 +185,15 @@
         </div>
 
     </div>
+
+    <br>
+
+    <div x-data="{ agreed: false }">
+        <input type="checkbox" x-model="agreed">
+        <span x-show="agreed">You have agreed this!...</span>
+    </div>
+
+    <br>
     
 
     <script>
