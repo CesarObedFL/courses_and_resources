@@ -1,0 +1,24 @@
+.custom-navbar {
+    .logo {
+        .img {
+            max-width: 150px;
+        }
+    }
+
+    .custom-nav {
+        padding: 0;
+        margin: 0;
+        li {
+            display: inline-block;
+            a {
+                padding: 10px 15px;
+                display: inline-block;
+                font-weight: 600;
+                color: rgba($dark, .7);
+                &:hover {
+                    color: dark;
+                }
+            }
+        }
+    }
+}

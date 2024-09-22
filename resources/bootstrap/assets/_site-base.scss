@@ -1,0 +1,58 @@
+$white: #fff;
+$black: #000;
+$primary: #EA6D27;
+$dark: #101A24;
+$light: #F3F4F4;
+$body-color: #5C6574;
+
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$font-family: "Inter", sans-serif;
+$font-family-serif: "David Libre", serif;
+
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font-family;
+    color: $body-color;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s all ease;
+}
+
+.btn {
+    height: 54px;
+    padding: 14px 30px;
+    border-radius: 4px 15px 4px 15px;
+    font-family: $font-family-serif;
+    font-size: 20px;
+    &:active, &:focus {
+        outline: none !important;
+        box-sizing: none !important;
+    }
+    &.btn-primary {
+        border-color: $primary;
+        background-color: $primary;
+        color: white;
+        box-shadow: 0 1px 2px rgba($black, .07),
+                    0 2px 4px rgba($black, .07),
+                    0 4px 8px rgba($black, .07),
+                    0 8px 6px rgba($black, .07),
+                    0 16px 32px rgba($black, .07),
+                    0 32px 64px rgba($black, .07);
+        &:hover {
+            border-color: darken($primary, 10%);
+            background-color: darken($primary, 10%);
+        }
+    }
+
+}
