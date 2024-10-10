@@ -1,11 +1,145 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    background-color: #FFC901;
+    font-family: 'Unbounded', sans-serif;
+}
+
+
+.container {
+    margin: auto;
+    width: 100%;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    transform: rotate(-7deg);
+}
+
+.box {
+    background-color: #FFC901;
+    border: 2px solid black;
+    box-shadow: 4px 4px 2px #1f1e1e;
+}
+
+.top {
+    padding: 2em;
+    width: 100%;
+    background-color: #FFC901;
+    border: none;
+}
+
+
+.title {
+    text-align: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 7em;
+    font-weight: 800;
+    color: black;
+    text-shadow: 4px 4px 2px #5c5c5c;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    color: #FFC901;
+    text-shadow: 2px 2px 2px #5c5c5c;
+    background-color: black;
+}
+
+
+.activity-feed {
+    width: 100%;
+    background-color: #FFC901;
+    font-size: 1em;
+}
+
+.title-2,
+.title-3,
+.title-4,
+.title-5,
+.title-6,
+.title-7 {
+    text-align: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2em;
+    padding: 1em;
+    color: #FFC901;
+    background-color: black;
+
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid black;
+    outline: 1px solid #FFC901;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1em;
+    border: 1px solid black;
+}
+
+ul li {
+    line-height: 1.5;
+}
+
+.calories {
+    padding: 1em;
+}
+
+
+.chal {
+    margin-top: 10px;
+    padding-right: 2em;
+}
+
+.star {
+    margin: auto;
+    max-width: 100%;
+    color: black;
+    font-size: 0px;
+}
+
+.frie {
+    line-height: 1;
+}
+
+
+
+@media (max-width: 1200px) {
+    .container {
+        transform: rotate(0deg);
+    }
+
+    .box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    .box {
+        width: 45%;
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 70px;
+    }
+
+    .subtitle {
+        font-size: 36px;
+    }
+
+    .box {
+        width: 100%;
+        transform: rotate(0deg);
+
+    }
 }
