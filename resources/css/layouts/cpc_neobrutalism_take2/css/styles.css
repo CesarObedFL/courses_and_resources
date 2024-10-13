@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;900&display=swap');
+
+body {
+    background-color: #FAFAED;
+    opacity: 1;
+    background-image: radial-gradient(#dadad9 2px, #FAFAED 2px);
+    background-size: 40px 40px;
+    color: #000;
+    font-family: 'Darker Grotesque', Sans-Serif;
+
+}
+
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashboard>div {
+    border: .5rem solid #000;
+    border-radius: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+    min-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 28px;
+    box-shadow: .5rem .5rem 0rem #000;
+}
+
+.dashboard>div:nth-child(3n-1) {
+    background-color: #A9D3FF;
+}
+
+.dashboard>div:nth-child(3n-2) {
+    background-color: #C3423F;
+}
+
+.dashboard>div:nth-child(3n-3) {
+    background-color: #A2FAA3;
+
+}
+
+.profile {
+    width: 95vw;
+}
+
+table {
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: .5rem;
+    margin: 0;
+}
+
+table th+th,
+table td+td {
+    border-left: .4rem solid #000;
+}
+
+table th {
+    border-bottom: .4rem solid #000;
+}
+
+ul {
+
+    list-style-type: "✔️";
+    padding-left: .5rem;
+    margin: 1rem;
+
+}
