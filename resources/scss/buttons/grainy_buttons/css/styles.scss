@@ -1,11 +1,101 @@
+$background: #272420;
+$text: #272420;
+$accent: #97BEE6;
+$borderWidth: 3px;
+
+$primary: #F3EDED;
+$secondary: #F0D7C2;
+$tertiary: #C5B5CA;
+
+html,
+body {
+    height: 100%;
+}
+
+* {
+
+    &,
+    &::after {
+        box-sizing: border-box;
+    }
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    font: 500 100%/1 'Nunito', sans-serif;
+    background-color: $background;
+}
+
+.list {
+    &__item {
+        color: $text;
+        height: auto;
+        min-height: 33vh;
+        padding: 40px 60px;
+        display: grid;
+        place-items: center;
+        position: relative;
+        background-color: $primary;
+
+        &:hover {
+            background-position: 0% 100%;
+        }
+
+        &:nth-child(2) {
+            background-color: $secondary;
+        }
+
+        &:nth-child(3) {
+            background-color: $tertiary;
+        }
+    }
+}
+
+.button {
+    background-color: inherit;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: currentColor;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    text-align: center;
+
+    span {
+        background-color: $accent;
+        display: inherit;
+        padding: 1em 3em;
+        border: 2px solid currentColor;
+        border-radius: 2em;
+        position: relative;
+        z-index: 1;
+        transform: translate(-.4rem, -.4rem);
+        transition: .2s ease-in-out;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 2em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid currentColor;
+        background-color: inherit;
+        pointer-events: none;
+        mix-blend-mode: darken;
+        filter: contrast(1200%) brightness(100%) saturate(0.25);
+        overflow: hidden;
+        background:
+            linear-gradient(182deg, currentColor, currentColor 25%, rgba(0, 0, 0, 0) 100%),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 400 75' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    &:hover {
+        span {
+            transform: translate(0px, 0px);
+            transition: .2s ease-in-out;
+        }
+    }
 }
