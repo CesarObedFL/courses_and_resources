@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cara Membuat Responsive Mega Menu Di Blogger</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- source -->
+    <!-- https://codepen.io/arlinacode/pen/JjjYdgm -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <header class="header_area">
+        <div class="main_header_area animated">
+            <div class="container">
+                <nav id="navigation1" class="navigation">
+                    <!-- Logo Area Start -->
+                    <div class="nav-header">
+                        <a class="nav-brand" href="#">HEADER</a>
+                        <div class="nav-toggle"></div>
+                    </div>
+                    <!-- Search panel Start -->
+                    <div class="nav-search">
+                        <div class="nav-search-button">
+                            <i class="nav-search-icon"></i>
+                        </div>
+                        <form>
+                            <div class="nav-search-inner">
+                                <input type="search" name="search" placeholder="Search Here">
+                                <input name='max-results' type='hidden' value='6'>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Main Menus Wrapper -->
+                    <div class="nav-menus-wrapper">
+                        <ul class="nav-menu align-to-right">
+                            <li><a href="#">Home</a>
+                                <div class="megamenu-panel">
+                                    <div class="megamenu-lists">
+                                        <ul class="megamenu-list list-col-4">
+                                            <li><a href="#">Business 1</a></li>
+                                            <li><a href="#">Business 2</a></li>
+                                            <li><a href="#">Business 3</a></li>
+                                            <li><a href="#">Blogger 1</a></li>
+                                            <li><a href="#">Blogger 2</a></li>
+                                            <li><a href="#">Creative Light</a></li>
+                                            <li><a href="#">Creative Dark</a></li>
+                                            <li><a href="#">Personal Portfolio</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li><a href="#">Vimeo Video</a></li>
+                                            <li><a href="#">YouTube Video</a></li>
+                                            <li><a href="#">HTML5 Local Video</a></li>
+                                            <li><a href="#">Agency</a></li>
+                                            <li><a href="#">App Showcase</a></li>
+                                            <li><a href="#">Creative</a></li>
+                                            <li><a href="#">Business</a></li>
+                                            <li><a href="#">Education</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li><a href="#">Fitness &amp; Gym</a></li>
+                                            <li><a href="#">Gardening</a></li>
+                                            <li><a href="#">Hosting</a></li>
+                                            <li><a href="#">HTML5 Video</a></li>
+                                            <li><a href="#">Medical</a></li>
+                                            <li><a href="#">Minimal Portfolio</a></li>
+                                            <li><a href="#">Photography</a></li>
+                                            <li><a href="#">Product Showcase</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li><a href="#">Restaurant</a></li>
+                                            <li><a href="#">Resume &amp; CV</a></li>
+                                            <li><a href="#">Service Landing</a></li>
+                                            <li><a href="#">Slideshows</a></li>
+                                            <li><a href="#">Spa &amp; Beauty</a></li>
+                                            <li><a href="#">Startup</a></li>
+                                            <li><a href="#">Vimeo Video</a></li>
+                                            <li><a href="#">YouTube Video</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Level 1</a>
+                                <ul class="nav-dropdown">
+                                    <li><a href="#">Header</a>
+                                        <ul class="nav-dropdown">
+                                            <li><a href="#">Simple</a></li>
+                                            <li><a href="#">Two Menus</a></li>
+                                            <li><a href="#">Centered</a></li>
+                                            <li><a href="#">Search Panel</a></li>
+                                            <li><a href="#">Button &amp; Text</a></li>
+                                            <li><a href="#">Dropdown</a></li>
+                                            <li><a href="#">Horizontal Dropdown</a></li>
+                                            <li><a href="#">Megamenu List</a></li>
+                                            <li><a href="#">Megamenu Tabs</a></li>
+                                            <li><a href="#">Social Links</a></li>
+                                            <li><a href="#">Always Hidden</a></li>
+                                            <li><a href="#">Icons</a></li>
+                                            <li><a href="#">Striped Skin</a></li>
+                                            <li><a href="#">Rounded Skin</a></li>
+                                            <li><a href="#">Box Skin</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Level 2</a>
+                                        <ul class="nav-dropdown">
+                                            <li><a href="#">Contact Layout 1</a></li>
+                                            <li><a href="#">Contact Layout 2</a></li>
+                                            <li><a href="#">Contact Layout 3</a></li>
+                                            <li><a href="#">Level 3</a>
+                                                <ul class="nav-dropdown">
+                                                    <li><a href="#">Contact Layout 1</a></li>
+                                                    <li><a href="#">Contact Layout 2</a></li>
+                                                    <li><a href="#">Contact Layout 3</a></li>
+                                                    <li><a href="#">Contact Layout 4</a></li>
+                                                    <li><a href="#">Contact Layout 5</a></li>
+                                                    <li><a href="#">Contact Layout 6</a></li>
+                                                    <li><a href="#">Contact Layout 7</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Contact Layout 5</a></li>
+                                            <li><a href="#">Contact Layout 6</a></li>
+                                            <li><a href="#">Contact Layout 7</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Coming Soon</a>
+                                        <ul class="nav-dropdown">
+                                            <li><a href="#">Coming Soon - 1</a></li>
+                                            <li><a href="#">Coming Soon - 2</a></li>
+                                            <li><a href="#">Coming Soon - 3</a></li>
+                                            <li><a href="#">Coming Soon - 4</a></li>
+                                            <li><a href="#">Coming Soon - 5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Premium Sliders</a></li>
+                                    <li><a href="#">Shortcodes</a></li>
+                                    <li><a href="#">Breadcumb</a></li>
+                                    <li><a href="#">Footer</a></li>
+                                    <li><a href="#">Icons</a></li>
+                                    <li><a href="#">Buttons</a></li>
+                                    <li><a href="#">Call to Action</a></li>
+                                    <li><a href="#">Google Maps</a></li>
+                                    <li><a href="#">Pie &amp; Skills</a></li>
+                                    <li><a href="#">Ratings</a></li>
+                                    <li><a href="#">Vector Maps</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <div class="megamenu-panel">
+                                    <div class="megamenu-lists">
+                                        <ul class="megamenu-list list-col-3">
+                                            <li><a href="#">About Us 1</a></li>
+                                            <li><a href="#">About Us 2</a></li>
+                                            <li><a href="#">About Us 3</a></li>
+                                            <li><a href="#">Service Layout 1</a></li>
+                                            <li><a href="#">Service Layout 2</a></li>
+                                            <li><a href="#">Service Layout 3</a></li>
+                                            <li><a href="#">404 Layout 1</a></li>
+                                            <li><a href="#">404 Layout 2</a></li>
+                                            <li><a href="#">404 Layout 3</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-3">
+                                            <li><a href="#">Coming Soon Layout 1</a></li>
+                                            <li><a href="#">Coming Soon Layout 2</a></li>
+                                            <li><a href="#">Coming Soon Layout 3</a></li>
+                                            <li><a href="#">Coming Soon Layout 4</a></li>
+                                            <li><a href="#">Coming Soon Layout 5</a></li>
+                                            <li><a href="#">500 Error</a></li>
+                                            <li><a href="#">Empty Page</a></li>
+                                            <li><a href="#">FAQ</a></li>
+                                            <li><a href="#">Search Result</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-3">
+                                            <li><a href="#">Contact Layout 1</a></li>
+                                            <li><a href="#">Contact Layout 2</a></li>
+                                            <li><a href="#">Contact Layout 3</a></li>
+                                            <li><a href="#">Contact Layout 4</a></li>
+                                            <li><a href="#">Contact Layout 5</a></li>
+                                            <li><a href="#">Contact Layout 6</a></li>
+                                            <li><a href="#">Contact Layout 7</a></li>
+                                            <li><a href="#">Subscribe Newsletter</a></li>
+                                            <li><a href="#">Under Maintenance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Portfolio</a>
+                                <div class="megamenu-panel">
+                                    <div class="megamenu-lists">
+                                        <ul class="megamenu-list list-col-5">
+                                            <li class="megamenu-list-title"><a href="#">Masonary</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-5">
+                                            <li class="megamenu-list-title"><a href="#">Masonary No Gutter</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-5">
+                                            <li class="megamenu-list-title"><a href="#">Grid</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-5">
+                                            <li class="megamenu-list-title"><a href="#">Grid No Gutter</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-5">
+                                            <li class="megamenu-list-title"><a href="#">Portfolio Details</a></li>
+                                            <li><a href="#">Embed Video</a></li>
+                                            <li><a href="#">Masonary Thumb</a></li>
+                                            <li><a href="#">Single Thumb</a></li>
+                                            <li><a href="#">Slider Gallery</a></li>
+                                            <li><a href="#">YouTube Video</a></li>
+                                            <li><a href="#">Vimeo Video</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <div class="megamenu-panel">
+                                    <div class="megamenu-lists">
+                                        <ul class="megamenu-list list-col-4">
+                                            <li class="megamenu-list-title"><a href="#">Masonary Layout</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li class="megamenu-list-title"><a href="#">Grid Layout</a></li>
+                                            <li><a href="#">2 Column</a></li>
+                                            <li><a href="#">3 Column</a></li>
+                                            <li><a href="#">4 Column</a></li>
+                                            <li><a href="#">6 Column</a></li>
+                                            <li><a href="#">Full Width</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li class="megamenu-list-title"><a href="#">Sidebar Layout</a></li>
+                                            <li><a href="#">Left Sidebar Grid</a></li>
+                                            <li><a href="#">Left Sidebar Masonary</a></li>
+                                            <li><a href="#">Right Sidebar Grid</a></li>
+                                            <li><a href="#">Right Sidebar Masonary</a></li>
+                                            <li><a href="#">No Sidebar</a></li>
+                                            <li><a href="#">Both Side Sidebar</a></li>
+                                        </ul>
+                                        <ul class="megamenu-list list-col-4">
+                                            <li class="megamenu-list-title"><a href="#">Blog Details</a></li>
+                                            <li><a href="#">Single Blog Layout 1</a></li>
+                                            <li><a href="#">Single Blog Layout 2</a></li>
+                                            <li><a href="#">Single Blog Layout 3</a></li>
+                                            <li><a href="#">Single Blog Layout 4</a></li>
+                                            <li><a href="#">Single Blog Layout 5</a></li>
+                                            <li><a href="#">Single Blog Layout 6</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="#">Shortcodes</a></li>
+                            <li><a href="#">One Page</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1>Cara Membuat Responsive Mega Menu di Blogger</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://2.bp.blogspot.com/-93lIHqW_YKM/XC70vRtpZSI/AAAAAAAAPQE/AOyXI7G9GU0C_XEmCgEYFmAzCuUZhCeFACLcBGAs/s1600/For%2Ba%2Bminute%2Bshe%2Bstood%2Blooking%2Bat%2Bthe%2Bhouse.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://2.bp.blogspot.com/-93lIHqW_YKM/XC70vRtpZSI/AAAAAAAAPQE/AOyXI7G9GU0C_XEmCgEYFmAzCuUZhCeFACLcBGAs/s640/For%2Ba%2Bminute%2Bshe%2Bstood%2Blooking%2Bat%2Bthe%2Bhouse.jpg"
+                    width="640" height="367" data-original-width="1000" data-original-height="574" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://2.bp.blogspot.com/-IAIGLG9yemg/XC70v8bxsBI/AAAAAAAAPQI/aJDJvds7tY4SaZJKVD3MOt15_XkfxFLwACLcBGAs/s1600/I%2Bsat%2Bdown%2Band%2Bthinking.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://2.bp.blogspot.com/-IAIGLG9yemg/XC70v8bxsBI/AAAAAAAAPQI/aJDJvds7tY4SaZJKVD3MOt15_XkfxFLwACLcBGAs/s640/I%2Bsat%2Bdown%2Band%2Bthinking.jpg"
+                    width="640" height="454" data-original-width="1000" data-original-height="709" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://2.bp.blogspot.com/-96-6W4MQBwk/XC70wlMaAeI/AAAAAAAAPQQ/Tt_ax6ONSY49DdxwV9e7yEwCqA73cF-XQCLcBGAs/s1600/Jane%2BSnow%2BInvites%2BFans%2Bto%2BSing.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://2.bp.blogspot.com/-96-6W4MQBwk/XC70wlMaAeI/AAAAAAAAPQQ/Tt_ax6ONSY49DdxwV9e7yEwCqA73cF-XQCLcBGAs/s640/Jane%2BSnow%2BInvites%2BFans%2Bto%2BSing.jpg"
+                    width="640" height="400" data-original-width="1600" data-original-height="1000" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://2.bp.blogspot.com/-sz-X9tvIawo/XC70ytM0zgI/AAAAAAAAPQU/fqhQvpPWqPIDRpCQMxvDUdZa1m0Th5sEQCLcBGAs/s1600/My%2Beffort%2Bwas%2Bcrowned%2Bwith%2Ba%2Bsuccess.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://2.bp.blogspot.com/-sz-X9tvIawo/XC70ytM0zgI/AAAAAAAAPQU/fqhQvpPWqPIDRpCQMxvDUdZa1m0Th5sEQCLcBGAs/s640/My%2Beffort%2Bwas%2Bcrowned%2Bwith%2Ba%2Bsuccess.jpg"
+                    width="640" height="427" data-original-width="1600" data-original-height="1067" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://2.bp.blogspot.com/-Wnlfy2sv3_8/XC70zRWaCJI/AAAAAAAAPQc/GfzJbQQr10MpivKrPnxYZ6c01qRv33uLQCLcBGAs/s1600/New%2Badventure%2Bexperience.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://2.bp.blogspot.com/-Wnlfy2sv3_8/XC70zRWaCJI/AAAAAAAAPQc/GfzJbQQr10MpivKrPnxYZ6c01qRv33uLQCLcBGAs/s640/New%2Badventure%2Bexperience.jpg"
+                    width="640" height="427" data-original-width="1280" data-original-height="853" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://3.bp.blogspot.com/-s1fsaJvbLjI/XC70zEcR6VI/AAAAAAAAPQY/WgKDR9GnCZoQYTkrmRPnKci9akVawnylQCLcBGAs/s1600/Runs%2Bfast%2Btowards%2Bthe%2BMaybury%2BHill.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://3.bp.blogspot.com/-s1fsaJvbLjI/XC70zEcR6VI/AAAAAAAAPQY/WgKDR9GnCZoQYTkrmRPnKci9akVawnylQCLcBGAs/s640/Runs%2Bfast%2Btowards%2Bthe%2BMaybury%2BHill.jpg"
+                    width="640" height="400" data-original-width="1600" data-original-height="1000" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://3.bp.blogspot.com/-ojo7rUMf2bA/XC70zYGMIPI/AAAAAAAAPQg/ZOa0SfL5gaEMUchv3BR9BBSSfWTImwrEgCLcBGAs/s1600/Some%2Bof%2Bthe%2BMost%2BBeautiful%2BDay%2BHikes.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://3.bp.blogspot.com/-ojo7rUMf2bA/XC70zYGMIPI/AAAAAAAAPQg/ZOa0SfL5gaEMUchv3BR9BBSSfWTImwrEgCLcBGAs/s640/Some%2Bof%2Bthe%2BMost%2BBeautiful%2BDay%2BHikes.jpg"
+                    width="640" height="426" data-original-width="1100" data-original-height="733" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <div class="separator" style="clear: both; text-align: center;">
+            <a href="https://3.bp.blogspot.com/-3UeEiZfhm6I/XC700F3cKaI/AAAAAAAAPQk/_NrFFJcCXwspCB07j-dHfPMVLfi8JM47QCLcBGAs/s1600/Thousands%2Bof%2Bmiles%2Bfrom%2BOregon.jpg"
+                imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0"
+                    src="https://3.bp.blogspot.com/-3UeEiZfhm6I/XC700F3cKaI/AAAAAAAAPQk/_NrFFJcCXwspCB07j-dHfPMVLfi8JM47QCLcBGAs/s640/Thousands%2Bof%2Bmiles%2Bfrom%2BOregon.jpg"
+                    width="640" height="400" data-original-width="1280" data-original-height="800" /></a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus, tortor sit amet rhoncus lobortis,
+            leo libero suscipit justo, ac tincidunt ligula eros sit amet sem. Sed lobortis nisl sed diam porttitor, quis
+            lacinia felis lacinia. In urna nulla, consectetur nec nisi vitae, laoreet pellentesque augue. Donec feugiat,
+            velit eu imperdiet semper, ante sem suscipit nulla, congue suscipit ipsum tellus commodo ipsum. Sed pharetra
+            orci a volutpat faucibus.</p>
+        </br>
+    </section>
+
+</body>
+
+</html>
