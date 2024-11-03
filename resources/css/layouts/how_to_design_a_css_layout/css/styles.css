@@ -1,11 +1,171 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    color: #555;
+    font-family: 'Oldenburg', cursive;
+    font-size: 14px;
+    background-color: #f5f5f5;
+}
+
+h1,
+h2,
+p {
+    text-align: center;
+}
+
+h1 {
+    margin: 30px 0 10px;
+}
+
+a {
+    color: #888;
+}
+
+footer {
+    display: block;
+    color: #908d86;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+/*  - Grid Medina -  */
+
+.grid {
+    width: auto;
+    margin: 20px auto 0;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+}
+
+.row {
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+.row .columns {
+    float: none;
+    text-align: center;
+    padding: 10px;
+}
+
+.row .columns-right {
+    float: none;
+}
+
+.row .columns-padding {
+    padding: 0 !important;
+}
+
+.row .columns:nth-child(odd) {
+    background-color: #e2e2e2;
+}
+
+.row .columns:nth-child(even) {
+    background-color: #c9c9c9;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve {
+    width: 100%;
+}
+
+@media only screen and (min-width : 480px) {
+    .grid {
+        width: 100%;
+    }
+
+    .row .columns {
+        float: left;
+        padding: 10px;
+    }
+
+    .row .columns-right {
+        float: right;
+    }
+
+    .one {
+        width: 8.333333333%;
+    }
+
+    .two {
+        width: 16.666666667%;
+    }
+
+    .three {
+        width: 25%;
+    }
+
+    .four {
+        width: 33.333333333%;
+    }
+
+    .five {
+        width: 41.666666667%;
+    }
+
+    .six {
+        width: 50%;
+    }
+
+    .seven {
+        width: 58.333333333%;
+    }
+
+    .eight {
+        width: 66.666666667%;
+    }
+
+    .nine {
+        width: 75%;
+    }
+
+    .ten {
+        width: 83.333333333%;
+    }
+
+    .eleven {
+        width: 91.666666667%;
+    }
+
+    .twelve {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width : 960px) {
+    .grid {
+        width: 960px;
+    }
 }
