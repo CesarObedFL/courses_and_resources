@@ -1,11 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Onset", sans-serif;
+}
 
 body {
     min-height: 100vh;
-    background: #ffffff;
+    background-image: url(https://9to5mac.com/?attachment_id=811090);
+    background-size: cover;
+}
+
+nav {
+    --bg: #ffffffaa;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    height: calc(100vh - 80px);
+    width: 300px;
+    background-color: var(--bg);
+    box-sizing: initial;
+    transition: width 0.5s;
+    overflow-x: hidden;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    padding: 0 5px;
+    padding-top: 40px;
+}
+
+nav>h1 {
+    display: none;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+nav:not(.active)+aside {
+    width: 300px;
+    opacity: 1;
+}
+
+nav+aside {
+    position: fixed;
+    top: 40px;
+    opacity: 0;
+    left: 330px;
+    background-color: #ffffff88;
+    height: calc(100vh - 80px);
+    backdrop-filter: blur(5px);
+    /* 	width:0; */
+    transition: opacity 0.3s;
+    overflow: hidden;
+    padding: 40px;
+    border-radius: 0 1rem 1rem 0;
+}
+
+aside h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+#shop,
+#bag,
+#new {
+    display: none;
+}
+
+nav:has(li:nth-of-type(1).active)+aside,
+nav:has(li:nth-of-type(5).active)+aside {
+    opacity: 0;
+}
+
+nav:has(li:nth-of-type(2).active)+aside #shop {
+    display: block;
+}
+
+nav:has(li:nth-of-type(3).active)+aside #new {
+    display: block;
+}
+
+nav:has(li:nth-of-type(4).active)+aside #bag {
+    display: block;
+}
+
+.bag {
+    padding: 20px 15px;
+    color: #00406b;
+    border-radius: 1rem;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bag:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+.bag>i {
+    font-size: 1.3rem;
+    margin-right: 20px;
+}
+
+nav.active {
+    width: 70px;
+}
+
+nav ul {
+    position: absoulte;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav ul li {
+    position: relative;
+    list-style: none;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    height: 60px;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    margin: auto;
+    width: 95%;
+    transition: 0.3s;
+}
+
+nav ul li.active {
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+nav.active ul li.active {
+    width: 95%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+nav ul li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #00406b;
+    align-items: center;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #003559;
+}
+
+nav ul li.active a {
+    color: #333;
+}
+
+nav ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    /* height:60px; */
+    text-align: center;
+}
+
+.icon i {
+    font-size: 1.5em;
+}
+
+.title {
+    position: relative;
+    padding-left: 15px;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffffaa;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle i {
+    position: absolute;
+    color: #00406b;
+    font-size: 30px;
+    display: none;
+}
+
+.toggle i:nth-of-type(2) {
+    display: block;
+}
+
+.toggle.active i:nth-of-type(2) {
+    display: none;
+}
+
+.toggle.active i:nth-of-type(1) {
+    display: block;
 }
