@@ -1,11 +1,158 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    margin: 0;
+    background: rgb(14 51 77);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    margin: 0;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li:before {
+    content: '# ';
+    mix-blend-mode: exclusion;
+}
+
+.dashboard {
+    max-width: 640px;
+    padding: 30px;
+    margin: 40px auto;
+    position: relative;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    border: 10px solid rgb(14 51 77);
+    background-color: rgb(159 98 114);
+    box-shadow: 15px 15px 0 -5px rgb(197 25 37), 195px 0 inset rgb(162 190 168);
+    font-weight: 600;
+    letter-spacing: 0.44px;
+}
+
+.dashboard:before,
+.dashboard:after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    background-image: url('data:image/gif;base64,R0lGODlhAQAIAIcAAAAAAJ9icgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgAAACwAAAAAAQAIAAAICQABCAwgEECAgAAh+QQJCgAAACwAAAAAAQAFAAAIBwADABgYICAAIfkECQoAAAAsAAABAAEABQAACAcAAwAYGCAgACH5BAUKAAAALAAAAgABAAUAAAgHAAMAGBggIAA7');
+}
+
+.dashboard:before {
+    top: -16px;
+    height: 16px;
+    width: 100%;
+}
+
+.dashboard:after {
+    top: 0;
+    height: calc(100% - 10px);
+    width: 20px;
+}
+
+.dashboard>div {
+    padding: 10px;
+    border: 4px solid;
+    flex: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard>div:before,
+.dashboard>div:after {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: inherit;
+    mix-blend-mode: hue;
+}
+
+.dashboard>div:before {
+    left: -15px;
+    top: -15px;
+    border-radius: 50%;
+}
+
+.dashboard>div:after {
+    right: -15px;
+    bottom: -10px;
+    width: 20%;
+}
+
+.dashboard>div:hover {
+    transform: translate(0, -2px);
+}
+
+.dashboard>div:hover:before,
+.dashboard>div:hover:after {
+    transform: translate(0, 4px);
+}
+
+.profile {
+    color: rgb(162 190 168);
+    background-color: rgb(14 51 77 / 70%);
+    width: 100%;
+    text-shadow: 2px 2px rgb(14 51 77);
+}
+
+.profile:hover {
+    background-color: rgb(14 51 77 / 85%);
+    border-color: rgb(14 51 77);
+}
+
+.profile p {
+    margin: 0;
+    font-size: 21px;
+}
+
+.personal-bests {
+    flex: 1;
+    flex: auto;
+}
+
+.schedule-table,
+.personal-bests {
+    color: rgb(162 190 168);
+    background-color: rgb(197 25 37 / 70%);
+    text-shadow: 2px 2px rgb(14 51 77);
+}
+
+.schedule-table:hover,
+.personal-bests:hover {
+    background-color: rgb(197 25 37 / 85%);
+    border-color: rgb(14 51 77);
+}
+
+div.exercise-table,
+div.challenges {
+    color: rgb(197 25 37);
+    border-color: rgb(162 190 168);
+    background-color: rgb(14 51 77 / 70%);
+    text-shadow: 2px 2px rgb(14 51 77);
+}
+
+div.exercise-table:hover,
+div.challenges:hover {
+    border-color: rgb(14 51 77);
+    background-color: rgb(14 51 77 / 85%);
+}
+
+.calories,
+.activity-feed {
+    color: rgb(14 51 77);
+    background-color: rgb(251 238 183 / 70%);
+}
+
+.calories:hover,
+.activity-feed:hover {
+    color: rgb(14 51 77);
+    background-color: rgb(251 238 183 / 85%);
+    border-color: rgb(14 51 77);
 }
