@@ -71,7 +71,7 @@ class Product
 
     public static function retrieve($id)
     {
-        $db = Database::connect($id);
+        $db = Database::connect();
         $product = $db->query("SELECT * FROM products WHERE id = {$id}");
         return $product->fetch_object();
     }
@@ -107,7 +107,7 @@ class Product
 
     public static function delete($id)
     {
-        $db = Database::connect($id);
+        $db = Database::connect();
         $is_delete = $db->query("DELETE FROM products WHERE id = {$id}");
         return $is_delete;
     }
