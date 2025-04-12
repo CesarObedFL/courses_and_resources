@@ -31,5 +31,7 @@ function typeNumber(event, type, input_value) {
     // se revisa si lo que se tipeo esta dentro de la cadena de números o es un caracter especial
     if(numbers.indexOf(KEY)==-1 && !specialKey)
         return false;
- }
+
+    return true;
+}
  
