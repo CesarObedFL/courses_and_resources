@@ -42,15 +42,22 @@
 
 
     <h3>generate a random string of 10 characters</h3>
-    <input type="text" id="random string" placeholder="random string" readonly>
-    <button>generate</button>
+    <input type="text" id="random_string" placeholder="random string" readonly>
+    <button id="generate_random_string_btn">generate</button>
     <br>
 
     <!-- Example Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/show_alert.js"></script>
     <script type="text/javascript" src="js/email_autocomplete.js"></script>
     <script type="text/javascript" src="js/enter_number.js"></script>
     <script type="text/javascript" src="js/random_string.js"></script>
+
+    <script>
+        $("#generate_random_string_btn").on("click", function() {
+            $("#random_string").val(random_string(10));
+        });
+    </script>
     <!-- ./ Example Scripts -->
 </body>
 
