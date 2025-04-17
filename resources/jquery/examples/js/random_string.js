@@ -1,4 +1,4 @@
-function randomString(string_lenght) {
+function random_string(string_lenght) {
     let result = '';
     let characters = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789';
 
