@@ -46,16 +46,27 @@
     <button id="generate_random_string_btn">generate</button>
     <br>
 
+    <h3>validate an ip</h3>
+    <input type="text" id="ip" placeholder="ip">
+    <button id="validate_ip_btn">validate</button>
+    <input type="text" id="is_ip_valid" value="" readonly/>
+    <br>
+
     <!-- Example Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/show_alert.js"></script>
     <script type="text/javascript" src="js/email_autocomplete.js"></script>
     <script type="text/javascript" src="js/enter_number.js"></script>
     <script type="text/javascript" src="js/random_string.js"></script>
+    <script type="text/javascript" src="js/validate_ip.js"></script>
 
     <script>
         $("#generate_random_string_btn").on("click", function() {
             $("#random_string").val(random_string(10));
+        });
+
+        $("#validate_ip_btn").on("click", function() {
+            $("#is_ip_valid").val(validate_ip_address($("#ip").val()));
         });
     </script>
     <!-- ./ Example Scripts -->
