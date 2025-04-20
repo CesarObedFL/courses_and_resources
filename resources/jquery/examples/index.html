@@ -52,6 +52,15 @@
     <input type="text" id="is_ip_valid" value="" readonly/>
     <br>
 
+
+    <!-- antigüedad -->
+    <h3>seniority</h3>
+    <input type="date" id="date_from" value="01-01-2023" min="01-01-2018" max="31-12-2030"/>
+    <input type="date" id="date_to" value="31-12-2023" min="01-01-2018" max="31-12-2030"/>
+    <button id="validate_seniority_btn">validate</button>
+    <input type="text" id="seniority" value="" readonly/>
+    <br>
+
     <!-- Example Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/show_alert.js"></script>
@@ -69,6 +78,7 @@
         $("#validate_ip_btn").on("click", function() {
             $("#is_ip_valid").val(validate_ip_address($("#ip").val()));
         });
+        
     </script>
     <!-- ./ Example Scripts -->
 </body>
