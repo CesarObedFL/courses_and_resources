@@ -79,6 +79,9 @@
             $("#is_ip_valid").val(validate_ip_address($("#ip").val()));
         });
         
+        $("#validate_seniority_btn").on("click", function(){
+            $("#seniority").val(seniority($("#date_from").val(), $("#date_to").val()));
+        });
     </script>
     <!-- ./ Example Scripts -->
 </body>
