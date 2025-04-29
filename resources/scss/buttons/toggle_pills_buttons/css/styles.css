@@ -1,0 +1,118 @@
+input:where(.chip[type=checkbox]) {
+  --color: #6c6;
+  font-size: 1rem;
+  appearance: none;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.2666666667);
+  border-radius: 100em;
+  overflow: clip;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+}
+input:where(.chip[type=checkbox])::after {
+  content: attr(value);
+  white-space: pre;
+  line-height: 1;
+  position: relative;
+  padding: 0.5em 1em 0.5em 2em;
+  display: block;
+}
+input:where(.chip[type=checkbox])::before {
+  content: "";
+  display: inline-block;
+  width: 0.75em;
+  aspect-ratio: 1;
+  background: linear-gradient(currentcolor 0 0), linear-gradient(currentcolor 0 0);
+  background-position: -200% -2em, 2em -200%, 50% 50%;
+  background-size: 1em 0.125em, 0.125em 1em;
+  background-repeat: no-repeat;
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 1.125em;
+  translate: -50% -50%;
+  rotate: 45deg;
+  transition: width 0.25s, background-position 0.5s;
+}
+input:where(.chip[type=checkbox]).grow::before, input:where(.chip[type=checkbox]).bounce::before {
+  background-position: 50% 50%, 50% 50%, 50% 50%;
+  background-size: 0 0, 0 0;
+  transition: width 0.25s, background-size 0.5s;
+}
+input:where(.chip[type=checkbox]).bounce::before {
+  transition-timing-function: ease-in-out, cubic-bezier(0.75, 0, 0.5, 2);
+}
+input:where(.chip[type=checkbox]):checked::before {
+  width: 200%;
+  background-position: 50% 50%, 50% 50%, 50% 50%;
+  background-size: 1em 0.125em, 0.125em 1em;
+}
+input:where(.chip[type=checkbox]):disabled {
+  --color: #eee !important;
+  color: #6c6c6c;
+  border-color: rgba(0, 0, 0, 0.0666666667);
+}
+input:where(.chip[type=checkbox]):hover:not(:disabled) {
+  border-color: rgba(0, 0, 0, 0.6666666667);
+  background-color: rgb(from var(--color) r g b/10%);
+  transition: 0.4s;
+}
+
+@media print {
+  input:where(.chip[type=checkbox]), input:where(.chip[type=checkbox])::before, input:where(.chip[type=checkbox])::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+@media (prefers-reduced-motion) {
+  input:where(.chip[type=checkbox]), input:where(.chip[type=checkbox])::before, input:where(.chip[type=checkbox])::after {
+    transition: none !important;
+  }
+}
+/*
+  high-contrast styles:
+  - all the dots will be highlight color
+  - Disabled will be gray
+  - No crosses (they are removed as backgrounds)
+  */
+@media (prefers-contrast: more) {
+  input:where(.chip[type=checkbox])::before {
+    background: highlight;
+  }
+  input:where(.chip[type=checkbox]):disabled {
+    border-color: gray-text;
+  }
+  input:where(.chip[type=checkbox]):disabled::before {
+    background: graytext;
+  }
+  input:where(.chip[type=checkbox]):disabled::after {
+    color: graytext;
+  }
+}
+/* DEMO - START */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 3em;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+fieldset {
+  border-color: rgba(0, 0, 0, 0);
+}
+fieldset legend {
+  color: #666696;
+  font-weight: 500;
+}
+
+/* DEMO - END */
+
+/*# sourceMappingURL=styles.css.map */
