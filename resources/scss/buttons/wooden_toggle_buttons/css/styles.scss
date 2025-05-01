@@ -133,7 +133,7 @@ body {
         width: 36px;
         height: 100%;
         transform: translateX(-4px);
-        background-image: url('https://assets.codepen.io/4175254/wood-pattern.png');
+        background-image: url('../assets/wood-pattern.png');
         background-size: 328px 110px;
         background-position: center;
         box-shadow:
@@ -259,7 +259,7 @@ body {
         border-radius: 50%;
         width: 24px;
         height: 24px;
-        background-image: url('https://assets.codepen.io/4175254/wood-pattern.png');
+        background-image: url('../assets/wood-pattern.png');
         background-size: 328px 110px;
         background-position: center;
         box-shadow:
@@ -301,7 +301,7 @@ body {
     height: 32px;
     background-image:
         linear-gradient(rgb(255 255 255 / .125), rgb(255 255 255 / .125)),
-        url('https://assets.codepen.io/4175254/wood-pattern.png');
+        url('../assets/wood-pattern.png');
     background-size: 100% 100%, 328px 110px;
     background-position: center;
     box-shadow:
@@ -328,7 +328,7 @@ body {
         height: inherit;
         background-image:
             linear-gradient(90deg, rgb(73 31 1 / .125), rgb(255 255 255 / .25), rgb(73 31 1 / .25)),
-            url('https://assets.codepen.io/4175254/wood-pattern.png');
+            url('../assets/wood-pattern.png');
         background-size: 200% 100%, 328px 110px;
         background-position: 100% 0, center;
         box-shadow:
