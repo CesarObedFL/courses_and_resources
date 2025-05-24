@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Notification for Thee</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/leimapapa/pen/eYoprMv -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <div class="notification-bell">
+        <svg class="bell-icon" viewBox="0 0 100 100" height="100%" width="100%">
+            <defs>
+                <path id="bellBody9"
+                    d="M 44 8 A 1 1 0 0 1 56 8 V 12 Q 80 17 80 41 Q 80 61 90 69 C 94 72 92 80 86 80 H 14 C 8 80 6 72 10 69 Q 20 61 20 41 Q 20 17 44 12 Z"
+                    fill="#000">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate"
+                        values="0 50 45; -12 50 45; 0 50 45; 12 50 45; 0 50 45" dur="400ms" begin="0s" repeatCount="9"
+                        keyTimes="0;0.4;0.5;0.6;1"
+                        keySplines="0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98"
+                        calcMode="spline"></animateTransform>
+                </path>
+                <circle id="badge9" cx="83" cy="27" r="15" fill="steelblue">
+                    <animate attributeName="r" values="15;17;15" dur="400ms" begin="0s" repeatCount="9"></animate>
+                </circle>
+                <mask id="mBell9">
+                    <rect x="0" y="0" width="100" height="100" fill="#fff"></rect>
+                    <use href="#bellBody9" fill="#000" stroke="#000" stroke-width="10"></use>
+                </mask>
+                <mask id="m9">
+                    <rect x="0" y="0" width="100" height="100" fill="#fff"></rect>
+                    <use href="#badge9" fill="#fff" stroke="#000" stroke-width="10"></use>
+                </mask>
+                <mask id="mm9">
+                    <circle cx="83" cy="27" r="15" fill="#fff"></circle>
+                </mask>
+            </defs>
+            <g mask="url(#m9)">
+                <use href="#bellBody9"></use>
+                <circle class="bellGong" cx="50" cy="85" r="11" fill="#000" mask="url(#mBell9)">
+                    <animate attributeName="cx" values="50; 40; 50; 60; 50" dur="400ms" begin="0s" repeatCount="9"
+                        keyTimes="0;0.4;0.5;0.6;1"
+                        keySplines="0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98; 0.67 0.01 0.39 0.98"
+                        calcMode="spline"></animate>
+                </circle>
+            </g>
+            <use href="#badge9"></use>
+            <g mask="url(#mm9)">
+                <g transform="translate(77 34)">
+                    <g>
+                        <text x="0" y="0" font-size="20" fill="#fff" font-weight="600" font-family="monospace">0</text>
+                        <text x="100" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">1</text>
+                        <text x="200" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">2</text>
+                        <text x="300" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">3</text>
+                        <text x="400" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">4</text>
+                        <text x="500" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">5</text>
+                        <text x="600" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">6</text>
+                        <text x="700" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">7</text>
+                        <text x="800" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">8</text>
+                        <text x="894" y="0" font-size="20" fill="#fff" font-weight="600"
+                            font-family="monospace">9+</text>
+                        <animateTransform attributeName="transform" type="translate"
+                            values="0 0;-100 0;-200 0;-300 0;-400 0;-500 0;-600 0;-700 0;-800 0;-900 0" dur="3600ms"
+                            begin="0s" calcMode="discrete" fill="freeze"></animateTransform>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <button class="notify2">2 notifications</button>
+    <br />
+    <button class="notify6">6 notifications</button>
+    <br />
+    <button class="notify12">12 notifications (upper limit is 9)</button>
+    <br />
+    <button class="notify12NoLimit">12 notifications (no upper limit)</button>
+    <br />
+    <button class="notify5Gold">5 notifications (gold)</button>
+    <br />
+    <button class="notify2Slow">2 notifications (slow)</button>
+    <br />
+    <button class="notify2NoOutline">2 notifications (no outline)</button>
+    <br />
+    <button class="notify99">99 notifications (fast ring)</button>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
