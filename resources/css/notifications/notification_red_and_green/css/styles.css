@@ -1,11 +1,49 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: gainsboro;
+}
+
+.notification-bell {
+    position: relative;
+    animation: shake 0.2s infinite alternate, glow 0.3s infinite alternate;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px #cc0000);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px #00ff00);
+    }
+}
+
+.bell-con {
+    fill: #000;
+    /* set the initial bell color */
+}
+
+.notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #00ff00;
+    /* green color for the glow */
+    color: #000;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
 }
