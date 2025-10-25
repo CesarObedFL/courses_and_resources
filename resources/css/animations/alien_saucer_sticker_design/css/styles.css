@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
+body {
+    background: #1d1e22;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2em;
+    padding: 1em;
+    overflow: hidden;
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
