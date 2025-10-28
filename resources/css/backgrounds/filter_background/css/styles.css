@@ -1,11 +1,88 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    /* font: https://modernfontstacks.com */
+    font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    gap: 5vw;
+    height: 100vh;
+    text-align: center;
+    /* img: https://images.unsplash.com/photo-1715553176036-76af0d949e57?q=80&w=1771 */
+    background: url("https://images.unsplash.com/photo-1715553176036-76af0d949e57?q=80&w=1771");
+    background-size: cover;
+    mix-blend-mode: difference;
+    color: white;
+    animation: backdrop-filter 30s infinite linear;
+    overflow: clip;
+    margin: 0;
+    user-select: none;
+}
+
+h1 {
+    font-size: clamp(3rem, 13vw, 5rem);
+    letter-spacing: 0.02em;
+    animation: filter 30s infinite linear;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+    letter-spacing: 0.02em;
+    animation: filter 30s infinite linear;
+}
+
+@keyframes backdrop-filter {
+    10% {
+        backdrop-filter: blur(1rem) brightness(120%) grayscale(60%) sepia(0);
+    }
+
+    20% {
+        backdrop-filter: blur(1rem) brightness(1) grayscale(0) sepia(1);
+    }
+
+    30% {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(1);
+    }
+
+    40% {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(0) saturate(4);
+    }
+
+    50% {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) serpia(0) saturate(4);
+    }
+
+    60% {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(0) saturate(0) hue-rotate(0deg);
+    }
+
+    70% {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(0) saturate(1);
+    }
+
+    to {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(0) saturate(1) hue-rotate(360deg);
+    }
+
+    from {
+        backdrop-filter: blur(0) brightness(1) grayscale(0) sepia(0) saturate(1) hue-rotate(0deg);
+    }
+}
+
+@keyframes filter {
+
+    from,
+    to,
+    20% {
+        filter: opacity(1) blur(0);
+    }
+
+    30%,
+    90% {
+        filter: opacity(50%) blur(0.2rem);
+    }
+
+    60% {
+        filter: opacity(40%) blur(0.4rem);
+    }
 }
