@@ -1,11 +1,86 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
+    /* Configuración del cuerpo para centrar el contenido y ocupar toda la vista */
+    margin: 0;
+    height: 100vh;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    justify-content: center;
+    background-color: #111;
+    overflow: hidden;
+    position: relative;
+}
+
+/* .gallery 
+----------------------------------------------------------------------------------
+*/
+.gallery {
+    /* Contenedor de las imágenes: Configuración de scroll horizontal y efecto de máscara */
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 100%;
+    /* Nota: 'mask-image' es una propiedad moderna, el soporte puede variar. */
+    mask-image: radial-gradient(circle, black 10%, rgba(0, 0, 0, .025) 100%);
+    height: 200px;
+    z-index: 0;
+}
+
+/* &::-webkit-scrollbar (dentro de .gallery)
+----------------------------------------------------------------------------------
+*/
+.gallery::-webkit-scrollbar {
+    /* Oculta la barra de desplazamiento en navegadores WebKit (Chrome, Safari) */
+    display: none;
+}
+
+/* img (dentro de .gallery)
+----------------------------------------------------------------------------------
+*/
+.gallery img {
+    /* Estilo de las imágenes dentro de la galería */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .left, .right 
+----------------------------------------------------------------------------------
+*/
+.left,
+.right {
+    /* Estilos base para los botones/enlaces de navegación */
+    position: absolute;
+    height: 100px;
+    font-size: 96px;
+    color: rgba(255, 255, 255, 0);
+    /* Hace que el texto/icono sea transparente */
+    z-index: 99;
+    background-color: rgba(255, 255, 255, .1);
+    /* Fondo semitransparente */
+    /* Clip de fondo: Muestra el fondo solo donde está el texto (para el efecto) */
+    background-clip: text;
+    /* Filtro de desenfoque detrás de los botones */
+    backdrop-filter: blur(2px);
+    /* Borde blanco alrededor del texto (efecto outline) */
+    -webkit-text-stroke: 1px white;
+}
+
+/* .left 
+----------------------------------------------------------------------------------
+*/
+.left {
+    /* Posición específica para el botón izquierdo */
+    left: 85px;
+}
+
+/* .right 
+----------------------------------------------------------------------------------
+*/
+.right {
+    /* Posición específica para el botón derecho */
+    right: 85px;
 }
