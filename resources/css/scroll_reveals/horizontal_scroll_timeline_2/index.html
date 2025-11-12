@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Horizontal Scroll Timeline</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- source -->
+    <!-- https://codepen.io/dolarau/pen/gOJGjgz -->
+</head>
+
+<body>
+
+    <!-- page content and controls will be here -->
+    <!-- Théo.Radière & Aurélien.Rousselot -->
+    <main>
+        <div class="switch_container">
+            <p>Suggested background color</p>
+            <div class="switch" onclick="toggleBackground()"></div>
+        </div>
+        <div class="container">
+            <div class="timeline_container">
+                <div class="arrows left_arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                    </svg>
+                </div>
+                <div class="timeline_line">
+                    <div class="timeline_line_bg"></div>
+                    <div class="timeline_event_container">
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">3000bc</div>
+                                <div class="timeline_event_content active">
+                                    <h2>SCROLL
+                                        <?xml version="1.0" encoding="UTF-8"?>
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="m21,18h-1V3.5c0-1.93-1.57-3.5-3.5-3.5H3C1.346,0,0,1.346,0,3s1.346,3,3,3h2v15c0,1.654,1.346,3,3,3h13c1.654,0,3-1.346,3-3s-1.346-3-3-3ZM3,5c-1.103,0-2-.897-2-2S1.897,1,3,1s2,.897,2,2v2h-2Zm5,18c-1.103,0-2-.897-2-2v-7h6c.276,0,.5-.224.5-.5s-.224-.5-.5-.5h-6v-7h5c.276,0,.5-.224.5-.5s-.224-.5-.5-.5h-5v-2c0-.768-.29-1.469-.766-2h11.266c1.379,0,2.5,1.122,2.5,2.5v5.5h-4.5c-.276,0-.5.224-.5.5s.224.5.5.5h4.5v8h-6c-1.654,0-3,1.346-3,3,0,1.103-.897,2-2,2Zm13,0h-10.766c.476-.531.766-1.232.766-2,0-1.103.897-2,2-2h8c1.103,0,2,.897,2,2s-.897,2-2,2Z" />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">Papyrus was first manufactured in Egypt as far back
+                                        as the third millennium BCE. For multiple millennia, papyrus was commonly rolled
+                                        into scrolls as a form of storage.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="timeline_group">
+                            <div class="timeline_event timeline_focus" style="transform: scale(1.2); z-index: 1;">
+                                <div class="timeline_event_date">1974</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Bravo scrollbar
+                                        <?xml version="1.0" encoding="UTF-8"?>
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                                            viewBox="0 0 24 24" width="" height="">
+                                            <path
+                                                d="M10.39,.716L1.896,10H22.104L13.613,.72c-.822-.914-2.407-.91-3.224-.004ZM4.165,9L11.131,1.388c.449-.5,1.286-.504,1.741,.004l6.963,7.608H4.165Zm6.222,14.28c.411,.457,.999,.72,1.613,.72s1.202-.263,1.61-.716l8.494-9.284H1.896l8.491,9.28Zm2.482-.668c-.449,.5-1.286,.504-1.741-.004l-6.963-7.608h15.67l-6.966,7.612Z" />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">In 1974, moving the cursor to the left margin while
+                                        using Bravo changed its shape to a double-headed arrow to allow for scrolling.
+                                        Pressing the left or top red button scrolled the content up, and the line next
+                                        to the cursor went to the top of the window.</span><span
+                                        style="font-weight: 400;">
+                                    </span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">1981</div>
+                                <div class="timeline_event_content active">
+                                    <h2>First side-scrolling video game
+                                        <?xml version="1.0" ?><svg fill="#000000" width="" height=""
+                                            viewBox="0 0 100 100" version="1.1" xml:space="preserve"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g id="Grid" />
+                                            <g id="_x31_" />
+                                            <g id="_x32_" />
+                                            <g id="_x33_" />
+                                            <g id="_x34_" />
+                                            <g id="_x35_">
+                                                <path
+                                                    d="M34.9,36.9H11.6c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.4-0.7-0.4-1.2l0.9-8.4c0.1-0.8,0.7-1.3,1.5-1.3H34   c0.8,0,1.4,0.6,1.5,1.3l0.9,8.4c0,0.4-0.1,0.8-0.4,1.2C35.7,36.8,35.3,36.9,34.9,36.9z M13.2,33.9h20l-0.6-5.4H13.8L13.2,33.9z    M36.2,28.5h-26c-0.4,0-0.8-0.2-1.1-0.5c-0.3-0.3-0.4-0.8-0.4-1.2l1.3-10.2c0.1-0.7,0.7-1.3,1.5-1.3h23.3c0.8,0,1.4,0.6,1.5,1.3   l1.3,10.2c0.1,0.4-0.1,0.9-0.4,1.2C37,28.3,36.6,28.5,36.2,28.5z M12,25.5h22.5l-0.9-7.2H12.9L12,25.5z M90.8,64.2H64.1V43.3   L83,32.9c0.5-0.3,0.8-0.8,0.8-1.3s-0.3-1-0.8-1.3L64.1,19.8v-4.2c0-0.8-0.7-1.5-1.5-1.5s-1.5,0.7-1.5,1.5v5.1v21.7v21.8h-52   c-0.8,0-1.5,0.7-1.5,1.5v10.2c0,0.8,0.7,1.5,1.5,1.5h1v6.9c0,0.8,0.7,1.5,1.5,1.5h76.6c0.8,0,1.5-0.7,1.5-1.5v-6.9h1   c0.8,0,1.5-0.7,1.5-1.5V65.7C92.3,64.9,91.7,64.2,90.8,64.2z M64.1,23.2l15,8.3l-15,8.3V23.2z M10.7,67.2h78.7v7.2h-1H11.7h-1V67.2   z M86.8,82.9H13.2v-5.4h73.6V82.9z" />
+                                            </g>
+                                            <g id="_x36_" />
+                                            <g id="_x37_" />
+                                            <g id="_x38_" />
+                                            <g id="_x39_" />
+                                            <g id="_x31_0" />
+                                            <g id="_x31_1" />
+                                            <g id="_x31_2" />
+                                            <g id="_x31_3" />
+                                            <g id="_x31_4" />
+                                            <g id="_x31_5" />
+                                            <g id="_x31_6" />
+                                            <g id="_x31_7" />
+                                            <g id="_x31_8" />
+                                            <g id="_x31_9" />
+                                            <g id="_x32_0" />
+                                            <g id="_x32_1" />
+                                            <g id="_x32_2" />
+                                            <g id="_x32_3" />
+                                            <g id="_x32_4" />
+                                            <g id="_x32_5" />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">Scramble, released by Konami in early 1981, had
+                                        continuous scrolling in a single direction and was the first side-scroller with
+                                        multiple distinct levels.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">1982</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Xeros scrollbar <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down"
+                                            viewBox="0 0 24 24" width="" height="">
+                                            <path
+                                                d="M12.465,22.777V1.223l3.766,3.766,.707-.707L13.146,.489c-.315-.315-.734-.489-1.181-.489h0c-.445,0-.864,.174-1.179,.489l-3.793,3.792,.707,.707,3.766-3.765V22.776l-3.766-3.765-.707,.707,3.793,3.792c.314,.315,.733,.489,1.179,.489h0c.446,0,.865-.174,1.181-.489l3.792-3.792-.707-.707-3.766,3.766Z" />
+                                        </svg></h2>
+                                    <span style="font-weight: 400;">the Xerox Star moved the scrollbar to the right to
+                                        get it out of the way and reduce visual clutter. Scroll arrows pointed inwards
+                                        in the direction the content would move based on user studies, and + and –
+                                        buttons allowed for scrolling by pages.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">1983</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Apple Lisa scrollbar
+                                        <?xml version="1.0" encoding="utf-8"?>
+
+                                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                        <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"
+                                            xml:space="preserve">
+                                            <style type="text/css">
+                                                .st0 {
+                                                    fill: none;
+                                                    stroke-width: 2;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-miterlimit: 10;
+                                                }
+                                            </style>
+                                            <path class="st0" d="M21,11H11V3c0-1.1,0.9-2,2-2h6c1.1,0,2,0.9,2,2V11z" />
+                                            <path class="st0"
+                                                d="M19,31h-6c-1.1,0-2-0.9-2-2v-8h10v8C21,30.1,20.1,31,19,31z" />
+                                            <rect x="11" y="11" class="st0" width="10" height="10" />
+                                            <polyline class="st0" points="14,7 16,5 18,7 " />
+                                            <polyline class="st0" points="18,25 16,27 14,25 " />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">the Apple Lisa had arrows pointing up and down, page
+                                        buttons, and a fixed size thumb. Giving it the appearance we know today.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">1993</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Scroll weel on a mouse
+                                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5 9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9Z"
+                                                stroke="#1C274C" stroke-width="1.5" />
+                                            <path d="M12 5V8" stroke="#1C274C" stroke-width="1.5"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">The scroll wheel was popularized by the Microsoft
+                                        IntelliMouse in 1996 along with support for the mouse wheel in Microsoft Office
+                                        97. It had been based on ideas developed by Eric Michelman since 1993 with input
+                                        from Chris Graham.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">2006</div>
+                                <div class="timeline_event_content active">
+                                    <h2><strong>Infinite Scroll</strong>
+                                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.75 9C5.1393 9 3.75 10.1979 3.75 12C3.75 13.8021 5.1393 15 6.75 15C8.93215 15 9.96658 13.7213 11.0909 12.0197C9.9648 10.2963 8.94769 9 6.75 9ZM11.9886 10.6591C10.9022 9.07118 9.47531 7.5 6.75 7.5C4.37993 7.5 2.25 9.30208 2.25 12C2.25 14.6979 4.37993 16.5 6.75 16.5C9.45251 16.5 10.8909 14.9553 11.9845 13.3798C12.4189 14.0069 12.9091 14.6294 13.5048 15.1451C14.4451 15.9593 15.6342 16.5 17.25 16.5C19.6201 16.5 21.75 14.6979 21.75 12C21.75 9.30208 19.6201 7.5 17.25 7.5C14.5253 7.5 13.0855 9.07015 11.9886 10.6591ZM12.8809 12.023C13.3905 12.8006 13.8793 13.4853 14.4866 14.0111C15.1705 14.6032 16.0158 15 17.25 15C18.8607 15 20.25 13.8021 20.25 12C20.25 10.1979 18.8607 9 17.25 9C15.0496 9 14.0162 10.3002 12.8809 12.023Z" />
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">This feature was created by Aza Raskin, it allows
+                                        you to consume content without reloading the page in a way optimized for
+                                        servers. In mobile the scrolling is done with the wave of the tip of the
+                                        finger.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">2011</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Mac OS X Lion
+                                        <?xml version="1.0" encoding="iso-8859-1"?>
+                                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg
+                                            version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 28.199 28.199"
+                                            xml:space="preserve">
+                                            <g>
+                                                <g>
+                                                    <path style="fill:#1C1B19;" d="M24.974,15.054H3.222C1.445,15.054,0,16.497,0,18.278c0,1.774,1.445,3.222,3.222,3.222h21.752
+c1.775,0,3.225-1.443,3.225-3.222C28.198,16.497,26.75,15.054,24.974,15.054z M24.974,20.894h-9
+c0.976-0.476,1.647-1.463,1.647-2.617c0-1.155-0.677-2.146-1.647-2.619h9c1.444,0,2.618,1.175,2.618,2.619
+C27.592,19.719,26.418,20.894,24.974,20.894z M12.985,10.577c-0.076-0.071-0.124-0.172-0.124-0.285
+c0-0.214,0.173-0.388,0.387-0.388c0.002,0,0.004,0,0.004,0h1.79V7.089C15.041,6.873,15.213,6.7,15.427,6.7h1.45
+c0.213,0,0.388,0.173,0.386,0.389v2.814h1.788c0.152,0,0.289,0.088,0.353,0.227c0.063,0.139,0.039,0.301-0.057,0.416l-2.902,3.354
+c-0.071,0.085-0.182,0.134-0.293,0.134c-0.11,0-0.221-0.049-0.293-0.134L12.985,10.577z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </h2>
+                                    <span style="font-weight: 400;">Mac OS X Lion introduce a scroll bar that fade when
+                                        not in use.</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="timeline_group">
+                            <div class="timeline_event" style="transform: scale(0.8); z-index: 0;">
+                                <div class="timeline_event_date">2024</div>
+                                <div class="timeline_event_content active">
+                                    <h2>Scrollbar retrospective</h2>
+                                    <span style="font-weight: 400;">Scrollbars have been used to navigate content on a
+                                        web page that is too long to fit on the screen for several decades.</span>
+                                </div>
+                                <div class="timeline_event_content">
+                                    <h2>Scrollbar UX/UI</h2>
+                                    <span style="font-weight: 400;">Its design has evolved over the years and is now
+                                        well established in use.</span>
+                                </div>
+                                <div class="timeline_event_content">
+                                    <h2>Infinite scroll and waste of time.</h2>
+                                    <span style="font-weight: 400;">Aza Raskin states during an interview with France
+                                        info that he calculated the time that infinite scrolling lost users: “In terms
+                                        of duration, it’s the equivalent of 200,000 lives per day! ".</span>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="arrows right_arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#e8eaed">
+                                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
