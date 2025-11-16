@@ -1,11 +1,41 @@
+html {
+    font-family: "Playwrite PL";
+    scroll-snap-type: y;
+    color: black;
+    scroll-behavior: smooth;
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: center;
+    /* display: flex;
+	align-items: center;
+	justify-content: center; */
+    text-align: center;
+}
+
+section:nth-of-type(1) {
+    background-image: url("https://cdn.pixabay.com/photo/2017/06/23/10/48/code-2434271_1280.jpg");
+}
+
+section:nth-of-type(2) {
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/19/22/52/coding-1841550_1280.jpg");
+}
+
+section:nth-of-type(3) {
+    background-image: url("https://cdn.pixabay.com/photo/2019/10/07/10/30/programming-4532296_1280.jpg");
+}
+
+div {
+    background-color: white;
+    width: auto;
+    padding: 10px;
 }
