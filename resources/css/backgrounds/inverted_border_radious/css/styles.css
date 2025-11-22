@@ -1,11 +1,57 @@
+img {
+    --r: 25px;
+    /* radius */
+    --s: 40px;
+    /* size of the inner curve*/
+
+    width: 200px;
+    border-radius: var(--r);
+
+    --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%) no-repeat;
+}
+
+.top-right {
+    mask:
+        right calc(var(--s) + var(--r)) top 0 var(--_m),
+        right calc(var(--s) + var(--r)) var(--_m),
+        radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r)) var(--r) no-repeat,
+        conic-gradient(at calc(100% - var(--s) - 2*var(--r)) calc(var(--s) + 2*var(--r)),
+            #0000 25%, #000 0);
+}
+
+.top-left {
+    mask:
+        calc(var(--s) + var(--r)) 0 var(--_m),
+        0 calc(var(--s) + var(--r)) var(--_m),
+        radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px)) var(--r) var(--r) no-repeat,
+        conic-gradient(at calc(var(--s) + 2*var(--r)) calc(var(--s) + 2*var(--r)),
+            #000 75%, #0000 0);
+}
+
+.bottom-left {
+    mask:
+        calc(var(--s) + var(--r)) bottom var(--_m),
+        bottom calc(var(--s) + var(--r)) left 0 var(--_m),
+        radial-gradient(var(--s) at 0 100%, #0000 99%, #000 calc(100% + 1px)) var(--r) calc(-1*var(--r)) no-repeat,
+        conic-gradient(from 180deg at calc(var(--s) + 2*var(--r)) calc(100% - var(--s) - 2*var(--r)),
+            #0000 25%, #000 0);
+}
+
+.bottom-right {
+    mask:
+        right 0 bottom calc(var(--s) + var(--r)) var(--_m),
+        right calc(var(--s) + var(--r)) bottom 0 var(--_m),
+        radial-gradient(var(--s) at 100% 100%, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r)) calc(-1*var(--r)) no-repeat,
+        conic-gradient(from 90deg at calc(100% - var(--s) - 2*var(--r)) calc(100% - var(--s) - 2*var(--r)),
+            #0000 25%, #000 0);
+}
 
 body {
+    margin: 0;
     min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+    gap: 20px;
+    background: #9DE0AD;
 }
