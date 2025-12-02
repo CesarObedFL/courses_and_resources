@@ -1,11 +1,21 @@
-
-body {
+body,
+html {
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    background: #000;
+    overflow: hidden;
+}
+
+canvas {
+    aspect-ratio: 320/180;
+    width: 100vw;
+    background-color: #fff;
+    /*image-rendering: pixelated;*/
+}
+
+:fullscreen {
+    background-color: #000;
 }
