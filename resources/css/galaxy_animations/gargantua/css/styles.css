@@ -1,11 +1,31 @@
-
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #000;
+    font: normal 400 1.3rem 'Rajdhani', sans-serif;
+}
+
+.credit {
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #efefef;
+    backdrop-filter: blur(20px);
+}
+
+.credit a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ff8080
 }
