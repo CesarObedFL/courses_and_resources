@@ -1,11 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
 
 body {
-    min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    font-family: Inter, system-ui, sans-serif;
+    background: #000205;
+    color: #dcdfff;
+    /*aa overflow: hidden;*/
+}
+
+#container {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, #040714 0%, #010308 80%, #000105 100%)
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.instructions {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 22px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #cdd0ff;
+    font-size: 13px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 10;
+    text-shadow: 0 0 5px rgba(255, 255, 255, .35)
 }
