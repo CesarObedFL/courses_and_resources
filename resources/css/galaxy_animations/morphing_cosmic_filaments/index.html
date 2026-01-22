@@ -10,7 +10,14 @@
 
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="importmap">
+    {
+        "imports":{
+            "three":"https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+            "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+        }
+    }
+    </script>
 
     <!-- source -->
     <!-- https://codepen.io/VoXelo/pen/LEErpvM -->
@@ -19,8 +26,10 @@
 <body>
 
     <!-- page content and controls will be here -->
-<div id="container"></div>
-<div class="instructions">Tap / click to morph the cosmic filaments</div>
+    <div id="container"></div>
+    <div class="instructions">Tap / click to morph the cosmic filaments</div>
+
+    <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 
