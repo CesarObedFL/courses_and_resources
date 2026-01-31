@@ -1,348 +1,500 @@
-// --------------------------------------------------------------------------------
-// Global variables for scene, camera, renderer, controls, and simulation objects.
-// --------------------------------------------------------------------------------
-let scene, camera, renderer, controls, composer;
-let particleSystem, particlePositions, particleVelocities;
-let galaxySystem = null; // Will hold the galaxy cluster (added later)
-let nebula = null; // Will hold the nebula background (added later)
-let particleCount = 20000; // Number of particles for the Big Bang explosion
-let params; // Object to store parameters controlled by the UI
-let clock = new THREE.Clock(); // Clock to keep track of elapsed time
+/*********
+ * made by Matthias Hurrle (@atzedent)
+ */
+let editMode = false // set to false to hide the code editor on load
+let resolution = .5 // set 1 for full resolution or to .5 to start with half resolution on load
+let renderDelay = 1000 // delay in ms before rendering the shader after a change
+let dpr = Math.max(1, resolution * window.devicePixelRatio)
+let frm, source, editor, store, renderer, pointers
+const shaderId = 'oggKrGW'
+window.onload = init
 
-// Initialize the scene and start the animation loop.
-init();
-animate();
+function resize() {
+    const { innerWidth: width, innerHeight: height } = window
 
-// --------------------------------------------------------------------------------
-// Function: init()
-// Sets up the scene, camera, renderer, lights, particle system, post-processing, etc.
-// --------------------------------------------------------------------------------
+    canvas.width = width * dpr
+    canvas.height = height * dpr
+
+    if (renderer) {
+        renderer.updateScale(dpr)
+    }
+}
+function toggleView() {
+    editor.hidden = btnToggleView.checked
+    canvas.style.setProperty('--canvas-z-index', btnToggleView.checked ? 0 : -1)
+}
+function reset() {
+    let shader = source
+    editor.text = shader ? shader.textContent : renderer.defaultSource
+    store.putShaderSource(shaderId, editor.text)
+    renderThis()
+}
+function toggleResolution() {
+    resolution = btnToggleResolution.checked ? .5 : 1
+    dpr = Math.max(1, resolution * window.devicePixelRatio)
+    pointers.updateScale(dpr)
+    resize()
+}
+function loop(now) {
+    renderer.updateMouse(pointers.first)
+    renderer.updatePointerCount(pointers.count)
+    renderer.updatePointerCoords(pointers.coords)
+    renderer.updateMove(pointers.move)
+    renderer.render(now)
+    frm = requestAnimationFrame(loop)
+}
+function renderThis() {
+    editor.clearError()
+    store.putShaderSource(shaderId, editor.text)
+
+    const result = renderer.test(editor.text)
+
+    if (result) {
+        editor.setError(result)
+    } else {
+        renderer.updateShader(editor.text)
+    }
+    cancelAnimationFrame(frm) // Always cancel the previous frame!
+    loop(0)
+}
+const debounce = (fn, delay) => {
+    let timerId
+    return (...args) => {
+        clearTimeout(timerId)
+        timerId = setTimeout(() => fn.apply(this, args), delay)
+    }
+}
+const render = debounce(renderThis, renderDelay)
 function init() {
-    // Create a new scene.
-    scene = new THREE.Scene();
+    source = document.querySelector("script[type='x-shader/x-fragment']")
 
-    // Create a perspective camera.
-    camera = new THREE.PerspectiveCamera(
-        60,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        10000
-    );
-    camera.position.set(0, 0, 200);
+    document.title = "Sketchy, But Keeps Spinning"
 
-    // Create the WebGL renderer with antialiasing and set its size.
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.shadowMap.enabled = true; // Enable shadow maps for added realism.
-    document.body.appendChild(renderer.domElement);
+    renderer = new Renderer(canvas, dpr)
+    pointers = new PointerHandler(canvas, dpr)
+    store = new Store(window.location)
+    editor = new Editor(codeEditor, error, indicator)
+    editor.text = source.textContent
+    renderer.setup()
+    renderer.init()
 
-    // Add OrbitControls so the user can explore the scene.
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Smooth out camera movement.
-    controls.dampingFactor = 0.05;
-
-    // Add ambient light to gently light the scene.
-    const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
-    scene.add(ambientLight);
-
-    // Add a point light at the origin to simulate the intense energy of the Big Bang.
-    const pointLight = new THREE.PointLight(0xffffff, 2, 1000);
-    pointLight.position.set(0, 0, 0);
-    pointLight.castShadow = true;
-    scene.add(pointLight);
-
-    // Set up post-processing using EffectComposer and add a bloom pass to simulate volumetric light.
-    composer = new THREE.EffectComposer(renderer);
-    let renderPass = new THREE.RenderPass(scene, camera);
-    composer.addPass(renderPass);
-    let bloomPass = new THREE.UnrealBloomPass(
-        new THREE.Vector2(window.innerWidth, window.innerHeight),
-        1.5, // strength
-        0.4, // radius
-        0.85 // threshold
-    );
-    bloomPass.threshold = 0;
-    bloomPass.strength = 2;
-    bloomPass.radius = 0.5;
-    composer.addPass(bloomPass);
-
-    // Create the primary particle system representing the initial Big Bang explosion.
-    createParticleSystem();
-
-    // Set up UI controls with dat.GUI.
-    setupGUI();
-
-    // Listen for window resize events.
-    window.addEventListener("resize", onWindowResize, false);
-}
-
-// --------------------------------------------------------------------------------
-// Function: createParticleSystem()
-// Creates a particle system where all particles originate at the singularity and
-// are assigned random velocities that will cause them to expand outward.
-// --------------------------------------------------------------------------------
-function createParticleSystem() {
-    // Create a BufferGeometry to store particle positions.
-    const geometry = new THREE.BufferGeometry();
-
-    // Allocate arrays for particle positions and velocities.
-    particlePositions = new Float32Array(particleCount * 3);
-    particleVelocities = new Float32Array(particleCount * 3);
-
-    // Initialize each particle at (0,0,0) with a random outward velocity.
-    for (let i = 0; i < particleCount; i++) {
-        // All particles start at the singularity (with a tiny offset if desired).
-        particlePositions[i * 3] = 0;
-        particlePositions[i * 3 + 1] = 0;
-        particlePositions[i * 3 + 2] = 0;
-
-        // Randomly determine the particle's direction (spherical coordinates).
-        let theta = Math.random() * 2 * Math.PI;
-        let phi = Math.acos(Math.random() * 2 - 1);
-        let speed = Math.random() * 0.5 + 0.5; // Speed between 0.5 and 1.0.
-        particleVelocities[i * 3] = speed * Math.sin(phi) * Math.cos(theta);
-        particleVelocities[i * 3 + 1] =
-            speed * Math.sin(phi) * Math.sin(theta);
-        particleVelocities[i * 3 + 2] = speed * Math.cos(phi);
+    if (!editMode) {
+        btnToggleView.checked = true
+        toggleView()
     }
-
-    // Attach the positions to the geometry.
-    geometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(particlePositions, 3)
-    );
-
-    // Create a PointsMaterial using a custom sprite texture for a soft glow.
-    const sprite = generateSprite();
-    const material = new THREE.PointsMaterial({
-        size: 2,
-        map: sprite,
-        blending: THREE.AdditiveBlending,
-        depthTest: false,
-        transparent: true,
-        opacity: 0.8,
-        color: 0xffffff,
-    });
-
-    // Create the particle system and add it to the scene.
-    particleSystem = new THREE.Points(geometry, material);
-    scene.add(particleSystem);
-}
-
-// --------------------------------------------------------------------------------
-// Function: generateSprite()
-// Generates a circular, glowing sprite texture using the canvas element.
-// --------------------------------------------------------------------------------
-function generateSprite() {
-    const canvas = document.createElement("canvas");
-    canvas.width = 64;
-    canvas.height = 64;
-    const context = canvas.getContext("2d");
-
-    // Create a radial gradient for the glow.
-    const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
-    gradient.addColorStop(0.2, "rgba(255, 200, 200, 0.8)");
-    gradient.addColorStop(0.4, "rgba(200, 100, 100, 0.6)");
-    gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, 64, 64);
-
-    // Create and return a texture from the canvas.
-    const texture = new THREE.CanvasTexture(canvas);
-    return texture;
-}
-
-// --------------------------------------------------------------------------------
-// Function: setupGUI()
-// Sets up a dat.GUI panel to let users control simulation parameters.
-// --------------------------------------------------------------------------------
-function setupGUI() {
-    // Define default parameters.
-    params = {
-        expansionSpeed: 50, // Scales how fast the particles expand.
-        particleSize: 2, // Particle point size.
-        bloomStrength: 2, // Bloom effect strength.
-        bloomRadius: 0.5, // Bloom effect radius.
-        bloomThreshold: 0, // Bloom effect threshold.
-    };
-
-    // Create a GUI panel.
-    const gui = new dat.GUI({ width: 300 });
-    gui.add(params, "expansionSpeed", 10, 200).name("Expansion Speed");
-    gui
-        .add(params, "particleSize", 1, 10)
-        .name("Particle Size")
-        .onChange((value) => {
-            particleSystem.material.size = value;
-        });
-    gui
-        .add(params, "bloomStrength", 0, 5)
-        .name("Bloom Strength")
-        .onChange((value) => {
-            composer.passes[1].strength = value;
-        });
-    gui
-        .add(params, "bloomRadius", 0, 1)
-        .name("Bloom Radius")
-        .onChange((value) => {
-            composer.passes[1].radius = value;
-        });
-    gui
-        .add(params, "bloomThreshold", 0, 1)
-        .name("Bloom Threshold")
-        .onChange((value) => {
-            composer.passes[1].threshold = value;
-        });
-}
-
-// --------------------------------------------------------------------------------
-// Function: onWindowResize()
-// Adjusts the camera aspect ratio and renderer size when the browser window resizes.
-// --------------------------------------------------------------------------------
-function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    composer.setSize(window.innerWidth, window.innerHeight);
-}
-
-// --------------------------------------------------------------------------------
-// Function: animate()
-// The main animation loop: updates particle positions, adds additional cosmic
-// elements as time progresses, and renders the scene.
-// --------------------------------------------------------------------------------
-function animate() {
-    requestAnimationFrame(animate);
-
-    // Compute the time elapsed since the last frame.
-    const delta = clock.getDelta();
-
-    // Update the positions of the explosion particles.
-    updateParticles(delta);
-
-    // Gradually add additional elements to the universe:
-    // After 10 seconds, add a galaxy cluster; after 15 seconds, add a nebula.
-    let elapsed = clock.elapsedTime;
-    if (elapsed > 10 && !galaxySystem) {
-        createGalaxyCluster();
+    if (resolution === .5) {
+        btnToggleResolution.checked = true
+        toggleResolution()
     }
-    if (elapsed > 15 && !nebula) {
-        createNebula();
+    canvas.addEventListener('shader-error', e => editor.setError(e.detail))
+
+    resize()
+
+    if (renderer.test(source.textContent) === null) {
+        renderer.updateShader(source.textContent)
     }
-
-    // Update camera controls.
-    controls.update();
-
-    // Render the scene using the post-processing composer (which includes bloom).
-    composer.render(delta);
+    loop(0)
+    window.onresize = resize
+    window.addEventListener("keydown", e => {
+        if (e.key === "L" && e.ctrlKey) {
+            e.preventDefault()
+            btnToggleView.checked = !btnToggleView.checked
+            toggleView()
+        }
+    })
 }
-
-// --------------------------------------------------------------------------------
-// Function: updateParticles()
-// Moves each particle outward from the center by updating its position based on
-// its velocity and the user-controlled expansion speed.
-// --------------------------------------------------------------------------------
-function updateParticles(delta) {
-    const positions = particleSystem.geometry.attributes.position.array;
-    for (let i = 0; i < particleCount; i++) {
-        let index = i * 3;
-        positions[index] +=
-            particleVelocities[index] * params.expansionSpeed * delta;
-        positions[index + 1] +=
-            particleVelocities[index + 1] * params.expansionSpeed * delta;
-        positions[index + 2] +=
-            particleVelocities[index + 2] * params.expansionSpeed * delta;
+class Renderer {
+    #vertexSrc = "#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}"
+    #fragmtSrc = "#version 300 es\nprecision highp float;\nout vec4 O;\nuniform float time;\nuniform vec2 resolution;\nvoid main() {\n\tvec2 uv=gl_FragCoord.xy/resolution;\n\tO=vec4(uv,sin(time)*.5+.5,1);\n}"
+    #vertices = [-1, 1, -1, -1, 1, 1, 1, -1]
+    constructor(canvas, scale) {
+        this.canvas = canvas
+        this.scale = scale
+        this.gl = canvas.getContext("webgl2")
+        this.gl.viewport(0, 0, canvas.width * scale, canvas.height * scale)
+        this.shaderSource = this.#fragmtSrc
+        this.mouseMove = [0, 0]
+        this.mouseCoords = [0, 0]
+        this.pointerCoords = [0, 0]
+        this.nbrOfPointers = 0
     }
-    particleSystem.geometry.attributes.position.needsUpdate = true;
-}
-
-// --------------------------------------------------------------------------------
-// Function: createGalaxyCluster()
-// Creates a secondary particle system to simulate the appearance of galaxies and
-// star clusters in the later universe.
-// --------------------------------------------------------------------------------
-function createGalaxyCluster() {
-    const galaxyCount = 5000; // Number of galaxy particles
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(galaxyCount * 3);
-
-    // Randomly distribute galaxy particles in a large spherical region.
-    for (let i = 0; i < galaxyCount; i++) {
-        positions[i * 3] = (Math.random() - 0.5) * 1000;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 1000;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 1000;
+    get defaultSource() { return this.#fragmtSrc }
+    updateShader(source) {
+        this.reset()
+        this.shaderSource = source
+        this.setup()
+        this.init()
     }
-    geometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(positions, 3)
-    );
-
-    // Create a PointsMaterial for the galaxy cluster with smaller, fainter points.
-    const material = new THREE.PointsMaterial({
-        size: 1.5,
-        color: 0xaaaaaa,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-        opacity: 0.5,
-        depthTest: false,
-    });
-
-    // Create the galaxy particle system and add it to the scene.
-    galaxySystem = new THREE.Points(geometry, material);
-    scene.add(galaxySystem);
-}
-
-// --------------------------------------------------------------------------------
-// Function: createNebula()
-// Creates a large, semi-transparent sphere with a custom-generated texture to
-// simulate a nebula that forms as the universe expands.
-// --------------------------------------------------------------------------------
-function createNebula() {
-    const nebulaGeometry = new THREE.SphereGeometry(500, 32, 32);
-    const nebulaMaterial = new THREE.MeshBasicMaterial({
-        map: generateNebulaTexture(),
-        side: THREE.BackSide,
-        transparent: true,
-        opacity: 0.7,
-    });
-    nebula = new THREE.Mesh(nebulaGeometry, nebulaMaterial);
-    scene.add(nebula);
-}
-
-// --------------------------------------------------------------------------------
-// Function: generateNebulaTexture()
-// Uses canvas drawing to create a nebula-like texture with a radial gradient and
-// random noise to simulate stars and gaseous clouds.
-// --------------------------------------------------------------------------------
-function generateNebulaTexture() {
-    const size = 512;
-    const canvas = document.createElement("canvas");
-    canvas.width = size;
-    canvas.height = size;
-    const context = canvas.getContext("2d");
-
-    // Create a radial gradient as the base of the nebula.
-    const gradient = context.createRadialGradient(
-        size / 2,
-        size / 2,
-        size / 8,
-        size / 2,
-        size / 2,
-        size / 2
-    );
-    gradient.addColorStop(0, "rgba(50, 0, 100, 0.8)");
-    gradient.addColorStop(1, "rgba(0, 0, 0, 0.0)");
-    context.fillStyle = gradient;
-    context.fillRect(0, 0, size, size);
-
-    // Add random noise dots to simulate stars and gas.
-    for (let i = 0; i < 1000; i++) {
-        context.fillStyle = "rgba(255,255,255," + Math.random() * 0.1 + ")";
-        const x = Math.random() * size;
-        const y = Math.random() * size;
-        context.fillRect(x, y, 1, 1);
+    updateMove(deltas) {
+        this.mouseMove = deltas
     }
-    return new THREE.CanvasTexture(canvas);
+    updateMouse(coords) {
+        this.mouseCoords = coords
+    }
+    updatePointerCoords(coords) {
+        this.pointerCoords = coords
+    }
+    updatePointerCount(nbr) {
+        this.nbrOfPointers = nbr
+    }
+    updateScale(scale) {
+        this.scale = scale
+        this.gl.viewport(0, 0, this.canvas.width * scale, this.canvas.height * scale)
+    }
+    compile(shader, source) {
+        const gl = this.gl
+        gl.shaderSource(shader, source)
+        gl.compileShader(shader)
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            console.error(gl.getShaderInfoLog(shader))
+            this.canvas.dispatchEvent(new CustomEvent('shader-error', { detail: gl.getShaderInfoLog(shader) }))
+        }
+    }
+    test(source) {
+        let result = null
+        const gl = this.gl
+        const shader = gl.createShader(gl.FRAGMENT_SHADER)
+        gl.shaderSource(shader, source)
+        gl.compileShader(shader)
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            result = gl.getShaderInfoLog(shader)
+        }
+        if (gl.getShaderParameter(shader, gl.DELETE_STATUS)) {
+            gl.deleteShader(shader)
+        }
+        return result
+    }
+    reset() {
+        const { gl, program, vs, fs } = this
+        if (!program || gl.getProgramParameter(program, gl.DELETE_STATUS)) return
+        if (gl.getShaderParameter(vs, gl.DELETE_STATUS)) {
+            gl.detachShader(program, vs)
+            gl.deleteShader(vs)
+        }
+        if (gl.getShaderParameter(fs, gl.DELETE_STATUS)) {
+            gl.detachShader(program, fs)
+            gl.deleteShader(fs)
+        }
+        gl.deleteProgram(program)
+    }
+    setup() {
+        const gl = this.gl
+        this.vs = gl.createShader(gl.VERTEX_SHADER)
+        this.fs = gl.createShader(gl.FRAGMENT_SHADER)
+        this.compile(this.vs, this.#vertexSrc)
+        this.compile(this.fs, this.shaderSource)
+        this.program = gl.createProgram()
+        gl.attachShader(this.program, this.vs)
+        gl.attachShader(this.program, this.fs)
+        gl.linkProgram(this.program)
+
+        if (!gl.getProgramParameter(this.program, gl.LINK_STATUS)) {
+            console.error(gl.getProgramInfoLog(this.program))
+        }
+    }
+    init() {
+        const { gl, program } = this
+        this.buffer = gl.createBuffer()
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer)
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.#vertices), gl.STATIC_DRAW)
+
+        const position = gl.getAttribLocation(program, "position")
+
+        gl.enableVertexAttribArray(position)
+        gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0)
+
+        program.resolution = gl.getUniformLocation(program, "resolution")
+        program.time = gl.getUniformLocation(program, "time")
+        program.move = gl.getUniformLocation(program, "move")
+        program.touch = gl.getUniformLocation(program, "touch")
+        program.pointerCount = gl.getUniformLocation(program, "pointerCount")
+        program.pointers = gl.getUniformLocation(program, "pointers")
+    }
+    render(now = 0) {
+        const { gl, program, buffer, canvas, mouseMove, mouseCoords, pointerCoords, nbrOfPointers } = this
+
+        if (!program || gl.getProgramParameter(program, gl.DELETE_STATUS)) return
+
+        gl.clearColor(0, 0, 0, 1)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+        gl.useProgram(program)
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer)
+        gl.uniform2f(program.resolution, canvas.width, canvas.height)
+        gl.uniform1f(program.time, now * 1e-3)
+        gl.uniform2f(program.move, ...mouseMove)
+        gl.uniform2f(program.touch, ...mouseCoords)
+        gl.uniform1i(program.pointerCount, nbrOfPointers)
+        gl.uniform2fv(program.pointers, pointerCoords)
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+    }
+}
+class Store {
+    constructor(key) {
+        this.key = key
+        this.store = window.localStorage
+    }
+    #ownShadersKey = 'ownShaders'
+    #StorageType = Object.freeze({
+        shader: 'fragmentSource',
+        config: 'config'
+    })
+    #getKeyPrefix(type) {
+        return `${type}${btoa(this.key)}`
+    }
+    #getKey(type, name) {
+        return `${this.#getKeyPrefix(type)}${btoa(name)}`
+    }
+    putShaderSource(name, source) {
+        const storageType = this.#StorageType.shader
+        this.store.setItem(this.#getKey(storageType, name), source)
+    }
+    getShaderSource(name) {
+        const storageType = this.#StorageType.shader
+        return this.store.getItem(this.#getKey(storageType, name))
+    }
+    deleteShaderSource(name) {
+        const storageType = this.#StorageType.shader
+        this.store.removeItem(this.#getKey(storageType, name))
+    }
+    /** @returns {{title:string, uuid:string}[]} */
+    getOwnShaders() {
+        const storageType = this.#StorageType.config
+        const result = this.store.getItem(this.#getKey(storageType, this.#ownShadersKey))
+
+        return result ? JSON.parse(result) : []
+    }
+    /** @param {{title:string, uuid:string}[]} shader */
+    putOwnShader(shader) {
+        const ownShaders = this.getOwnShaders()
+        const storageType = this.#StorageType.config
+        const index = ownShaders.findIndex((s) => s.uuid === shader.uuid)
+        if (index === -1) {
+            ownShaders.push(shader)
+        } else {
+            ownShaders[index] = shader
+        }
+        this.store.setItem(this.#getKey(storageType, this.#ownShadersKey), JSON.stringify(ownShaders))
+    }
+    deleteOwnShader(uuid) {
+        const ownShaders = this.getOwnShaders()
+        const storageType = this.#StorageType.config
+        this.store.setItem(this.#getKey(storageType, this.#ownShadersKey), JSON.stringify(ownShaders.filter((s) => s.uuid !== uuid)))
+        this.deleteShaderSource(uuid)
+    }
+    /** @param {string[]} keep The names of the shaders to keep*/
+    cleanup(keep = []) {
+        const storageType = this.#StorageType.shader
+        const ownShaders = this.getOwnShaders().map((s) => this.#getKey(storageType, s.uuid))
+        const premadeShaders = keep.map((name) => this.#getKey(storageType, name))
+        const keysToKeep = [...ownShaders, ...premadeShaders]
+        const result = []
+
+        for (let i = 0; i < this.store.length; i++) {
+            const key = this.store.key(i)
+
+            if (key.startsWith(this.#getKeyPrefix(this.#StorageType.shader)) && !keysToKeep.includes(key)) {
+                result.push(key)
+            }
+        }
+
+        result.forEach((key) => this.store.removeItem(key))
+    }
+}
+class PointerHandler {
+    constructor(element, scale) {
+        this.scale = scale
+        this.active = false
+        this.pointers = new Map()
+        this.lastCoords = [0, 0]
+        this.moves = [0, 0]
+        const map = (element, scale, x, y) => [x * scale, element.height - y * scale]
+        element.addEventListener("pointerdown", (e) => {
+            this.active = true
+            this.pointers.set(e.pointerId, map(element, this.getScale(), e.clientX, e.clientY))
+        })
+        element.addEventListener("pointerup", (e) => {
+            if (this.count === 1) {
+                this.lastCoords = this.first
+            }
+            this.pointers.delete(e.pointerId)
+            this.active = this.pointers.size > 0
+        })
+        element.addEventListener("pointerleave", (e) => {
+            if (this.count === 1) {
+                this.lastCoords = this.first
+            }
+            this.pointers.delete(e.pointerId)
+            this.active = this.pointers.size > 0
+        })
+        element.addEventListener("pointermove", (e) => {
+            if (!this.active) return
+            this.lastCoords = [e.clientX, e.clientY]
+            this.pointers.set(e.pointerId, map(element, this.getScale(), e.clientX, e.clientY))
+            this.moves = [this.moves[0] + e.movementX, this.moves[1] + e.movementY]
+        })
+    }
+    getScale() {
+        return this.scale
+    }
+    updateScale(scale) { this.scale = scale }
+    reset() {
+        this.pointers.clear()
+        this.active = false
+        this.moves = [0, 0]
+    }
+    get count() {
+        return this.pointers.size
+    }
+    get move() {
+        return this.moves
+    }
+    get coords() {
+        return this.pointers.size > 0 ? Array.from(this.pointers.values()).map((p) => [...p]).flat() : [0, 0]
+    }
+    get first() {
+        return this.pointers.values().next().value || this.lastCoords
+    }
+}
+class Editor {
+    constructor(textarea, errorfield, errorindicator) {
+        this.textarea = textarea
+        this.errorfield = errorfield
+        this.errorindicator = errorindicator
+        textarea.addEventListener('keydown', this.handleKeydown.bind(this))
+        textarea.addEventListener('scroll', this.handleScroll.bind(this))
+    }
+    get hidden() { return this.textarea.classList.contains('hidden') }
+    set hidden(value) { value ? this.#hide() : this.#show() }
+    get text() { return this.textarea.value }
+    set text(value) { this.textarea.value = value }
+    get scrollTop() { return this.textarea.scrollTop }
+    set scrollTop(value) { this.textarea.scrollTop = value }
+    setError(message) {
+        this.errorfield.innerHTML = message
+        this.errorfield.classList.add('opaque')
+        const match = message.match(/ERROR: \d+:(\d+):/)
+        const lineNumber = match ? parseInt(match[1]) : 0
+        const overlay = document.createElement('pre')
+
+        overlay.classList.add('overlay')
+        overlay.textContent = '\n'.repeat(lineNumber)
+
+        document.body.appendChild(overlay)
+
+        const offsetTop = parseInt(getComputedStyle(overlay).height)
+
+        this.errorindicator.style.setProperty('--top', offsetTop + 'px')
+        this.errorindicator.style.visibility = 'visible'
+
+        document.body.removeChild(overlay)
+    }
+    clearError() {
+        this.errorfield.textContent = ''
+        this.errorfield.classList.remove('opaque')
+        this.errorfield.blur()
+        this.errorindicator.style.visibility = 'hidden'
+    }
+    focus() {
+        this.textarea.focus()
+    }
+    #hide() {
+        for (const el of [this.errorindicator, this.errorfield, this.textarea]) {
+            el.classList.add('hidden')
+        }
+    }
+    #show() {
+        for (const el of [this.errorindicator, this.errorfield, this.textarea]) {
+            el.classList.remove('hidden')
+        }
+        this.focus()
+    }
+    handleScroll() {
+        this.errorindicator.style.setProperty('--scroll-top', `${this.textarea.scrollTop}px`)
+    }
+    handleKeydown(event) {
+        if (event.key === "Tab") {
+            event.preventDefault()
+            this.handleTabKey(event.shiftKey)
+        } else if (event.key === "Enter") {
+            event.preventDefault()
+            this.handleEnterKey()
+        }
+    }
+    handleTabKey(shiftPressed) {
+        if (this.#getSelectedText() !== "") {
+            if (shiftPressed) {
+                this.#unindentSelectedText()
+                return
+            }
+            this.#indentSelectedText()
+        } else {
+            this.#indentAtCursor()
+        }
+    }
+    #getSelectedText() {
+        const editor = this.textarea
+        const start = editor.selectionStart
+        const end = editor.selectionEnd
+        return editor.value.substring(start, end)
+    }
+    #indentAtCursor() {
+        const editor = this.textarea
+        const cursorPos = editor.selectionStart
+
+        document.execCommand('insertText', false, '\t')
+        editor.selectionStart = editor.selectionEnd = cursorPos + 1
+    }
+    #indentSelectedText() {
+        const editor = this.textarea
+        const cursorPos = editor.selectionStart
+        const selectedText = this.#getSelectedText()
+        const lines = selectedText.split('\n')
+        const indentedText = lines.map(line => '\t' + line).join('\n')
+
+        document.execCommand('insertText', false, indentedText)
+        editor.selectionStart = cursorPos
+    }
+    #unindentSelectedText() {
+        const editor = this.textarea
+        const cursorPos = editor.selectionStart
+        const selectedText = this.#getSelectedText()
+        const lines = selectedText.split('\n')
+        const indentedText = lines.map(line => line.replace(/^\t/, '').replace(/^ /, '')).join('\n')
+
+        document.execCommand('insertText', false, indentedText)
+        editor.selectionStart = cursorPos
+    }
+    handleEnterKey() {
+        const editor = this.textarea
+        const visibleTop = editor.scrollTop
+        const cursorPosition = editor.selectionStart
+
+        let start = cursorPosition - 1
+        while (start >= 0 && editor.value[start] !== '\n') {
+            start--
+        }
+
+        let newLine = ''
+        while (start < cursorPosition - 1 && (editor.value[start + 1] === ' ' || editor.value[start + 1] === '\t')) {
+            newLine += editor.value[start + 1]
+            start++
+        }
+
+        document.execCommand('insertText', false, '\n' + newLine)
+        editor.selectionStart = editor.selectionEnd = cursorPosition + 1 + newLine.length
+        editor.scrollTop = visibleTop // Prevent the editor from scrolling
+        const lineHeight = editor.scrollHeight / editor.value.split('\n').length
+        const line = editor.value.substring(0, cursorPosition).split('\n').length
+
+        // Do the actual layout calculation in order to get the correct scroll position
+        const visibleBottom = editor.scrollTop + editor.clientHeight
+        const lineTop = lineHeight * (line - 1)
+        const lineBottom = lineHeight * (line + 2)
+
+        // If the cursor is outside the visible range, scroll the editor
+        if (lineTop < visibleTop) editor.scrollTop = lineTop
+        if (lineBottom > visibleBottom) editor.scrollTop = lineBottom - editor.clientHeight
+    }
 }
