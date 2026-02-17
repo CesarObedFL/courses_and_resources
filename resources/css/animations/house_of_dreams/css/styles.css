@@ -1,11 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+section,
+.mots,
+svg {
+    width: 60vmin;
+}
+
+section {
+    display: grid;
+    aspect-ratio: 1 / 1;
+}
+
+section>* {
+    grid-area: 1 / 1;
+}
+
+.reves {
+    width: 60vmin;
+    aspect-ratio: 1;
+    background: #004066;
+    border-radius: 100%;
+}
+
+.maison {
+    place-self: end center;
+    width: 27%;
+    aspect-ratio: 1 / 1.4;
+    margin-inline-start: 12vmin;
+    background: #ffefd5;
+    clip-path: polygon(32% 0%,
+            2% 30%,
+            0% 100%,
+            100% 100%,
+            100% 40%,
+            80% 19%,
+            81% 0%,
+            73% 0%,
+            70% 13%);
+}
+
+p {
+    background: radial-gradient(circle at 50% 50%, yellow, #0000),
+        radial-gradient(circle at 20% 20%, blue, #0000),
+        radial-gradient(circle at 80% 80%, green, #0000),
+        radial-gradient(circle at 20% 80%, red, #0000);
+    background-clip: text;
+    color: #0000;
+    text-align: center;
+    line-height: 1.2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    background: #ffefd5;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.2rem, 4vw, 2.25rem);
 }
