@@ -1,11 +1,98 @@
+* {
+    box-sizing: border-box;
+}
 
 body {
+    --s: max(1rem, 2vw);
+    --bg: deeppink;
+    margin: 0;
+    padding: var(--s);
+    display: grid;
     min-height: 100vh;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    box-sizing: border-box;
+    place-items: center;
+    background: teal;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 70rem;
+    display: grid;
+    gap: var(--s);
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+}
+
+.wrapper div {
+    aspect-ratio: 1;
+    border: calc(var(--s) * 0.2) solid;
+    background-color: var(--bg);
+
+    --c1-pos: 30%;
+    background-image:
+        linear-gradient(var(--black-dir, to bottom), transparent 10%, black 0, black 15%, transparent 0, transparent 18%, black 0, black 22%, transparent 0, transparent 25.25%, black 0, black 29%, transparent 0, transparent 33%, black 0, black 35.5%, transparent 0),
+        linear-gradient(var(--c1-angle, 105deg), transparent var(--c1-pos), lime 0, lime calc(var(--c1-pos) + var(--c1-w, 10%)), transparent 0),
+        radial-gradient(circle at var(--circle-pos, 75% 75%), white var(--circle-size, 30%), transparent 0);
+
+    &:nth-child(2) {
+        --black-dir: 25deg;
+        --c1-angle: 175deg;
+        --c1-w: 55%;
+        --circle-pos: 60% 12%;
+        --circle-size: 9%;
+    }
+
+    &:nth-child(3) {
+        --black-dir: 250deg;
+        --c1-angle: 360deg;
+        --c1-w: 15%;
+        --circle-pos: 5% 50%;
+        --circle-size: 40%;
+    }
+
+    &:nth-child(4) {
+        --black-dir: 280deg;
+        --c1-angle: 20deg;
+        --c1-w: 5%;
+        --circle-pos: 25% 25%;
+        --circle-size: 18%;
+    }
+
+    &:nth-child(5) {
+        --black-dir: 0;
+        --c1-angle: 135deg;
+        --c1-w: 60%;
+        --circle-pos: 35% 35%;
+        --circle-size: 30%;
+    }
+
+    &:nth-child(6) {
+        --black-dir: 50deg;
+        --c1-angle: 265deg;
+        --c1-w: 10%;
+        --circle-pos: 40% 45%;
+        --circle-size: 10%;
+    }
+
+    &:nth-child(7) {
+        --black-dir: 140deg;
+        --c1-angle: 90deg;
+        --c1-w: 20%;
+        --circle-pos: 50% 65%;
+        --circle-size: 24%;
+    }
+
+    &:nth-child(8) {
+        --black-dir: 190deg;
+        --c1-angle: 10deg;
+        --c1-w: 8%;
+        --circle-pos: 50% 120%;
+        --circle-size: 50%;
+    }
+
+    &:nth-child(9) {
+        --black-dir: 100deg;
+        --c1-angle: -40deg;
+        --c1-w: 25%;
+        --circle-pos: 40% 20%;
+        --circle-size: 12%;
+    }
 }
